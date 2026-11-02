@@ -1,0 +1,4 @@
+business_id,business_name,city_name,category_name,address,phone,source_record_id,quality_score,validation_status
+BP-OSM-N-3292377261,login,Ahmedabad,Food & Beverage,vijay char rasta,,node/3292377261,60.0,needs_review
+BP-OSM-N-3293761164,rehmati bakery,Ahmedabad,Food & Beverage,ashram road,,node/3293761164,60.0,needs_review
+BP-OSM-N-7101234641,Indian Oil,Surat,Automotive,Bharthana VIP Road,,node/7101234641,60.0,needs_review

@@ -1,0 +1,13 @@
+category_name,cities_present,cities_with_listings,city_coverage_pct,listing_count
+Retail,12,12,100.0,452
+Food & Beverage,12,12,100.0,447
+Automotive,12,12,100.0,351
+Hospitality,12,12,100.0,275
+Health & Pharmacy,12,12,100.0,244
+Finance & Banking,12,12,100.0,224
+Fitness & Recreation,11,12,91.67,124
+Professional Services,11,12,91.67,62
+Beauty & Personal Care,11,12,91.67,42
+Home & Repair Services,10,12,83.33,21
+Other Services,6,12,50.0,8
+Education & Training,2,12,16.67,2

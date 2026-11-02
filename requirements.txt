@@ -1,0 +1,13 @@
+# BusinessPulse - Data Analyst / BI stack (no web framework)
+pandas>=2.2
+numpy>=2.0
+matplotlib>=3.9
+PyMySQL>=1.1
+SQLAlchemy>=2.0
+python-dotenv>=1.0
+openpyxl>=3.1
+requests>=2.32
+
+# Testing
+pytest>=8.0
+pytest-cov>=5.0

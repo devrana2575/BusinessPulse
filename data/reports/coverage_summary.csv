@@ -1,0 +1,2 @@
+total_city_category_pairs,covered_pairs,coverage_pct,candidate_pairs,high_tier_pairs,medium_tier_pairs,low_tier_pairs,insufficient_evidence_pairs,max_sql_python_score_difference,score_mismatches,tier_mismatches,methodology_version
+144,123,85.42,132,12,5,115,12,0.01,0,0,v1.0

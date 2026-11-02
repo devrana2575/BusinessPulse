@@ -1,0 +1,13 @@
+city_name,state_name,listing_count,categories_present,city_share_pct,completeness_pct,avg_quality_score
+Surat,Gujarat,206,10,9.15,14.56,73.45
+Chennai,Tamil Nadu,201,10,8.93,4.98,59.33
+Ahmedabad,Gujarat,192,11,8.53,6.25,65.42
+Pune,Maharashtra,192,11,8.53,5.21,63.1
+Bengaluru,Karnataka,190,11,8.44,4.74,65.61
+Jaipur,Rajasthan,189,10,8.39,11.11,65.11
+Hyderabad,Telangana,186,9,8.26,0.54,57.77
+Mumbai,Maharashtra,185,10,8.21,4.32,63.86
+Kolkata,West Bengal,182,11,8.08,3.85,63.38
+Chandigarh,Chandigarh,179,9,7.95,4.47,60.95
+Lucknow,Uttar Pradesh,176,11,7.82,5.11,63.38
+Delhi,Delhi,174,10,7.73,2.3,57.61

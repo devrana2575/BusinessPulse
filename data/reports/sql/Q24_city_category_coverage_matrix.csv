@@ -1,0 +1,145 @@
+city_name,category_name,listing_count,city_total,category_share_in_city_pct,national_category_share_pct,relative_representation,is_covered,coverage_status
+Ahmedabad,Food & Beverage,40,192,20.83,19.85,1.0496,1,At or above baseline
+Ahmedabad,Retail,39,192,20.31,20.07,1.012,1,At or above baseline
+Ahmedabad,Health & Pharmacy,16,192,8.33,10.83,0.7691,1,Slightly below baseline
+Ahmedabad,Finance & Banking,24,192,12.5,9.95,1.2567,1,At or above baseline
+Ahmedabad,Professional Services,9,192,4.69,2.75,1.7026,1,At or above baseline
+Ahmedabad,Hospitality,22,192,11.46,12.21,0.9383,1,Slightly below baseline
+Ahmedabad,Beauty & Personal Care,1,192,0.52,1.87,0.2793,1,Below national baseline
+Ahmedabad,Automotive,27,192,14.06,15.59,0.9022,1,Slightly below baseline
+Ahmedabad,Education & Training,1,192,0.52,0.09,5.8646,1,At or above baseline
+Ahmedabad,Fitness & Recreation,11,192,5.73,5.51,1.0405,1,At or above baseline
+Ahmedabad,Home & Repair Services,2,192,1.04,0.93,1.1171,1,At or above baseline
+Ahmedabad,Other Services,0,192,0.0,0.36,0.0,0,No listings in this city-category
+Bengaluru,Food & Beverage,35,190,18.42,19.85,0.9281,1,Slightly below baseline
+Bengaluru,Retail,42,190,22.11,20.07,1.1014,1,At or above baseline
+Bengaluru,Health & Pharmacy,15,190,7.89,10.83,0.7286,1,Slightly below baseline
+Bengaluru,Finance & Banking,18,190,9.47,9.95,0.9524,1,Slightly below baseline
+Bengaluru,Professional Services,7,190,3.68,2.75,1.3382,1,At or above baseline
+Bengaluru,Hospitality,18,190,9.47,12.21,0.7758,1,Slightly below baseline
+Bengaluru,Beauty & Personal Care,10,190,5.26,1.87,2.8221,1,At or above baseline
+Bengaluru,Automotive,24,190,12.63,15.59,0.8104,1,Slightly below baseline
+Bengaluru,Education & Training,0,190,0.0,0.09,0.0,0,No listings in this city-category
+Bengaluru,Fitness & Recreation,17,190,8.95,5.51,1.625,1,At or above baseline
+Bengaluru,Home & Repair Services,3,190,1.58,0.93,1.6932,1,At or above baseline
+Bengaluru,Other Services,1,190,0.53,0.36,1.4816,1,At or above baseline
+Chandigarh,Food & Beverage,38,179,21.23,19.85,1.0695,1,At or above baseline
+Chandigarh,Retail,27,179,15.08,20.07,0.7515,1,Slightly below baseline
+Chandigarh,Health & Pharmacy,22,179,12.29,10.83,1.1344,1,At or above baseline
+Chandigarh,Finance & Banking,14,179,7.82,9.95,0.7863,1,Slightly below baseline
+Chandigarh,Professional Services,9,179,5.03,2.75,1.8263,1,At or above baseline
+Chandigarh,Hospitality,30,179,16.76,12.21,1.3725,1,At or above baseline
+Chandigarh,Beauty & Personal Care,1,179,0.56,1.87,0.2995,1,Below national baseline
+Chandigarh,Automotive,35,179,19.55,15.59,1.2545,1,At or above baseline
+Chandigarh,Education & Training,0,179,0.0,0.09,0.0,0,No listings in this city-category
+Chandigarh,Fitness & Recreation,3,179,1.68,5.51,0.3044,1,Below national baseline
+Chandigarh,Home & Repair Services,0,179,0.0,0.93,0.0,0,No listings in this city-category
+Chandigarh,Other Services,0,179,0.0,0.36,0.0,0,No listings in this city-category
+Chennai,Food & Beverage,42,201,20.9,19.85,1.0527,1,At or above baseline
+Chennai,Retail,41,201,20.4,20.07,1.0163,1,At or above baseline
+Chennai,Health & Pharmacy,25,201,12.44,10.83,1.1479,1,At or above baseline
+Chennai,Finance & Banking,16,201,7.96,9.95,0.8003,1,Slightly below baseline
+Chennai,Professional Services,4,201,1.99,2.75,0.7228,1,Slightly below baseline
+Chennai,Hospitality,24,201,11.94,12.21,0.9778,1,Slightly below baseline
+Chennai,Beauty & Personal Care,3,201,1.49,1.87,0.8003,1,Slightly below baseline
+Chennai,Automotive,32,201,15.92,15.59,1.0214,1,At or above baseline
+Chennai,Education & Training,0,201,0.0,0.09,0.0,0,No listings in this city-category
+Chennai,Fitness & Recreation,11,201,5.47,5.51,0.9939,1,Slightly below baseline
+Chennai,Home & Repair Services,3,201,1.49,0.93,1.6006,1,At or above baseline
+Chennai,Other Services,0,201,0.0,0.36,0.0,0,No listings in this city-category
+Delhi,Food & Beverage,29,174,16.67,19.85,0.8397,1,Slightly below baseline
+Delhi,Retail,28,174,16.09,20.07,0.8017,1,Slightly below baseline
+Delhi,Health & Pharmacy,10,174,5.75,10.83,0.5304,1,Slightly below baseline
+Delhi,Finance & Banking,26,174,14.94,9.95,1.5023,1,At or above baseline
+Delhi,Professional Services,3,174,1.72,2.75,0.6263,1,Slightly below baseline
+Delhi,Hospitality,14,174,8.05,12.21,0.6589,1,Slightly below baseline
+Delhi,Beauty & Personal Care,1,174,0.57,1.87,0.3082,1,Below national baseline
+Delhi,Automotive,43,174,24.71,15.59,1.5856,1,At or above baseline
+Delhi,Education & Training,0,174,0.0,0.09,0.0,0,No listings in this city-category
+Delhi,Fitness & Recreation,18,174,10.34,5.51,1.8788,1,At or above baseline
+Delhi,Home & Repair Services,0,174,0.0,0.93,0.0,0,No listings in this city-category
+Delhi,Other Services,2,174,1.15,0.36,3.2356,1,At or above baseline
+Hyderabad,Food & Beverage,41,186,22.04,19.85,1.1105,1,At or above baseline
+Hyderabad,Retail,41,186,22.04,20.07,1.0982,1,At or above baseline
+Hyderabad,Health & Pharmacy,21,186,11.29,10.83,1.042,1,At or above baseline
+Hyderabad,Finance & Banking,22,186,11.83,9.95,1.1891,1,At or above baseline
+Hyderabad,Professional Services,0,186,0.0,2.75,0.0,0,No listings in this city-category
+Hyderabad,Hospitality,15,186,8.06,12.21,0.6604,1,Slightly below baseline
+Hyderabad,Beauty & Personal Care,0,186,0.0,1.87,0.0,0,No listings in this city-category
+Hyderabad,Automotive,28,186,15.05,15.59,0.9658,1,Slightly below baseline
+Hyderabad,Education & Training,0,186,0.0,0.09,0.0,0,No listings in this city-category
+Hyderabad,Fitness & Recreation,16,186,8.6,5.51,1.5623,1,At or above baseline
+Hyderabad,Home & Repair Services,1,186,0.54,0.93,0.5765,1,Slightly below baseline
+Hyderabad,Other Services,1,186,0.54,0.36,1.5134,1,At or above baseline
+Jaipur,Food & Beverage,34,189,17.99,19.85,0.9063,1,Slightly below baseline
+Jaipur,Retail,36,189,19.05,20.07,0.949,1,Slightly below baseline
+Jaipur,Health & Pharmacy,21,189,11.11,10.83,1.0255,1,At or above baseline
+Jaipur,Finance & Banking,16,189,8.47,9.95,0.8511,1,Slightly below baseline
+Jaipur,Professional Services,9,189,4.76,2.75,1.7296,1,At or above baseline
+Jaipur,Hospitality,34,189,17.99,12.21,1.4732,1,At or above baseline
+Jaipur,Beauty & Personal Care,2,189,1.06,1.87,0.5674,1,Slightly below baseline
+Jaipur,Automotive,35,189,18.52,15.59,1.1881,1,At or above baseline
+Jaipur,Education & Training,0,189,0.0,0.09,0.0,0,No listings in this city-category
+Jaipur,Fitness & Recreation,1,189,0.53,5.51,0.0961,1,Below national baseline
+Jaipur,Home & Repair Services,1,189,0.53,0.93,0.5674,1,Slightly below baseline
+Jaipur,Other Services,0,189,0.0,0.36,0.0,0,No listings in this city-category
+Kolkata,Food & Beverage,36,182,19.78,19.85,0.9965,1,Slightly below baseline
+Kolkata,Retail,39,182,21.43,20.07,1.0676,1,At or above baseline
+Kolkata,Health & Pharmacy,21,182,11.54,10.83,1.0649,1,At or above baseline
+Kolkata,Finance & Banking,18,182,9.89,9.95,0.9943,1,Slightly below baseline
+Kolkata,Professional Services,5,182,2.75,2.75,0.9979,1,Slightly below baseline
+Kolkata,Hospitality,24,182,13.19,12.21,1.0799,1,At or above baseline
+Kolkata,Beauty & Personal Care,4,182,2.2,1.87,1.1784,1,At or above baseline
+Kolkata,Automotive,20,182,10.99,15.59,0.705,1,Slightly below baseline
+Kolkata,Education & Training,0,182,0.0,0.09,0.0,0,No listings in this city-category
+Kolkata,Fitness & Recreation,11,182,6.04,5.51,1.0977,1,At or above baseline
+Kolkata,Home & Repair Services,2,182,1.1,0.93,1.1784,1,At or above baseline
+Kolkata,Other Services,2,182,1.1,0.36,3.0934,1,At or above baseline
+Lucknow,Food & Beverage,34,176,19.32,19.85,0.9733,1,Slightly below baseline
+Lucknow,Retail,34,176,19.32,20.07,0.9625,1,Slightly below baseline
+Lucknow,Health & Pharmacy,17,176,9.66,10.83,0.8915,1,Slightly below baseline
+Lucknow,Finance & Banking,22,176,12.5,9.95,1.2567,1,At or above baseline
+Lucknow,Professional Services,3,176,1.7,2.75,0.6191,1,Slightly below baseline
+Lucknow,Hospitality,22,176,12.5,12.21,1.0236,1,At or above baseline
+Lucknow,Beauty & Personal Care,5,176,2.84,1.87,1.5233,1,At or above baseline
+Lucknow,Automotive,24,176,13.64,15.59,0.8749,1,Slightly below baseline
+Lucknow,Education & Training,0,176,0.0,0.09,0.0,0,No listings in this city-category
+Lucknow,Fitness & Recreation,11,176,6.25,5.51,1.1351,1,At or above baseline
+Lucknow,Home & Repair Services,3,176,1.7,0.93,1.8279,1,At or above baseline
+Lucknow,Other Services,1,176,0.57,0.36,1.5994,1,At or above baseline
+Mumbai,Food & Beverage,41,185,22.16,19.85,1.1165,1,At or above baseline
+Mumbai,Retail,38,185,20.54,20.07,1.0234,1,At or above baseline
+Mumbai,Health & Pharmacy,19,185,10.27,10.83,0.9479,1,Slightly below baseline
+Mumbai,Finance & Banking,22,185,11.89,9.95,1.1956,1,At or above baseline
+Mumbai,Professional Services,3,185,1.62,2.75,0.589,1,Slightly below baseline
+Mumbai,Hospitality,33,185,17.84,12.21,1.4608,1,At or above baseline
+Mumbai,Beauty & Personal Care,5,185,2.7,1.87,1.4492,1,At or above baseline
+Mumbai,Automotive,20,185,10.81,15.59,0.6936,1,Slightly below baseline
+Mumbai,Education & Training,0,185,0.0,0.09,0.0,0,No listings in this city-category
+Mumbai,Fitness & Recreation,0,185,0.0,5.51,0.0,0,No listings in this city-category
+Mumbai,Home & Repair Services,3,185,1.62,0.93,1.739,1,At or above baseline
+Mumbai,Other Services,1,185,0.54,0.36,1.5216,1,At or above baseline
+Pune,Food & Beverage,42,192,21.88,19.85,1.1021,1,At or above baseline
+Pune,Retail,40,192,20.83,20.07,1.038,1,At or above baseline
+Pune,Health & Pharmacy,29,192,15.1,10.83,1.394,1,At or above baseline
+Pune,Finance & Banking,13,192,6.77,9.95,0.6807,1,Slightly below baseline
+Pune,Professional Services,2,192,1.04,2.75,0.3784,1,Below national baseline
+Pune,Hospitality,17,192,8.85,12.21,0.7251,1,Slightly below baseline
+Pune,Beauty & Personal Care,6,192,3.13,1.87,1.6756,1,At or above baseline
+Pune,Automotive,25,192,13.02,15.59,0.8354,1,Slightly below baseline
+Pune,Education & Training,1,192,0.52,0.09,5.8646,1,At or above baseline
+Pune,Fitness & Recreation,15,192,7.81,5.51,1.4189,1,At or above baseline
+Pune,Home & Repair Services,2,192,1.04,0.93,1.1171,1,At or above baseline
+Pune,Other Services,0,192,0.0,0.36,0.0,0,No listings in this city-category
+Surat,Food & Beverage,35,206,16.99,19.85,0.856,1,Slightly below baseline
+Surat,Retail,47,206,22.82,20.07,1.1367,1,At or above baseline
+Surat,Health & Pharmacy,28,206,13.59,10.83,1.2545,1,At or above baseline
+Surat,Finance & Banking,13,206,6.31,9.95,0.6344,1,Slightly below baseline
+Surat,Professional Services,8,206,3.88,2.75,1.4106,1,At or above baseline
+Surat,Hospitality,22,206,10.68,12.21,0.8746,1,Slightly below baseline
+Surat,Beauty & Personal Care,4,206,1.94,1.87,1.0411,1,At or above baseline
+Surat,Automotive,38,206,18.45,15.59,1.1835,1,At or above baseline
+Surat,Education & Training,0,206,0.0,0.09,0.0,0,No listings in this city-category
+Surat,Fitness & Recreation,10,206,4.85,5.51,0.8816,1,Slightly below baseline
+Surat,Home & Repair Services,1,206,0.49,0.93,0.5206,1,Slightly below baseline
+Surat,Other Services,0,206,0.0,0.36,0.0,0,No listings in this city-category

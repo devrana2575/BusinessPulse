@@ -1,0 +1,31 @@
+city_name,category_name,listing_count,city_total,relative_representation,underrepresentation_index,city_breadth_gap,reliability_index,underrepresentation_points,breadth_points,reliability_points,opportunity_score,opportunity_tier,coverage_status
+Chandigarh,Other Services,0,179,0.0,1.0,0.25,0.0447,60.0,6.25,0.67,66.92,High,No listings in this city-category
+Chandigarh,Home & Repair Services,0,179,0.0,1.0,0.25,0.0447,60.0,6.25,0.67,66.92,High,No listings in this city-category
+Surat,Other Services,0,206,0.0,1.0,0.1667,0.1456,60.0,4.17,2.18,66.35,High,No listings in this city-category
+Hyderabad,Professional Services,0,186,0.0,1.0,0.25,0.0054,60.0,6.25,0.08,66.33,High,No listings in this city-category
+Hyderabad,Beauty & Personal Care,0,186,0.0,1.0,0.25,0.0054,60.0,6.25,0.08,66.33,High,No listings in this city-category
+Jaipur,Other Services,0,189,0.0,1.0,0.1667,0.1111,60.0,4.17,1.67,65.83,High,No listings in this city-category
+Chennai,Other Services,0,201,0.0,1.0,0.1667,0.0498,60.0,4.17,0.75,64.91,High,No listings in this city-category
+Mumbai,Fitness & Recreation,0,185,0.0,1.0,0.1667,0.0432,60.0,4.17,0.65,64.82,High,No listings in this city-category
+Delhi,Home & Repair Services,0,174,0.0,1.0,0.1667,0.023,60.0,4.17,0.35,64.51,High,No listings in this city-category
+Ahmedabad,Other Services,0,192,0.0,1.0,0.0833,0.0625,60.0,2.08,0.94,63.02,High,No listings in this city-category
+Pune,Other Services,0,192,0.0,1.0,0.0833,0.0521,60.0,2.08,0.78,62.86,High,No listings in this city-category
+Jaipur,Fitness & Recreation,1,189,0.0961,0.9039,0.1667,0.1111,54.23,4.17,1.67,60.07,High,Below national baseline
+Chandigarh,Beauty & Personal Care,1,179,0.2995,0.7005,0.25,0.0447,42.03,6.25,0.67,48.95,Medium,Below national baseline
+Chandigarh,Fitness & Recreation,3,179,0.3044,0.6956,0.25,0.0447,41.74,6.25,0.67,48.66,Medium,Below national baseline
+Ahmedabad,Beauty & Personal Care,1,192,0.2793,0.7207,0.0833,0.0625,43.24,2.08,0.94,46.26,Medium,Below national baseline
+Delhi,Beauty & Personal Care,1,174,0.3082,0.6918,0.1667,0.023,41.51,4.17,0.35,46.02,Medium,Below national baseline
+Pune,Professional Services,2,192,0.3784,0.6216,0.0833,0.0521,37.3,2.08,0.78,40.16,Medium,Below national baseline
+Surat,Home & Repair Services,1,206,0.5206,0.4794,0.1667,0.1456,28.76,4.17,2.18,35.12,Low,Slightly below baseline
+Delhi,Health & Pharmacy,10,174,0.5304,0.4696,0.1667,0.023,28.18,4.17,0.35,32.69,Low,Slightly below baseline
+Jaipur,Beauty & Personal Care,2,189,0.5674,0.4326,0.1667,0.1111,25.96,4.17,1.67,31.79,Low,Slightly below baseline
+Jaipur,Home & Repair Services,1,189,0.5674,0.4326,0.1667,0.1111,25.96,4.17,1.67,31.79,Low,Slightly below baseline
+Hyderabad,Home & Repair Services,1,186,0.5765,0.4235,0.25,0.0054,25.41,6.25,0.08,31.74,Low,Slightly below baseline
+Mumbai,Professional Services,3,185,0.589,0.411,0.1667,0.0432,24.66,4.17,0.65,29.48,Low,Slightly below baseline
+Surat,Finance & Banking,13,206,0.6344,0.3656,0.1667,0.1456,21.94,4.17,2.18,28.29,Low,Slightly below baseline
+Delhi,Professional Services,3,174,0.6263,0.3737,0.1667,0.023,22.42,4.17,0.35,26.93,Low,Slightly below baseline
+Hyderabad,Hospitality,15,186,0.6604,0.3396,0.25,0.0054,20.38,6.25,0.08,26.71,Low,Slightly below baseline
+Lucknow,Professional Services,3,176,0.6191,0.3809,0.0833,0.0511,22.85,2.08,0.77,25.7,Low,Slightly below baseline
+Delhi,Hospitality,14,174,0.6589,0.3411,0.1667,0.023,20.47,4.17,0.35,24.98,Low,Slightly below baseline
+Mumbai,Automotive,20,185,0.6936,0.3064,0.1667,0.0432,18.38,4.17,0.65,23.2,Low,Slightly below baseline
+Pune,Finance & Banking,13,192,0.6807,0.3193,0.0833,0.0521,19.16,2.08,0.78,22.02,Low,Slightly below baseline

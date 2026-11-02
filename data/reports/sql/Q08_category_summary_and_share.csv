@@ -1,0 +1,13 @@
+category_name,listing_count,category_share_pct,cities_present,city_coverage_pct,completeness_pct,category_rank
+Retail,452,20.07,12,100.0,7.3,1
+Food & Beverage,447,19.85,12,100.0,6.26,2
+Automotive,351,15.59,12,100.0,1.71,3
+Hospitality,275,12.21,12,100.0,9.45,4
+Health & Pharmacy,244,10.83,12,100.0,5.74,5
+Finance & Banking,224,9.95,12,100.0,0.89,6
+Fitness & Recreation,124,5.51,11,91.67,2.42,7
+Professional Services,62,2.75,11,91.67,19.35,8
+Beauty & Personal Care,42,1.87,11,91.67,4.76,9
+Home & Repair Services,21,0.93,10,83.33,9.52,10
+Other Services,8,0.36,6,50.0,12.5,11
+Education & Training,2,0.09,2,16.67,0.0,12

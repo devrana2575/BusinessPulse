@@ -1,0 +1,4 @@
+business_id,business_name,city,address,phone,source,source_record_id,duplicate_group,kept_business_id,duplicate_reason
+BP-OSM-N-3292377261,login,Ahmedabad,vijay char rasta,,OpenStreetMap (Overpass API),node/3292377261,DUP-0001,BP-OSM-N-3292377162,name + city + address
+BP-OSM-N-3293761164,rehmati bakery,Ahmedabad,ashram road,,OpenStreetMap (Overpass API),node/3293761164,DUP-0002,BP-OSM-N-3293760464,name + city + address
+BP-OSM-N-7101234641,Indian Oil,Surat,Bharthana VIP Road,,OpenStreetMap (Overpass API),node/7101234641,DUP-0003,BP-OSM-N-7101234640,name + city + address

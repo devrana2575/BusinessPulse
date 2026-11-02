@@ -1,0 +1,124 @@
+city_name,category_name,listing_count,pct_within_city,category_rank_in_city
+Ahmedabad,Food & Beverage,40,20.83,1
+Ahmedabad,Retail,39,20.31,2
+Ahmedabad,Automotive,27,14.06,3
+Ahmedabad,Finance & Banking,24,12.5,4
+Ahmedabad,Hospitality,22,11.46,5
+Ahmedabad,Health & Pharmacy,16,8.33,6
+Ahmedabad,Fitness & Recreation,11,5.73,7
+Ahmedabad,Professional Services,9,4.69,8
+Ahmedabad,Home & Repair Services,2,1.04,9
+Ahmedabad,Beauty & Personal Care,1,0.52,10
+Ahmedabad,Education & Training,1,0.52,10
+Bengaluru,Retail,42,22.11,1
+Bengaluru,Food & Beverage,35,18.42,2
+Bengaluru,Automotive,24,12.63,3
+Bengaluru,Finance & Banking,18,9.47,4
+Bengaluru,Hospitality,18,9.47,4
+Bengaluru,Fitness & Recreation,17,8.95,6
+Bengaluru,Health & Pharmacy,15,7.89,7
+Bengaluru,Beauty & Personal Care,10,5.26,8
+Bengaluru,Professional Services,7,3.68,9
+Bengaluru,Home & Repair Services,3,1.58,10
+Bengaluru,Other Services,1,0.53,11
+Chandigarh,Food & Beverage,38,21.23,1
+Chandigarh,Automotive,35,19.55,2
+Chandigarh,Hospitality,30,16.76,3
+Chandigarh,Retail,27,15.08,4
+Chandigarh,Health & Pharmacy,22,12.29,5
+Chandigarh,Finance & Banking,14,7.82,6
+Chandigarh,Professional Services,9,5.03,7
+Chandigarh,Fitness & Recreation,3,1.68,8
+Chandigarh,Beauty & Personal Care,1,0.56,9
+Chennai,Food & Beverage,42,20.9,1
+Chennai,Retail,41,20.4,2
+Chennai,Automotive,32,15.92,3
+Chennai,Health & Pharmacy,25,12.44,4
+Chennai,Hospitality,24,11.94,5
+Chennai,Finance & Banking,16,7.96,6
+Chennai,Fitness & Recreation,11,5.47,7
+Chennai,Professional Services,4,1.99,8
+Chennai,Beauty & Personal Care,3,1.49,9
+Chennai,Home & Repair Services,3,1.49,9
+Delhi,Automotive,43,24.71,1
+Delhi,Food & Beverage,29,16.67,2
+Delhi,Retail,28,16.09,3
+Delhi,Finance & Banking,26,14.94,4
+Delhi,Fitness & Recreation,18,10.34,5
+Delhi,Hospitality,14,8.05,6
+Delhi,Health & Pharmacy,10,5.75,7
+Delhi,Professional Services,3,1.72,8
+Delhi,Other Services,2,1.15,9
+Delhi,Beauty & Personal Care,1,0.57,10
+Hyderabad,Food & Beverage,41,22.04,1
+Hyderabad,Retail,41,22.04,1
+Hyderabad,Automotive,28,15.05,3
+Hyderabad,Finance & Banking,22,11.83,4
+Hyderabad,Health & Pharmacy,21,11.29,5
+Hyderabad,Fitness & Recreation,16,8.6,6
+Hyderabad,Hospitality,15,8.06,7
+Hyderabad,Home & Repair Services,1,0.54,8
+Hyderabad,Other Services,1,0.54,8
+Jaipur,Retail,36,19.05,1
+Jaipur,Automotive,35,18.52,2
+Jaipur,Food & Beverage,34,17.99,3
+Jaipur,Hospitality,34,17.99,3
+Jaipur,Health & Pharmacy,21,11.11,5
+Jaipur,Finance & Banking,16,8.47,6
+Jaipur,Professional Services,9,4.76,7
+Jaipur,Beauty & Personal Care,2,1.06,8
+Jaipur,Fitness & Recreation,1,0.53,9
+Jaipur,Home & Repair Services,1,0.53,9
+Kolkata,Retail,39,21.43,1
+Kolkata,Food & Beverage,36,19.78,2
+Kolkata,Hospitality,24,13.19,3
+Kolkata,Health & Pharmacy,21,11.54,4
+Kolkata,Automotive,20,10.99,5
+Kolkata,Finance & Banking,18,9.89,6
+Kolkata,Fitness & Recreation,11,6.04,7
+Kolkata,Professional Services,5,2.75,8
+Kolkata,Beauty & Personal Care,4,2.2,9
+Kolkata,Home & Repair Services,2,1.1,10
+Kolkata,Other Services,2,1.1,10
+Lucknow,Food & Beverage,34,19.32,1
+Lucknow,Retail,34,19.32,1
+Lucknow,Automotive,24,13.64,3
+Lucknow,Finance & Banking,22,12.5,4
+Lucknow,Hospitality,22,12.5,4
+Lucknow,Health & Pharmacy,17,9.66,6
+Lucknow,Fitness & Recreation,11,6.25,7
+Lucknow,Beauty & Personal Care,5,2.84,8
+Lucknow,Home & Repair Services,3,1.7,9
+Lucknow,Professional Services,3,1.7,9
+Lucknow,Other Services,1,0.57,11
+Mumbai,Food & Beverage,41,22.16,1
+Mumbai,Retail,38,20.54,2
+Mumbai,Hospitality,33,17.84,3
+Mumbai,Finance & Banking,22,11.89,4
+Mumbai,Automotive,20,10.81,5
+Mumbai,Health & Pharmacy,19,10.27,6
+Mumbai,Beauty & Personal Care,5,2.7,7
+Mumbai,Home & Repair Services,3,1.62,8
+Mumbai,Professional Services,3,1.62,8
+Mumbai,Other Services,1,0.54,10
+Pune,Food & Beverage,42,21.88,1
+Pune,Retail,40,20.83,2
+Pune,Health & Pharmacy,29,15.1,3
+Pune,Automotive,25,13.02,4
+Pune,Hospitality,17,8.85,5
+Pune,Fitness & Recreation,15,7.81,6
+Pune,Finance & Banking,13,6.77,7
+Pune,Beauty & Personal Care,6,3.13,8
+Pune,Home & Repair Services,2,1.04,9
+Pune,Professional Services,2,1.04,9
+Pune,Education & Training,1,0.52,11
+Surat,Retail,47,22.82,1
+Surat,Automotive,38,18.45,2
+Surat,Food & Beverage,35,16.99,3
+Surat,Health & Pharmacy,28,13.59,4
+Surat,Hospitality,22,10.68,5
+Surat,Finance & Banking,13,6.31,6
+Surat,Fitness & Recreation,10,4.85,7
+Surat,Professional Services,8,3.88,8
+Surat,Beauty & Personal Care,4,1.94,9
+Surat,Home & Repair Services,1,0.49,10

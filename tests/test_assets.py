@@ -1,0 +1,147 @@
+"""Static contract tests for the SQL, Power BI and repository assets.
+
+These tests do not execute Power BI. They verify that the deliverable files
+exist and that the repository does not silently claim a web stack or fabricate a
+rendered report.
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
+
+from analytics.sql_analysis.run_queries import parse_queries, slug
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_schema_has_eight_base_tables():
+    schema = (ROOT / "database" / "schema.sql").read_text(encoding="utf-8")
+    assert schema.count("CREATE TABLE IF NOT EXISTS") == 8
+    for table in (
+        "dim_city",
+        "dim_category",
+        "dim_source",
+        "import_batches",
+        "listing_master",
+        "data_quality_audit",
+        "listing_rejects",
+        "opportunity_config",
+    ):
+        assert f"CREATE TABLE IF NOT EXISTS {table}" in schema
+
+
+def test_views_have_seven_reporting_views():
+    views = (ROOT / "database" / "views.sql").read_text(encoding="utf-8")
+    assert views.count("CREATE OR REPLACE VIEW") == 7
+    for view in (
+        "vw_listing_detail",
+        "vw_city_summary",
+        "vw_category_summary",
+        "vw_source_summary",
+        "vw_data_quality_summary",
+        "vw_city_category_coverage",
+        "vw_market_opportunity",
+    ):
+        assert f"CREATE OR REPLACE VIEW {view}" in views
+
+
+def test_exactly_35_analytical_queries_are_parseable():
+    text = (ROOT / "database" / "analytical_queries.sql").read_text(encoding="utf-8")
+    queries = parse_queries(text)
+    assert len(queries) == 35
+    assert [query["query_id"] for query in queries] == [f"Q{i:02d}" for i in range(1, 36)]
+    assert all(query["sql"] for query in queries)
+    assert all(query["title"] for query in queries)
+    assert len({query["query_id"] for query in queries}) == 35
+
+
+def test_query_slug_is_stable():
+    assert slug("Dataset health snapshot") == "dataset_health_snapshot"
+    assert slug("City-wise category distribution and category rank") == (
+        "city_wise_category_distribution_and_category_rank"
+    )
+
+
+def test_opportunity_formula_is_documented_in_sql():
+    views = (ROOT / "database" / "views.sql").read_text(encoding="utf-8")
+    assert "0.60 * underrepresentation" in views
+    assert "0.25 * city breadth gap" in views
+    assert "0.15 * reliability" in views
+    assert "not proof of low competition" in views.lower()
+
+
+def test_powerbi_files_exist():
+    required = [
+        "README.md",
+        "dax_measures.dax",
+        "data_model.md",
+        "power_query_guide.md",
+        "dashboard_design.md",
+        "screenshots/README.md",
+        "power_query_m/stg_Listings.pq",
+        "power_query_m/FactListings.pq",
+        "power_query_m/FactDataQuality.pq",
+        "power_query_m/FactCityCategoryCoverage.pq",
+        "power_query_m/DimCity.pq",
+        "power_query_m/DimCategory.pq",
+        "power_query_m/DimSource.pq",
+    ]
+    for relative in required:
+        assert (ROOT / "powerbi" / relative).exists(), relative
+
+
+def test_data_quality_query_has_no_city_or_category_ids():
+    # Prevents the documented ambiguous relationship path.
+    text = (ROOT / "powerbi" / "power_query_m" / "FactDataQuality.pq").read_text(
+        encoding="utf-8"
+    )
+    assert '"city_id"' not in text
+    assert '"category_id"' not in text
+
+
+def test_dax_contains_core_and_quality_measures():
+    text = (ROOT / "powerbi" / "dax_measures.dax").read_text(encoding="utf-8")
+    for measure in (
+        "Total Listings =",
+        "City Contribution % =",
+        "Missing Phone % =",
+        "Completeness % =",
+        "Opportunity Score =",
+        "High Opportunity Gaps =",
+        "Methodology Note =",
+    ):
+        assert measure in text
+
+
+def test_dashboard_specification_has_four_pages():
+    text = (ROOT / "powerbi" / "dashboard_design.md").read_text(encoding="utf-8")
+    for page in (
+        "Page 1 — Executive Overview",
+        "Page 2 — Geographic Coverage",
+        "Page 3 — Data Quality & Completeness",
+        "Page 4 — Market Opportunity",
+    ):
+        assert page in text
+
+
+def test_no_fake_pbix_or_screenshot_files():
+    assert not list(ROOT.glob("**/*.pbix"))
+    image_files = []
+    for suffix in ("*.png", "*.jpg", "*.jpeg"):
+        image_files.extend((ROOT / "powerbi").rglob(suffix))
+    assert image_files == []
+
+
+def test_no_web_framework_in_requirements():
+    requirements = (ROOT / "requirements.txt").read_text(encoding="utf-8").lower()
+    for forbidden in ("fastapi", "flask", "django", "react", "streamlit"):
+        assert forbidden not in requirements
+
+
+def test_screenshots_readme_is_honest():
+    text = (ROOT / "powerbi" / "screenshots" / "README.md").read_text(encoding="utf-8")
+    assert "PENDING MANUAL ACTION" in text
+    assert "Power BI Desktop is not installed" in text
+    assert "Do not substitute generated images" in text

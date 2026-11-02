@@ -1,0 +1,13 @@
+category,listing_count,cities_present,missing_phone,missing_address,duplicates,complete_listings,avg_quality_score,share_pct,missing_phone_pct,missing_address_pct,completeness_pct,city_coverage_pct
+Retail,452,12,418,301,0,33,64.78,20.07,92.48,66.59,7.3,100.0
+Food & Beverage,447,12,403,329,2,28,63.3,19.85,90.16,73.6,6.26,100.0
+Automotive,351,12,344,264,1,6,61.48,15.59,98.01,75.21,1.71,100.0
+Hospitality,275,12,240,208,0,26,63.33,12.21,87.27,75.64,9.45,100.0
+Health & Pharmacy,244,12,227,137,0,14,67.15,10.83,93.03,56.15,5.74,100.0
+Finance & Banking,224,12,221,190,0,2,58.93,9.95,98.66,84.82,0.89,100.0
+Fitness & Recreation,124,11,119,104,0,3,59.76,5.51,95.97,83.87,2.42,91.67
+Professional Services,62,11,48,33,0,12,71.05,2.75,77.42,53.23,19.35,91.67
+Beauty & Personal Care,42,11,40,29,0,2,63.69,1.87,95.24,69.05,4.76,91.67
+Home & Repair Services,21,10,19,12,0,2,67.62,0.93,90.48,57.14,9.52,83.33
+Other Services,8,6,7,6,0,1,63.75,0.36,87.5,75.0,12.5,50.0
+Education & Training,2,2,2,2,0,0,55.0,0.09,100.0,100.0,0.0,16.67

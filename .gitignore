@@ -1,0 +1,34 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data collection HTTP cache (the combined raw CSV and manifest are kept)
+data/raw/osm_responses/
+data/raw/*.tmp
+
+# Local database / logs
+.mysql-data/
+*.log
+*.pid
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Power BI local autosave / temp files (the real PBIX is kept if created)
+*.pbix~
+~$*
+powerbi/.pbi/
