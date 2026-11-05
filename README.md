@@ -27,8 +27,8 @@ a database dump, and a specified four-page Power BI report.
 | Exact duplicates | **3** flagged (retained for audit) |
 | Analytical SQL | **35** queries, **35/35** executed |
 | Coverage | **123/144** city × category pairs (**85.42%**) |
-| Automated tests | **99 passed** (unit + live MySQL integration) |
-| Power BI | Model/PQ/DAX/design **implemented**; PBIX and screenshots **pending manual action** |
+| Automated tests | **92 passed, 9 MySQL tests skipped** in the current environment (local MySQL unavailable); 99 passed in the documented 2026-11-02 run |
+| Power BI | Model/PQ/DAX/design **implemented**; PBIX, Desktop validation and screenshots **pending manual action** |
 
 Numbers above come from the generated reports in `data/reports/`; re-run the
 pipeline to reproduce them. The Power BI assets are not claimed to have been
@@ -54,7 +54,7 @@ auditable analysis when the real public data is incomplete:
 - **Retail and Food & Beverage dominate.** Retail has 452 listings (20.07%) and Food & Beverage 447 (19.85%). Education & Training (2) and Other Services (8) are too thin for reliable city comparisons.
 - **Contact data is the binding constraint.** 2,088 listings (92.72%) have no phone, 1,615 (71.71%) have no address, and only 129 (5.73%) meet the strict phone + address + not-duplicate rule. Missing values are flagged, not imputed.
 - **Coverage is high but uneven.** 123 of 144 city x category pairs (85.42%) have at least one listing. 12 candidate cells are High tier, but 11 of those 12 have zero collected listings; they are source/sampling signals, not demand.
-- **The score is a review queue, not a forecast.** All 35 SQL queries and all 37 reconciliation checks pass; 99 automated tests pass. The opportunity formula is reproducible across SQL and Python, but it cannot support investment or demand claims.
+- **The score is a review queue, not a forecast.** The 2026-11-02 historical run recorded 35 SQL queries and 37 reconciliation checks passing, with 99 tests passing. In the current environment, 92 tests pass and 9 live MySQL tests are skipped because the local server is unavailable. The score cannot support investment or demand claims.
 
 ## Selected EDA outputs
 
@@ -67,6 +67,16 @@ auditable analysis when the real public data is incomplete:
 These are **Matplotlib outputs from the Python EDA/opportunity scripts**, not
 Power BI dashboard screenshots. The full generated report is
 [`docs/eda_report.md`](docs/eda_report.md).
+
+## Power BI Phase 9 status
+
+The Power BI M, DAX, semantic-model and four-page design assets are source
+controlled, but this environment could not reach the configured local MySQL
+server and does not have Power BI Desktop. Consequently, no PBIX or Power BI
+screenshots are claimed. See the [Phase 9 audit](reports/powerbi/final_powerbi_audit.md),
+[MySQL verification report](reports/powerbi/mysql_verification_report.md),
+[metric reconciliation](reports/powerbi/metric_reconciliation.csv), and
+[Power BI build guide](powerbi/README.md) for verified versus pending work.
 
 ## Architecture
 

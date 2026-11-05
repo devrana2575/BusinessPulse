@@ -2,8 +2,8 @@
 
 ## Status legend
 
-- **VERIFIED IN THIS REPOSITORY:** files exist, SQL was executed, tests were run
-  against the Python/MySQL layers.
+- **VERIFIED IN THIS REPOSITORY:** source files exist; historical Python/MySQL
+  SQL and integration checks are recorded.
 - **IMPLEMENTED, NOT VERIFIED:** DAX/Power Query text exists but has not been
   opened or executed in Power BI Desktop.
 - **PENDING MANUAL ACTION:** building the `.pbix`, capturing screenshots,
@@ -11,9 +11,15 @@
 - **NOT IMPLEMENTED:** anything not listed here. There is no web app, API,
   React frontend, fabricated screenshot, or fabricated `.pbix`.
 
-Power BI Desktop is not installed on the build machine. The assets below are a
-complete, importable implementation guide, not a claim that a working PBIX was
-tested here.
+Power BI Desktop is not installed on the build machine. The assets below are an
+implementation guide, not a claim that a working PBIX was tested here. In the
+current 2026-11-05 audit, the local MySQL server also refused connections; the
+historical successful database run is recorded separately from current status.
+
+The current execution also could not connect to the configured local MySQL
+service. See [`../reports/powerbi/mysql_verification_report.md`](../reports/powerbi/mysql_verification_report.md)
+and [`../reports/powerbi/final_powerbi_audit.md`](../reports/powerbi/final_powerbi_audit.md)
+for current verification status.
 
 ## What is in this folder
 
@@ -21,6 +27,7 @@ tested here.
 powerbi/
 ├── dax_measures.dax              # measure library (all six sections)
 ├── data_model.md                 # tables, relationships, model properties
+├── documentation/data_model.md   # detailed table/column and relationship contract
 ├── power_query_guide.md          # connection and refresh steps
 ├── dashboard_design.md           # four report pages, visual by visual
 ├── power_query_m/
@@ -45,7 +52,7 @@ powerbi/
 3. Create blank queries and paste each file from `power_query_m/`, renaming the
    query exactly as documented.
 4. Set `stg_Listings` to **Do not load**; load the other six tables.
-5. Create the six relationships in `data_model.md`; verify cardinality and
+5. Create the six relationships in `documentation/data_model.md`; verify cardinality and
    filter direction.
 6. Add the measures from `dax_measures.dax` (or paste section by section), then
    apply the format strings and data categories.
@@ -98,9 +105,15 @@ that the underlying data is complete.
 - The opportunity score is a transparent prioritization heuristic based on
   underrepresentation, city breadth and data reliability. It is not a demand,
   revenue, or competition forecast.
+- Source filtering applies to listing-level visuals only. The opportunity view
+  has no source key and is aggregated across sources; this snapshot has only
+  one source.
 - The report is a snapshot, not a time series.
 - Power BI Desktop validation is pending; the DAX/PQ files are not claimed to
   have been executed here.
+- Current live MySQL verification is pending when the configured local service
+  is unavailable. The report distinguishes this from the historical
+  SQL/Python reconciliation.
 
 ## Attribution
 

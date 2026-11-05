@@ -23,6 +23,15 @@
 Total Listings =
 COUNTROWS ( FactListings )
 
+Total Cities =
+[Distinct Cities]
+
+Total Categories =
+[Distinct Categories]
+
+Total Sources =
+[Distinct Sources]
+
 // Distinct cities that actually have listings in the current fact table.
 // This avoids counting an empty dimension member.
 Distinct Cities =
@@ -121,6 +130,24 @@ DIVIDE (
 Listings per City =
 DIVIDE ( [Total Listings], [Distinct Cities], 0 )
 
+Average Listings per City =
+[Listings per City]
+
+Highest City Listing Count =
+MAXX (
+    ALLSELECTED ( DimCity[city_id] ),
+    CALCULATE ( [Total Listings] )
+)
+
+Lowest City Listing Count =
+MINX (
+    FILTER (
+        ALLSELECTED ( DimCity[city_id] ),
+        CALCULATE ( [Total Listings] ) > 0
+    ),
+    CALCULATE ( [Total Listings] )
+)
+
 Source Share % =
 DIVIDE (
     [Listings by Source],
@@ -143,6 +170,19 @@ COUNTROWS (
 Missing Phone % =
 DIVIDE ( [Missing Phone Count], [Total Listings], 0 )
 
+// Availability means the source published a nonblank value. It does not imply
+// that the phone is valid or that a business can be contacted.
+Listings with Phone Numbers =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[missing_phone] = 0 )
+)
+
+Listings without Phone Numbers =
+[Missing Phone Count]
+
+Phone Availability Percentage =
+DIVIDE ( [Listings with Phone Numbers], [Total Listings], 0 )
+
 Missing Address Count =
 COUNTROWS (
     FILTER ( FactDataQuality, FactDataQuality[missing_address] = 1 )
@@ -150,6 +190,21 @@ COUNTROWS (
 
 Missing Address % =
 DIVIDE ( [Missing Address Count], [Total Listings], 0 )
+
+Listings with Addresses =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[missing_address] = 0 )
+)
+
+// address_valid follows the documented minimum usability rule; it is not
+// proof of a real-world address.
+Listings with Complete Addresses =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[address_valid] = 1 )
+)
+
+Address Availability Percentage =
+DIVIDE ( [Listings with Addresses], [Total Listings], 0 )
 
 Duplicate Listings =
 COUNTROWS (
@@ -171,6 +226,9 @@ COUNTROWS (
 
 Completeness % =
 DIVIDE ( [Complete Listings], [Total Listings], 0 )
+
+Complete Records Percentage =
+[Completeness %]
 
 Average Quality Score =
 AVERAGE ( FactDataQuality[quality_score] )

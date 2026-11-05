@@ -2,9 +2,11 @@
 
 ## Status
 
-**Unit/asset tests: VERIFIED by execution.** **Live MySQL integration tests:
-VERIFIED after the final import.** **Power BI tests: NOT RUN — Desktop is not
-installed.**
+**Current audit (2026-11-05):** 92 offline tests passed; all 9 live MySQL
+integration tests skipped because the configured local server refused
+connections. Power BI tests were not run because Desktop is not installed.
+The 2026-11-02 historical run reported 99 passed, including MySQL integration;
+that earlier result is not a live verification for this audit.
 
 This page reports the actual commands and results from the build machine, not
 hypothetical coverage.
@@ -22,6 +24,20 @@ python -m pytest -q
 The live tests skip with a clear reason when MySQL is unavailable or the
 database has not been imported. They never write to the database.
 
+## Current audit results (2026-11-05)
+
+Executed:
+
+```text
+$ python -m pytest -q
+92 passed, 9 skipped
+```
+
+All 92 non-MySQL tests passed. Each of the 9 live integration tests skipped
+because `127.0.0.1:3307` refused the connection. Therefore the database import,
+live SQL views/queries and current database counts were not verified in this
+audit. The historical MySQL results below are retained for provenance only.
+
 ## Test layers
 
 | File | What it protects |
@@ -38,7 +54,7 @@ The integration test is marked `mysql`; `pytest.ini` registers the marker.
 Tests use the real cleaned CSV and the committed database state. A mismatch
 fails rather than being silently tolerated.
 
-## Final results
+## Historical results (2026-11-02)
 
 Executed on **2026-11-02** against the final 12-city snapshot.
 

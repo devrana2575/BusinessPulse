@@ -29,9 +29,10 @@ fabricate screenshots or claim visual QA that was not performed.
   `Source: OpenStreetMap contributors (ODbL 1.0) · Snapshot only · Not a census`.
 - Use a left-hand navigation rail or four page tabs with short labels. Keep the
   same filter pane position on every page.
-- Global slicers: `DimCity[city_name]`, `DimCategory[category_name]`,
-  `FactDataQuality[quality_band]`. Set the city/category slicers to
-  multi-select with a “Select all” state.
+- Global slicers: `DimCity[city_name]`, `DimCategory[category_name]`, and
+  `DimSource[source_name]` where listing-level visuals appear. A quality-band
+  slicer is optional. Set city/category slicers to multi-select with a “Select
+  all” state and keep the standard clear-selection control visible.
 - Do not add a date-range slicer. One snapshot date makes a range control
   misleading. Use the snapshot card.
 
@@ -40,19 +41,20 @@ fabricate screenshots or claim visual QA that was not performed.
 **Question:** What does the collected sample contain, and where is it complete
 enough to act on?
 
-**Top KPI row (four cards):**
+**Top KPI row (five cards):**
 
 | Card | Field / measure | Format |
 |---|---|---|
 | Listings collected | `[Total Listings]` | whole number |
-| Cities represented | `[Distinct Cities]` | whole number |
-| Categories represented | `[Distinct Categories]` | whole number |
-| Complete records | `[Completeness %]` | 1 decimal % |
+| Cities represented | `[Total Cities]` | whole number |
+| Categories represented | `[Total Categories]` | whole number |
+| Data sources | `[Total Sources]` | whole number |
+| Average listings per city | `[Average Listings per City]` | 1 decimal |
 
 Add a smaller secondary row:
-`[Average Quality Score]`, `[Missing Phone %]`, `[Missing Address %]`,
-`[Duplicate Rate %]`. Label the quality card “Mean audit score (0–100)” and do
-not imply it is a business-quality score.
+`[Completeness %]`, `[Average Quality Score]`, `[Phone Availability Percentage]`,
+`[Address Availability Percentage]`, `[Duplicate Rate %]`. Label the quality
+card “Mean audit score (0–100)” and do not imply it is a business-quality score.
 
 **Visual 1 — City contribution (horizontal bar, sorted descending):**
 - Axis: `DimCity[city_name]`
@@ -117,8 +119,10 @@ are category gaps concentrated?
   sample”.
 
 **Interaction:** Selecting a city on the map filters the table and heat map.
-Add a “Clear filters” bookmark or the standard slicer clear control. Test the
-interaction manually and capture one screenshot.
+Add city, category and source slicers; include the standard slicer clear
+control. The current source dimension has one member, so its slicer is
+descriptive and cannot distinguish sources. Test the interactions manually
+and capture one screenshot.
 
 ## Page 3 — Data Quality & Completeness
 
@@ -126,8 +130,9 @@ interaction manually and capture one screenshot.
 the analysis?
 
 **KPI row:**
-`[Missing Phone %]`, `[Missing Address %]`, `[Duplicate Rate %]`,
-`[Completeness %]`, `[Average Quality Score]`.
+`[Total Listings]`, `[Phone Availability Percentage]`,
+`[Address Availability Percentage]`, `[Duplicate Rate %]`,
+`[Complete Records Percentage]`, `[Average Quality Score]`.
 
 **Visual 1 — Missing fields by city (clustered bar):**
 - Axis: `DimCity[city_name]`
@@ -161,6 +166,9 @@ the analysis?
 **Visual 5 — Source completeness (single card/table):**
 - `DimSource[source_name]`, `[Total Listings]`, `[Source Completeness %]`.
 - With one source this is descriptive only; do not imply a source comparison.
+- Add the source slicer where listing-level visuals are shown. The aggregated
+  city × category opportunity view has no source key, so source selections do
+  not filter its scores; state this limitation in the report.
 
 ## Page 4 — Market Opportunity
 

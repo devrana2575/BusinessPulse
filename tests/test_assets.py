@@ -7,6 +7,7 @@ rendered report.
 
 from __future__ import annotations
 
+import csv
 from pathlib import Path
 
 import pytest
@@ -105,6 +106,16 @@ def test_dax_contains_core_and_quality_measures():
     text = (ROOT / "powerbi" / "dax_measures.dax").read_text(encoding="utf-8")
     for measure in (
         "Total Listings =",
+        "Total Cities =",
+        "Total Categories =",
+        "Total Sources =",
+        "Average Listings per City =",
+        "Listings with Phone Numbers =",
+        "Listings without Phone Numbers =",
+        "Listings with Complete Addresses =",
+        "Phone Availability Percentage =",
+        "Address Availability Percentage =",
+        "Complete Records Percentage =",
         "City Contribution % =",
         "Missing Phone % =",
         "Completeness % =",
@@ -145,3 +156,23 @@ def test_screenshots_readme_is_honest():
     assert "PENDING MANUAL ACTION" in text
     assert "Power BI Desktop is not installed" in text
     assert "Do not substitute generated images" in text
+
+
+def test_powerbi_phase_evidence_and_model_documentation_exist():
+    required = (
+        ROOT / "powerbi" / "documentation" / "data_model.md",
+        ROOT / "reports" / "powerbi" / "repository_baseline.md",
+        ROOT / "reports" / "powerbi" / "mysql_verification_report.md",
+        ROOT / "reports" / "powerbi" / "metric_reconciliation.csv",
+        ROOT / "reports" / "powerbi" / "final_powerbi_audit.md",
+    )
+    assert all(path.exists() for path in required)
+
+
+def test_powerbi_metric_reconciliation_keeps_desktop_values_unclaimed():
+    path = ROOT / "reports" / "powerbi" / "metric_reconciliation.csv"
+    with path.open(encoding="utf-8", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    assert len(rows) >= 10
+    assert all(row["powerbi_value"] == "" for row in rows)
+    assert all(row["validation_status"] == "PARTIAL" for row in rows)
