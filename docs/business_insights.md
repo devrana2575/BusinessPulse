@@ -200,14 +200,17 @@ reproducible, but it is not a demand, revenue or competition model.
 ## 9. Reproduce the numbers
 
 ```powershell
-python -m analytics.cleaning.run_cleaning
-python -m analytics.validation.run_validation
-python scripts/import_data.py --replace-data
-python -m analytics.sql_analysis.run_queries
-python -m analytics.eda.run_eda
-python -m analytics.business_insights.opportunity_analysis
-python scripts/verify_reconciliation.py
+python scripts/businesspulse.py clean --confirm-regenerate
+python scripts/businesspulse.py validate
+python scripts/businesspulse.py import --database businesspulse --confirm-target-empty
+python scripts/businesspulse.py analyze --database businesspulse
+python scripts/businesspulse.py eda
+python scripts/businesspulse.py insights --database businesspulse
+python scripts/businesspulse.py reconcile --database businesspulse
 ```
+
+The database must be independently approved and verified. Import refuses an
+existing/populated target and is not a replacement workflow.
 
 For the full automated check:
 
@@ -215,6 +218,6 @@ For the full automated check:
 python -m pytest -q
 ```
 
-The final run reported **99 tests passed**, **35/35 SQL queries executed**, and
+The historical 2026-11-02 run reported **99 tests passed**, **35/35 SQL queries executed**, and
 **37/37 reconciliation checks passed**. See [`testing.md`](testing.md) and
 `data/reports/reconciliation_report.md` for the exact outputs.

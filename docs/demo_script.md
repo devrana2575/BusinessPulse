@@ -29,8 +29,8 @@ Show the repository tree and the status table in the README.
 Run or show:
 
 ```powershell
-python -m analytics.cleaning.run_cleaning
-python -m analytics.validation.run_validation
+python scripts/businesspulse.py clean --confirm-regenerate
+python scripts/businesspulse.py validate
 ```
 
 Show `data/reports/data_quality_summary.csv`:
@@ -48,9 +48,13 @@ reason to fabricate a number. Show one rejected row and its documented reason.
 Show the MySQL schema and views:
 
 ```powershell
-python scripts/setup_database.py --database businesspulse
-python scripts/import_data.py --replace-data
+# Only for an explicitly approved new database/account.
+python scripts/businesspulse.py setup --database businesspulse --confirm-database-create --confirm-account-provisioning
+python scripts/businesspulse.py import --database businesspulse --confirm-target-empty
 ```
+
+Do not use `--reset` or `--replace-data` against an existing database during
+the demo. Those options are destructive.
 
 Open `database/views.sql` and `database/analytical_queries.sql`. Highlight:
 
@@ -99,9 +103,10 @@ Open `powerbi/dashboard_design.md`:
 
 Be explicit:
 
-> Power BI Desktop is not installed here, so I have not claimed a rendered PBIX
-> or screenshots. The model, Power Query and DAX are complete and source
-> controlled; building and validating the report is a documented manual step.
+> Power BI Desktop 2.159.883.0 is installed, but the report has not yet been
+> generated or validated there. The model, Power Query and DAX are source
+> controlled; PBIP/PBIX generation, refresh, validation and screenshots remain
+> pending.
 
 ## 7. Close (30 seconds)
 

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "geography_geo_coverage",
+  "position": {
+    "x": 290,
+    "y": 650,
+    "z": 0,
+    "width": 250,
+    "height": 50,
+    "tabOrder": 832290
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Geographic Coverage %"
+                }
+              },
+              "queryRef": "FactListings.Geographic Coverage %",
+              "displayName": "Listings with coordinates"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Listings with coordinates'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

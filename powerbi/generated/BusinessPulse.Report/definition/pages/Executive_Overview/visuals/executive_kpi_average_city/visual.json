@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_kpi_average_city",
+  "position": {
+    "x": 1012,
+    "y": 76,
+    "z": 0,
+    "width": 232,
+    "height": 68,
+    "tabOrder": 98292
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Average Listings per City"
+                }
+              },
+              "queryRef": "FactListings.Average Listings per City",
+              "displayName": "Average listings per city"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average listings per city'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

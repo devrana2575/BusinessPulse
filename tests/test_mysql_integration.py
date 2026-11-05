@@ -3,9 +3,11 @@
 Marked ``mysql``. They skip when the configured database is unavailable or has
 not been imported. Run after:
 
-    python scripts/import_data.py --replace-data
+    python scripts/import_data.py
     pytest -q -m mysql
 
+Use ``--replace-data`` only on an explicitly approved disposable database; it
+deletes existing listing, audit, reject and batch rows.
 The tests compare the cleaned CSV with the committed database state. They never
 write to the database.
 """

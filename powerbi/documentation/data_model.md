@@ -1,12 +1,22 @@
 # BusinessPulse Power BI model contract
 
-## Status and grain
+## Generated PBIP status
 
-This document describes the intended Import-mode semantic model. The queries
-and relationships have **not** been loaded or validated in Power BI Desktop.
-Column names and types below are derived from `database/schema.sql`,
+`powerbi/generated/BusinessPulse.pbip` now contains a PBIR report and TMDL
+semantic model built from the checked-in offline snapshot. It has not yet been
+opened, refreshed, or validated in Power BI Desktop. Its local snapshot model
+uses `business_id` as the listing/quality 1:1 key; it does not fabricate the
+database-generated listing IDs.
+
+## Planned MySQL model contract and grain
+
+The tables, column names and relationships below are the authoritative
+contract for the future MySQL-backed Import model, not the current embedded
+snapshot source. The corresponding MySQL M templates have not been loaded or
+validated in Power BI Desktop. Column names and types below are derived from
+`database/schema.sql`,
 `database/views.sql`, and the Power Query files; live database metadata was not
-available during this audit.
+verified because the configured application login failed against WAMP MariaDB.
 
 | Model table | Source | Grain | Intended rows | Purpose |
 |---|---|---|---:|---|

@@ -4,13 +4,28 @@ Audit date: 2026-11-05
 Status: **BLOCKED** for live verification; source-level checks and historical
 evidence are reported separately.
 
+## Subsequent status update
+
+The earlier connection-refused result below was superseded after MariaDB was
+started manually. The WAMP `wampmariadb64` service was subsequently verified as
+running, with port `3307` listening, but the configured `bp_user` login failed
+with MariaDB error 1045. No password was tested or changed. An authorized
+administrator session was not available, so account hosts, grants, server
+version, schema contents and current row counts could not be inspected.
+
+Port `3306` belongs to WAMP-bundled MySQL 9.1; port `3307` belongs to WAMP
+MariaDB 11.5. Neither is the planned standalone Oracle MySQL instance. The
+standalone server has not been installed or verified. Do not treat either
+service as a successfully migrated target.
+
 ## Connection and import status
 
-The application configuration resolves the MySQL endpoint to host
-`127.0.0.1`, port `3307`, database `businesspulse`. Credentials are configured
-locally and are intentionally not included here. A read-only connection attempt
-failed with connection refused (Windows socket error 10061). No database query
-ran and no schema or data was changed.
+The application configuration was inspected without exposing credentials and
+resolves the endpoint to host `127.0.0.1`, port `3307`, database `businesspulse`.
+The initial read-only connection attempt failed with connection refused
+(Windows socket error 10061). After the service was started manually, the
+configured application login failed with error 1045. No database query was
+successfully run and no schema or data was changed during these checks.
 
 The database cannot be marked verified from this execution. The tracked
 `database/businesspulse_dump.sql`, import scripts and reports document a prior
@@ -66,10 +81,13 @@ unverified.
 
 ## Test results and historical verification
 
-- Current command: `python -m pytest -q -m mysql`
-- Result: **9 skipped** because MySQL at `127.0.0.1:3307` refused the connection.
-- Full current suite after the Power BI asset/documentation updates:
-  **92 passed, 9 skipped**.
+- Earlier command: `python -m pytest -q -m mysql`
+- Earlier result: **9 skipped** when MySQL at `127.0.0.1:3307` refused the
+  connection. The subsequent error 1045 means the listener is available, but
+  does not verify database access.
+- Current offline audit command: `python -m pytest -p no:cacheprovider -q -m
+  "not mysql"`; result: **119 passed, 9 deselected**. Live MySQL tests were not
+  run in this audit.
 - Historical repository evidence dated 2026-11-02 reports 2,252 listings and
   audit rows, zero rejects, 35/35 SQL queries, and 37/37 SQL/Python
   reconciliation checks. See `docs/testing.md` and
@@ -78,8 +96,9 @@ unverified.
 
 ## Required follow-up
 
-Start or configure the project MySQL service, confirm the imported database,
-then run:
+After approval, establish an authorized standalone MySQL target or provide an
+authorized administrator session for the intended instance. Verify the target
+before querying it, then run:
 
 ```powershell
 python -m pytest -q -m mysql

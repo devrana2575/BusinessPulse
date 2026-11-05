@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_kpi_businesses",
+  "position": {
+    "x": 271,
+    "y": 76,
+    "z": 0,
+    "width": 232,
+    "height": 68,
+    "tabOrder": 97551
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Unique Businesses"
+                }
+              },
+              "queryRef": "FactListings.Unique Businesses",
+              "displayName": "Unique businesses"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Unique businesses'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

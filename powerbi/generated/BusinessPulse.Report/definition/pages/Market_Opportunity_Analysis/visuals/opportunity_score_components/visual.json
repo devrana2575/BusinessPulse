@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_score_components",
+  "position": {
+    "x": 640,
+    "y": 174,
+    "z": 0,
+    "width": 616,
+    "height": 205,
+    "tabOrder": 223360
+  },
+  "visual": {
+    "visualType": "stackedBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactCityCategoryCoverage"
+                    }
+                  },
+                  "Property": "city_category"
+                }
+              },
+              "queryRef": "FactCityCategoryCoverage.city_category"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Candidate Underrepresentation Points"
+                }
+              },
+              "queryRef": "FactListings.Candidate Underrepresentation Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Candidate Breadth Points"
+                }
+              },
+              "queryRef": "FactListings.Candidate Breadth Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Candidate Reliability Points"
+                }
+              },
+              "queryRef": "FactListings.Candidate Reliability Points"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average additive score components'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

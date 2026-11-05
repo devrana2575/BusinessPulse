@@ -2,18 +2,63 @@
 
 ## Status
 
-**IMPLEMENTED AS FILES — NOT EXECUTED IN POWER BI DESKTOP.**
+**PBIP/PBIR/TMDL GENERATED — NOT YET OPENED OR VALIDATED IN DESKTOP.**
 
-Power BI Desktop is not installed in the environment used to build this
-repository. The DAX library, Power Query queries, model design and report
-specification are complete source-controlled assets. A `.pbix` file and
-dashboard screenshots are **PENDING MANUAL ACTION**. No screenshot or PBIX is
-included, and none should be invented.
+Power BI Desktop is installed from the Microsoft Store (version 2.159.883.0).
+The generated project is `powerbi/generated/BusinessPulse.pbip`; it contains
+four report pages and a six-table TMDL model built from the checked-in offline
+snapshot. Static checks pass, but Desktop refresh, model validation, DAX
+evaluation, visual rendering, screenshots, and PBIX export remain pending.
 
-The model is intentionally small and explicit: a listing fact table, a 1:1
-data-quality fact table, a city × category coverage fact table, and three
-conformed dimensions. All tables import from the MySQL reporting views or
-dimension tables.
+This file describes both the generated offline model and the planned MySQL
+model. The detailed planned MySQL column, type, relationship and integrity
+contract is maintained in `powerbi/documentation/data_model.md`.
+
+## Generated offline project
+
+The PBIP includes a listing fact, 1:1 quality fact, city × category coverage
+fact, and city/category/source dimensions. It embeds the cleaned-listing and
+market-opportunity CSV snapshots in compressed Power Query expressions. No
+database connection, credential, service, or `.env` value is used.
+
+| Model table | Source in generated PBIP | Grain | Snapshot rows |
+|---|---|---|---:|
+| `FactListings` | Embedded `cleaned_business_listings.csv` | One collected listing | 2,252 |
+| `FactDataQuality` | Same embedded listing snapshot | One quality record per business ID | 2,252 |
+| `FactCityCategoryCoverage` | Embedded `market_opportunities.csv` | One city × category | 144 |
+| `DimCity` | Distinct keys from opportunity snapshot | One city | 12 |
+| `DimCategory` | Distinct keys from opportunity snapshot | One category | 12 |
+| `DimSource` | OSM attribution from project seed definitions | One source | 1 |
+
+`business_id` is the stable string key on both listing and quality facts. The
+offline CSV does not contain database-generated `listing_id` values, so none
+are invented. The city/category keys reuse the existing opportunity output.
+`source_id = 1` is the single OSM source seeded by the project. Boolean text
+quality flags are converted to integer 0/1 values in M. The generator verifies
+unique keys, matching city/category keys, coordinate bounds, quality flag
+consistency, the strict completeness rule, listing counts for all 144 pairs,
+and opportunity-score agreement within the existing 0.02 tolerance.
+
+Generated relationships:
+
+| From | To | Cardinality | Cross-filter | Active |
+|---|---|---|---|---|
+| `DimCity[city_id]` | `FactListings[city_id]` | 1 → many | Single | Yes |
+| `DimCategory[category_id]` | `FactListings[category_id]` | 1 → many | Single | Yes |
+| `DimSource[source_id]` | `FactListings[source_id]` | 1 → many | Single | Yes |
+| `FactListings[business_id]` | `FactDataQuality[business_id]` | 1 → 1 | Both | Yes |
+| `DimCity[city_id]` | `FactCityCategoryCoverage[city_id]` | 1 → many | Single | Yes |
+| `DimCategory[category_id]` | `FactCityCategoryCoverage[category_id]` | 1 → many | Single | Yes |
+
+The generated model uses a single date snapshot and does not create a date
+dimension. Listing coordinates are source POI coordinates; the geographic page
+uses a scatter plot rather than an online map service.
+
+## Planned live MySQL model
+
+The sections below describe the future MySQL-view model and retain the M query
+contract for the approved standalone MySQL migration. They are not the current
+data source of the generated PBIP.
 
 ## Tables
 
@@ -106,10 +151,13 @@ then add time-intelligence measures.
 
 - Storage mode: **Import** for all tables. The dataset is a static portfolio
   snapshot; scheduled refresh is not configured.
-- Recommended refresh after re-running the Python import:
-  1. Run `python scripts/import_data.py --replace-data`.
+- After an explicitly approved import into the intended database:
+  1. Confirm the import completed without replacing existing data.
   2. Open the PBIX, **Refresh** all queries.
   3. Run the manual reconciliation checks in `powerbi/README.md`.
+- `scripts/import_data.py --replace-data` deletes existing listing, audit,
+  reject and batch rows. Do not use it unless replacement is explicitly
+  approved for a disposable target.
 - The MySQL server must be reachable from the machine running Power BI
   Desktop. For a public portfolio, do not expose the database port to the
   internet; use a local/private connection and document the limitation.
@@ -140,4 +188,4 @@ security is implemented; this is a single-analyst portfolio project.
 - The opportunity score measures underrepresentation in **collected listings**,
   not demand, revenue, footfall or competition.
 - Power BI-specific validation (relationships, measure execution, visual
-  rendering, accessibility checker) remains pending until Desktop is available.
+  rendering, accessibility checker) remains pending in Desktop.

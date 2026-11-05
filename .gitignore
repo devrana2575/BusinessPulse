@@ -16,6 +16,7 @@ htmlcov/
 # Data collection HTTP cache (the combined raw CSV and manifest are kept)
 data/raw/osm_responses/
 data/raw/*.tmp
+data/reports/businesspulse_automation.jsonl
 
 # Local database / logs
 .mysql-data/
@@ -32,3 +33,5 @@ Thumbs.db
 *.pbix~
 ~$*
 powerbi/.pbi/
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

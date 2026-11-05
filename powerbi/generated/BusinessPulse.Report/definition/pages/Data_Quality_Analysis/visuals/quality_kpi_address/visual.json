@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "quality_kpi_address",
+  "position": {
+    "x": 518,
+    "y": 78,
+    "z": 0,
+    "width": 232,
+    "height": 82,
+    "tabOrder": 100358
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Missing Address %"
+                }
+              },
+              "queryRef": "FactListings.Missing Address %",
+              "displayName": "Missing published address"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Missing published address'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_kpi_address_availability",
+  "position": {
+    "x": 840,
+    "y": 150,
+    "z": 0,
+    "width": 192,
+    "height": 60,
+    "tabOrder": 192840
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Address Availability Percentage"
+                }
+              },
+              "queryRef": "FactListings.Address Availability Percentage",
+              "displayName": "Published address available"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Published address available'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

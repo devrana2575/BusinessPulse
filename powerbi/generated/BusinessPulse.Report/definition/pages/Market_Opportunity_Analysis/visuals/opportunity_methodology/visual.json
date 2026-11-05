@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_methodology",
+  "position": {
+    "x": 24,
+    "y": 650,
+    "z": 0,
+    "width": 600,
+    "height": 50,
+    "tabOrder": 832024
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Opportunity Caveat"
+                }
+              },
+              "queryRef": "FactListings.Opportunity Caveat",
+              "displayName": "Interpretation"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Interpretation'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

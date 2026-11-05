@@ -184,8 +184,8 @@ exports every result to CSV and records row counts/status.
 - The database import is transactional and rejects a repeated file hash.
 - `scripts/verify_reconciliation.py` compares Pandas metrics with MySQL views,
   including counts, percentages, averages and the opportunity formula.
-- Power BI is not installed in the build environment; DAX/model validation is
-  explicitly pending manual action, not claimed as verified.
+- Power BI Desktop 2.159.883.0 is installed, but DAX/model validation is still
+  pending and is not claimed as verified.
 
 ## 11. What would change with more data
 

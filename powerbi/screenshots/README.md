@@ -1,17 +1,17 @@
 # Dashboard screenshots — PENDING MANUAL ACTION
 
-No Power BI screenshots are stored here. Power BI Desktop is not installed in
-the build environment, so rendering the report and capturing screenshots was
-not possible. **Do not substitute generated images, mockups, or screenshots
-from another project.**
+No Power BI screenshots are stored here. A PBIP project exists, but it has not
+yet been opened, refreshed, or rendered in Power BI Desktop.
+**Do not substitute generated images, mockups, or screenshots from another project.**
 
-## What to capture after building the PBIX
+## What to capture after validating the PBIP and saving the PBIX
 
 Use a 16:9 canvas at 100% zoom, hide the Power BI authoring panes, and capture
 the full page (not a cropped visual). Name files exactly:
 
 1. `01_executive_overview.png` — KPI row, city bars, category mix, quality band.
-2. `02_geographic_coverage.png` — map, city ranking, city × category heat map.
+2. `02_geographic_market_analysis.png` — coordinate scatter, city ranking,
+   city × category heat map.
 3. `03_data_quality.png` — missing-field KPIs, city bars, quality bands,
    review queue.
 4. `04_market_opportunity.png` — methodology banner, top gaps, coverage heat
@@ -25,7 +25,7 @@ Optional:
 
 ## Metadata to record next to each screenshot
 
-- PBIX commit/version and data import date.
+- PBIP/PBIX commit/version and snapshot date.
 - Report page name and active filters.
 - `Total Listings`, `Completeness %`, `Opportunity Score` shown on screen.
 - Desktop version and screen resolution.

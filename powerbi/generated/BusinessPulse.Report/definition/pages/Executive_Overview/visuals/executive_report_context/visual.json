@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_report_context",
+  "position": {
+    "x": 24,
+    "y": 602,
+    "z": 0,
+    "width": 1232,
+    "height": 90,
+    "tabOrder": 770584
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Report Context"
+                }
+              },
+              "queryRef": "FactListings.Report Context",
+              "displayName": "Source and snapshot"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Source and snapshot'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_kpi_coverage",
+  "position": {
+    "x": 24,
+    "y": 78,
+    "z": 0,
+    "width": 290,
+    "height": 82,
+    "tabOrder": 99864
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Category Coverage %"
+                }
+              },
+              "queryRef": "FactListings.Category Coverage %",
+              "displayName": "Covered city-category pairs"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Covered city-category pairs'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -90,11 +90,11 @@ mistake would not be detected by agreement between layers.
 
 ## 10. Power BI status
 
-Power BI Desktop is not installed in the build environment. The DAX, Power Query
-and design files are complete source assets, but they have not been executed in
-Desktop. There is no `.pbix` and there are no dashboard screenshots. Those are
-**PENDING MANUAL ACTION**, not verified deliverables. The SQL/Python/Excel
-outputs are verified; the BI rendering is not.
+Power BI Desktop is installed from the Microsoft Store (version 2.159.883.0),
+but the DAX, Power Query and design files have not yet been executed in Desktop.
+There is no generated `.pbip`, `.pbix` or dashboard screenshot. These remain
+pending deliverables, not verified outputs. Saved SQL/Python artifacts are
+available, but current live database and BI rendering are not verified.
 
 ## 11. Not implemented
 

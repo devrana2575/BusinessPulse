@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_kpi_quality_score",
+  "position": {
+    "x": 432,
+    "y": 150,
+    "z": 0,
+    "width": 192,
+    "height": 60,
+    "tabOrder": 192432
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Average Quality Score"
+                }
+              },
+              "queryRef": "FactListings.Average Quality Score",
+              "displayName": "Mean audit score (0-100)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Mean audit score (0-100)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

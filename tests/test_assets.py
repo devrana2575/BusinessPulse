@@ -8,6 +8,7 @@ rendered report.
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 
 import pytest
@@ -80,6 +81,7 @@ def test_powerbi_files_exist():
         "data_model.md",
         "power_query_guide.md",
         "dashboard_design.md",
+        "implementation_checklist.json",
         "screenshots/README.md",
         "power_query_m/stg_Listings.pq",
         "power_query_m/FactListings.pq",
@@ -106,6 +108,7 @@ def test_dax_contains_core_and_quality_measures():
     text = (ROOT / "powerbi" / "dax_measures.dax").read_text(encoding="utf-8")
     for measure in (
         "Total Listings =",
+        "Unique Businesses =",
         "Total Cities =",
         "Total Categories =",
         "Total Sources =",
@@ -117,11 +120,16 @@ def test_dax_contains_core_and_quality_measures():
         "Address Availability Percentage =",
         "Complete Records Percentage =",
         "City Contribution % =",
+        "City Coverage % =",
+        "Geographic Coverage % =",
+        "City Concentration HHI (Collected Listings) =",
         "Missing Phone % =",
         "Completeness % =",
         "Opportunity Score =",
         "High Opportunity Gaps =",
         "Methodology Note =",
+        "Candidate Opportunity Score =",
+        "Report Context =",
     ):
         assert measure in text
 
@@ -137,8 +145,45 @@ def test_dashboard_specification_has_four_pages():
         assert page in text
 
 
+def test_powerbi_implementation_checklist_tracks_generated_project_honestly():
+    checklist = json.loads(
+        (ROOT / "powerbi" / "implementation_checklist.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert checklist["desktop"]["validation_performed"] is False
+    assert checklist["status"] == "PBIP GENERATED — DESKTOP VALIDATION PENDING"
+    assert checklist["generated_project"]["pbip_generated"] is True
+    assert checklist["generated_project"]["pbix_generated"] is False
+    assert [page["title"] for page in checklist["pages"]] == [
+        "Executive Overview",
+        "Geographic Market Analysis",
+        "Data Quality Analysis",
+        "Market Opportunity Analysis",
+    ]
+    assert all(
+        page["status"] == "generated_not_desktop_validated"
+        for page in checklist["pages"]
+    )
+    for asset in checklist["source_assets"]:
+        for relative in asset.get("files", []):
+            assert (ROOT / relative).is_file()
+        assert asset["can_be_automated"]
+        assert asset["requires_desktop"]
+
+
 def test_no_fake_pbix_or_screenshot_files():
     assert not list(ROOT.glob("**/*.pbix"))
+    assert (ROOT / "powerbi" / "generated" / "BusinessPulse.pbip").is_file()
+    assert (
+        ROOT
+        / "powerbi"
+        / "generated"
+        / "BusinessPulse.SemanticModel"
+        / "definition"
+        / "tables"
+        / "FactListings.tmdl"
+    ).is_file()
     image_files = []
     for suffix in ("*.png", "*.jpg", "*.jpeg"):
         image_files.extend((ROOT / "powerbi").rglob(suffix))
@@ -153,8 +198,9 @@ def test_no_web_framework_in_requirements():
 
 def test_screenshots_readme_is_honest():
     text = (ROOT / "powerbi" / "screenshots" / "README.md").read_text(encoding="utf-8")
-    assert "PENDING MANUAL ACTION" in text
-    assert "Power BI Desktop is not installed" in text
+    assert "No Power BI screenshots are stored here." in text
+    assert "has not" in text
+    assert "rendered in Power BI Desktop" in text
     assert "Do not substitute generated images" in text
 
 

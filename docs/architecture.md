@@ -28,6 +28,10 @@ MySQL: 8 base tables, 7 views, 35 analytical queries
     ├── analytics/eda/run_eda.py → tables, figures, EDA report
     ├── analytics/business_insights/opportunity_analysis.py → scoring/chart
     └── Power BI (manual) → four-page report
+
+The staged entry point is `scripts/businesspulse.py`; it orchestrates these
+existing modules, records JSONL stage results, and stops after the first failed
+critical stage. `scripts/run_pipeline.py` is only a compatibility wrapper.
 ```
 
 ## 2. Layer responsibilities
@@ -89,6 +93,15 @@ The `uq_listing_source_record` and `uq_listing_business_id` constraints provide
 a second line of defence. Duplicate flagged rows are intentionally retained for
 the data-quality analysis; they are not silently deleted.
 
+Use the guarded workflow command for database imports:
+
+```powershell
+python scripts/businesspulse.py import --database businesspulse --confirm-target-empty
+```
+
+The low-level `scripts/import_data.py --replace-data` option remains a
+destructive legacy capability and is never invoked by the automation workflow.
+
 ## 5. Power BI model
 
 The star schema has:
@@ -147,5 +160,6 @@ See `powerbi/data_model.md`, `powerbi/power_query_m/*.pq`, and
 - Rule-based category mapping and duplicate detection.
 - The opportunity score is a heuristic, not a demand model.
 - Power BI Desktop validation is pending; no `.pbix` is stored.
-- The local MySQL server was started manually for development; deployment is out
-  of scope.
+- The previously inspected WAMP MySQL/MariaDB services are not the planned
+  standalone Oracle MySQL target. Current application authentication is
+  unresolved; do not treat saved artifacts as live database verification.

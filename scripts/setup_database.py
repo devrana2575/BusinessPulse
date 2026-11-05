@@ -1,8 +1,10 @@
 """Create/apply the BusinessPulse MySQL schema, indexes, seeds and views.
 
 Usage (PowerShell):
-    python scripts/setup_database.py --reset
-    python scripts/setup_database.py --database businesspulse_test --reset
+    python scripts/setup_database.py --database businesspulse
+
+The explicit --reset option drops the selected database and is destructive.
+Provisioned application accounts are restricted to the configured loopback host.
 
 The real .env is required; credentials are never printed.
 """
@@ -10,6 +12,7 @@ The real .env is required; credentials are never printed.
 from __future__ import annotations
 
 import argparse
+import ipaddress
 import re
 import sys
 from pathlib import Path
@@ -146,6 +149,7 @@ def app_connection(settings: Settings, database: str):
 def create_database_and_user(settings: Settings, database: str) -> None:
     if not IDENTIFIER.match(database) or not IDENTIFIER.match(settings.mysql_user):
         raise ConfigurationError("Database and user names must be simple identifiers.")
+    host = account_host(settings.mysql_host)
     admin = admin_connection(settings)
     try:
         with admin.cursor() as cursor:
@@ -154,18 +158,34 @@ def create_database_and_user(settings: Settings, database: str) -> None:
                 "CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci"
             )
             password_literal = admin.escape(settings.mysql_password)
-            for host in ("localhost", "127.0.0.1", "%"):
-                cursor.execute(
-                    f"CREATE USER IF NOT EXISTS '{settings.mysql_user}'@'{host}' "
-                    f"IDENTIFIED BY {password_literal}"
-                )
-                cursor.execute(
-                    f"GRANT ALL PRIVILEGES ON `{database}`.* "
-                    f"TO '{settings.mysql_user}'@'{host}'"
-                )
+            cursor.execute(
+                f"CREATE USER IF NOT EXISTS '{settings.mysql_user}'@'{host}' "
+                f"IDENTIFIED BY {password_literal}"
+            )
+            cursor.execute(
+                f"GRANT ALL PRIVILEGES ON `{database}`.* "
+                f"TO '{settings.mysql_user}'@'{host}'"
+            )
             cursor.execute("FLUSH PRIVILEGES")
     finally:
         admin.close()
+
+
+def account_host(host: str) -> str:
+    """Restrict provisioned application accounts to local connections."""
+    if host.casefold() == "localhost":
+        return "localhost"
+    try:
+        address = ipaddress.ip_address(host.strip("[]"))
+    except ValueError as exc:
+        raise ConfigurationError(
+            "Automatic account provisioning supports localhost or a loopback IP only."
+        ) from exc
+    if not address.is_loopback:
+        raise ConfigurationError(
+            "Automatic account provisioning is restricted to loopback connections."
+        )
+    return str(address)
 
 
 def reset_database(settings: Settings, database: str) -> None:

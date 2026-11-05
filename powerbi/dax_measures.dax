@@ -23,6 +23,9 @@
 Total Listings =
 COUNTROWS ( FactListings )
 
+Unique Businesses =
+DISTINCTCOUNT ( FactListings[business_id] )
+
 Total Cities =
 [Distinct Cities]
 
@@ -153,6 +156,44 @@ DIVIDE (
     [Listings by Source],
     CALCULATE ( [Total Listings], ALL ( DimSource ) ),
     0
+)
+
+// Share of represented source cities covered by the current category/source
+// selection. City filters are cleared so a city slicer does not change the
+// denominator.
+City Coverage % =
+DIVIDE (
+    CALCULATE ( [Distinct Cities], REMOVEFILTERS ( DimCity ) ),
+    CALCULATE ( DISTINCTCOUNT ( DimCity[city_id] ), REMOVEFILTERS ( DimCity ) ),
+    0
+)
+
+Listings with Coordinates =
+COUNTROWS (
+    FILTER (
+        FactListings,
+        NOT ISBLANK ( FactListings[latitude] )
+            && NOT ISBLANK ( FactListings[longitude] )
+    )
+)
+
+// Coordinate completeness in the collected dataset, not geographic land-area
+// coverage.
+Geographic Coverage % =
+DIVIDE ( [Listings with Coordinates], [Total Listings], 0 )
+
+Top City Contribution % =
+MAXX (
+    ALLSELECTED ( DimCity[city_id] ),
+    [City Contribution % (Selected)]
+)
+
+// HHI is calculated over collected-listing shares, not commercial market
+// shares. It ranges from 1 / represented cities to 1.
+City Concentration HHI (Collected Listings) =
+SUMX (
+    ALLSELECTED ( DimCity[city_id] ),
+    POWER ( [City Contribution % (Selected)], 2 )
 )
 
 
@@ -287,6 +328,30 @@ COUNTROWS (
     )
 )
 
+Candidate Opportunity Score =
+CALCULATE (
+    AVERAGE ( FactCityCategoryCoverage[opportunity_score] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
+Candidate Underrepresentation Points =
+CALCULATE (
+    AVERAGE ( FactCityCategoryCoverage[underrepresentation_points] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
+Candidate Breadth Points =
+CALCULATE (
+    AVERAGE ( FactCityCategoryCoverage[breadth_points] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
+Candidate Reliability Points =
+CALCULATE (
+    AVERAGE ( FactCityCategoryCoverage[reliability_points] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
 
 // -----------------------------------------------------------------------------
 // 06. Opportunity scoring (descriptive, not a demand forecast)
@@ -298,9 +363,9 @@ Opportunity Score =
 AVERAGE ( FactCityCategoryCoverage[opportunity_score] )
 
 Top Opportunity Score =
-MAXX (
-    FactCityCategoryCoverage,
-    FactCityCategoryCoverage[opportunity_score]
+CALCULATE (
+    MAX ( FactCityCategoryCoverage[opportunity_score] ),
+    FactCityCategoryCoverage[is_candidate] = 1
 )
 
 High Opportunity Gaps =
@@ -341,3 +406,11 @@ AVERAGE ( FactCityCategoryCoverage[reliability_points] )
 
 Methodology Note =
 SELECTEDVALUE ( FactCityCategoryCoverage[methodology_note], "Opportunity methodology not available" )
+
+Report Context =
+"Snapshot "
+    & FORMAT ( [Snapshot Date], "yyyy-mm-dd" )
+    & " | OpenStreetMap contributors (ODbL 1.0) | Collected POIs, not a census"
+
+Opportunity Caveat =
+"Ranks underrepresentation in collected listings only; not demand, revenue, or competition."

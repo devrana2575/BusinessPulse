@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "geography_city_coverage",
+  "position": {
+    "x": 24,
+    "y": 650,
+    "z": 0,
+    "width": 250,
+    "height": 50,
+    "tabOrder": 832024
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "City Coverage %"
+                }
+              },
+              "queryRef": "FactListings.City Coverage %",
+              "displayName": "City coverage"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'City coverage'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

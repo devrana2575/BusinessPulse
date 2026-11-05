@@ -3,12 +3,14 @@
 ## Status
 
 **IMPLEMENTED AS SOURCE FILES — NOT VERIFIED IN POWER BI DESKTOP.** Power BI
-Desktop is unavailable on the build machine. Follow these steps in Desktop and
-record the actual result.
+Desktop is installed from the Microsoft Store (version 2.159.883.0), but these
+queries have not yet been executed there. Verify the MySQL Connector/NET
+prerequisite, follow these steps in Desktop, and record actual results.
 
 ## Prerequisites
 
-- Power BI Desktop (Windows).
+- Power BI Desktop for Windows, version 2.159.883.0 in the inspected
+  environment.
 - MySQL Connector/NET (the Power BI MySQL connector depends on it). Install the
   current MySQL Connector/NET and restart Desktop.
 - A reachable MySQL 8+/9.x instance with the `businesspulse` database loaded.
@@ -87,9 +89,12 @@ Column → Data Type → Decimal Number** and refresh.
 ## Refresh procedure
 
 ```powershell
-# From the project root, after cleaning/importing fresh data
-python scripts/import_data.py --replace-data
+# Only after approving and verifying the explicit empty target
+python scripts/businesspulse.py import --database businesspulse --confirm-target-empty
 ```
+
+Do not use `--replace-data` on an existing database without explicit approval;
+that option deletes existing listing, audit, reject and batch rows.
 
 Then in Power BI Desktop:
 
@@ -108,7 +113,7 @@ or the new committed state.
 |---|---|---|
 | `MySQL: We couldn't authenticate` | Wrong user/password, or user lacks access from this host | Verify `bp_user` grants for the database; never use root in the report. |
 | `The specified module could not be found` | MySQL Connector/NET missing | Install Connector/NET, restart Desktop. |
-| `Table not found` | Schema/database mismatch or setup not run | Run `python scripts/setup_database.py --reset` then import. |
+| `Table not found` | Schema/database mismatch or setup not run | Verify the intended target is empty and approved, then provision it without `--reset`; never use reset on an existing database. |
 | `Expression.Error: The key didn't match any rows` | View name changed or database wrong | Re-check Navigator and the `Item` name in the query. |
 | Slow refresh | Import mode, but large views/complex joins on a small machine | Check indexes, refresh outside report use. The dataset is small. |
 | Relationship creates ambiguity | Added a direct city/category relationship to `FactDataQuality` | Follow `data_model.md`; route filters through `FactListings`. |

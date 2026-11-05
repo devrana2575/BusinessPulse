@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_kpi_candidates",
+  "position": {
+    "x": 330,
+    "y": 78,
+    "z": 0,
+    "width": 290,
+    "height": 82,
+    "tabOrder": 100170
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Candidate City-Category Pairs"
+                }
+              },
+              "queryRef": "FactListings.Candidate City-Category Pairs",
+              "displayName": "Evidence-qualified pairs"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence-qualified pairs'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

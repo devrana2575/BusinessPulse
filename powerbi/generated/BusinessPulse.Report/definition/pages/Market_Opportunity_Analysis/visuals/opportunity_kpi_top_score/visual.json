@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_kpi_top_score",
+  "position": {
+    "x": 942,
+    "y": 78,
+    "z": 0,
+    "width": 314,
+    "height": 82,
+    "tabOrder": 100782
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Top Opportunity Score"
+                }
+              },
+              "queryRef": "FactListings.Top Opportunity Score",
+              "displayName": "Highest score (0-100)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Highest score (0-100)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

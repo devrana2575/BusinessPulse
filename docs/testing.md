@@ -2,11 +2,14 @@
 
 ## Status
 
-**Current audit (2026-11-05):** 92 offline tests passed; all 9 live MySQL
-integration tests skipped because the configured local server refused
-connections. Power BI tests were not run because Desktop is not installed.
-The 2026-11-02 historical run reported 99 passed, including MySQL integration;
-that earlier result is not a live verification for this audit.
+**Current offline audit (2026-11-05):** 119 tests passed and 9 MySQL tests were
+deselected. Live integration tests were not run. The configured MariaDB
+service was later verified running, but the application login failed with
+error 1045 and no authorized administrator session was available. Power BI
+Desktop is installed (Microsoft Store, version 2.159.883.0), but Power BI
+validation was not run. The 2026-11-02 historical run reported 99 passed,
+including MySQL integration; that earlier result is not current live
+verification.
 
 This page reports the actual commands and results from the build machine, not
 hypothetical coverage.
@@ -24,19 +27,20 @@ python -m pytest -q
 The live tests skip with a clear reason when MySQL is unavailable or the
 database has not been imported. They never write to the database.
 
-## Current audit results (2026-11-05)
+## Offline audit results (2026-11-05)
 
 Executed:
 
 ```text
-$ python -m pytest -q
-92 passed, 9 skipped
+$ python -m pytest -p no:cacheprovider -q -m "not mysql"
+119 passed, 9 deselected
 ```
 
-All 92 non-MySQL tests passed. Each of the 9 live integration tests skipped
-because `127.0.0.1:3307` refused the connection. Therefore the database import,
-live SQL views/queries and current database counts were not verified in this
-audit. The historical MySQL results below are retained for provenance only.
+All 119 offline tests passed. The nine live integration tests were deliberately
+excluded and no database connection was attempted during this audit. Database
+import, live SQL views/queries and current database counts remain unverified.
+The earlier connection-refused result and later error 1045 are recorded in
+`reports/powerbi/mysql_verification_report.md`.
 
 ## Test layers
 
@@ -46,8 +50,8 @@ audit. The historical MySQL results below are retained for provenance only.
 | `tests/test_validation.py` | Blocking vs warning severities, duplicate keys, invalid coordinates, audit inconsistency, summary math |
 | `tests/test_opportunity.py` | Score formula, null handling, weights, thresholds, tiers |
 | `tests/test_import_helpers.py` | File/hash guards, boolean/date/null conversion, import column contract |
-| `tests/test_assets.py` | 8 tables, 7 views, 35 queries, DAX/PQ/design presence, no fake PBIX/screenshots, no web framework |
-| `tests/test_scripts.py` | Dump option quoting, project-root contract |
+| `tests/test_assets.py` | 8 tables, 7 views, 35 queries, DAX/PQ/design presence, machine-readable Power BI checklist, no fake PBIX/screenshots, no web framework |
+| `tests/test_scripts.py` | Automation CLI stage summaries, stop-on-failure, skips, dependency and unsafe-target guards, loopback-only account provisioning, consent gates, and read-only SQL contract |
 | `tests/test_mysql_integration.py` | Imported counts, quality reconciliation, city/category counts, 144-pair universe, opportunity formula, all 35 SQL queries |
 
 The integration test is marked `mysql`; `pytest.ini` registers the marker.
@@ -84,12 +88,19 @@ Additional executed checks:
 | Opportunity score mismatches / tier mismatches | 0 / 0 |
 | Final database import | 2,252 listings, 2,252 audits, 0 rejects, 3 duplicates flagged |
 | Database dump restore | 2,252 listings, 2,252 audits, 8 base tables, 7 views, 144 opportunity rows |
-| Power BI Desktop | **NOT RUN** — not installed in the build environment |
+| Power BI Desktop | **NOT RUN** — installed, but no report was generated or opened for validation |
 
 The reconciliation report is committed at
 `data/reports/reconciliation_report.md` and `.csv`. The database dump is
 `database/businesspulse_dump.sql`; it was restored into a fresh database to
 verify these counts and then the restore database was dropped.
+
+## Automation workflow checks
+
+The operational tests exercise stage success/failure/skipping, structured JSONL
+events, dependency detection, explicit/loopback database-target guards, and
+the four-page Power BI checklist. These are unit-level tests; they do not
+connect to MySQL or launch Power BI Desktop.
 
 ## What is deliberately not tested
 

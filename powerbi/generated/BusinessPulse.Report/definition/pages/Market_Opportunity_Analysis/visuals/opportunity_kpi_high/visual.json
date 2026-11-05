@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_kpi_high",
+  "position": {
+    "x": 636,
+    "y": 78,
+    "z": 0,
+    "width": 290,
+    "height": 82,
+    "tabOrder": 100476
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "High Opportunity Gaps"
+                }
+              },
+              "queryRef": "FactListings.High Opportunity Gaps",
+              "displayName": "High-tier candidate pairs"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'High-tier candidate pairs'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
