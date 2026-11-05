@@ -1,0 +1,4 @@
+business_id,business_name,city,category,address,phone,source_record_id,duplicate_group,duplicate_reason,kept_business_id,kept_business_name,kept_source_record_id,kept_address,kept_phone,review_status,retention_decision
+BP-OSM-N-3292377261,login,Ahmedabad,Food & Beverage,vijay char rasta,,node/3292377261,DUP-0001,name + city + address,BP-OSM-N-3292377162,login,node/3292377162,vijay char rasta,,flagged_retained,Retained in cleaned data for audit; not deleted
+BP-OSM-N-3293761164,rehmati bakery,Ahmedabad,Food & Beverage,ashram road,,node/3293761164,DUP-0002,name + city + address,BP-OSM-N-3293760464,rehmati bakery,node/3293760464,ashram road,,flagged_retained,Retained in cleaned data for audit; not deleted
+BP-OSM-N-7101234641,Indian Oil,Surat,Automotive,Bharthana VIP Road,,node/7101234641,DUP-0003,name + city + address,BP-OSM-N-7101234640,Indian Oil,node/7101234640,"Bharthana, VIP Road",,flagged_retained,Retained in cleaned data for audit; not deleted
