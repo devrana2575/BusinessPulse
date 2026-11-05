@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_kpi_average",
+  "position": {
+    "x": 636,
+    "y": 72,
+    "z": 0,
+    "width": 194,
+    "height": 72,
+    "tabOrder": 92796
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Opportunity Score"
+                }
+              },
+              "queryRef": "_Measures.Avg Opportunity Score",
+              "displayName": "Avg candidate score"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg candidate score'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

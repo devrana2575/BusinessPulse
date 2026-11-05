@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_score_components",
+  "position": {
+    "x": 24,
+    "y": 422,
+    "z": 0,
+    "width": 600,
+    "height": 230,
+    "tabOrder": 540184
+  },
+  "visual": {
+    "visualType": "stackedBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactCityCategoryCoverage"
+                    }
+                  },
+                  "Property": "Pair Label"
+                }
+              },
+              "queryRef": "FactCityCategoryCoverage.Pair Label"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Underrepresentation Points"
+                }
+              },
+              "queryRef": "_Measures.Avg Underrepresentation Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Breadth Points"
+                }
+              },
+              "queryRef": "_Measures.Avg Breadth Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Reliability Points"
+                }
+              },
+              "queryRef": "_Measures.Avg Reliability Points"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Candidate score components'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "quality_status_slicer",
+  "position": {
+    "x": 496,
+    "y": 10,
+    "z": 0,
+    "width": 220,
+    "height": 52,
+    "tabOrder": 13296
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "validation_status"
+                }
+              },
+              "queryRef": "FactListings.validation_status",
+              "displayName": "Validation status"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Validation status'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

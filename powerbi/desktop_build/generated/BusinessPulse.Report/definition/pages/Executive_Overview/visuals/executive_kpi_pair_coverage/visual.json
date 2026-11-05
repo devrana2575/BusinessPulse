@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_kpi_pair_coverage",
+  "position": {
+    "x": 840,
+    "y": 76,
+    "z": 0,
+    "width": 196,
+    "height": 74,
+    "tabOrder": 98120
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Pair Coverage %"
+                }
+              },
+              "queryRef": "_Measures.Pair Coverage %",
+              "displayName": "City-category coverage"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'City-category coverage'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

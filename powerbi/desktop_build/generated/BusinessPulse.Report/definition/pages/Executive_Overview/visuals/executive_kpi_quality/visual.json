@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_kpi_quality",
+  "position": {
+    "x": 1044,
+    "y": 76,
+    "z": 0,
+    "width": 196,
+    "height": 74,
+    "tabOrder": 98324
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Quality Score"
+                }
+              },
+              "queryRef": "_Measures.Avg Quality Score",
+              "displayName": "Avg data quality (0-100)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg data quality (0-100)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

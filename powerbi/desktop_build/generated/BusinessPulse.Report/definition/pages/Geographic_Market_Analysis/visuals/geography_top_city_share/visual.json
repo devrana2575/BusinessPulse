@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "geography_top_city_share",
+  "position": {
+    "x": 516,
+    "y": 76,
+    "z": 0,
+    "width": 232,
+    "height": 72,
+    "tabOrder": 97796
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Top City Share %"
+                }
+              },
+              "queryRef": "_Measures.Top City Share %",
+              "displayName": "Top city share"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top city share'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

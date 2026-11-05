@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "quality_kpi_invalid_coordinates",
+  "position": {
+    "x": 720,
+    "y": 72,
+    "z": 0,
+    "width": 164,
+    "height": 74,
+    "tabOrder": 92880
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Invalid Coordinate Count"
+                }
+              },
+              "queryRef": "_Measures.Invalid Coordinate Count",
+              "displayName": "Invalid coordinates"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Invalid coordinates'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

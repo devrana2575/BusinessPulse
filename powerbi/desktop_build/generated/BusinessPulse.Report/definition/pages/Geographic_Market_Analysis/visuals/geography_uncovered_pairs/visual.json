@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "geography_uncovered_pairs",
+  "position": {
+    "x": 1008,
+    "y": 76,
+    "z": 0,
+    "width": 232,
+    "height": 72,
+    "tabOrder": 98288
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Uncovered Pairs"
+                }
+              },
+              "queryRef": "_Measures.Uncovered Pairs",
+              "displayName": "Uncovered city-category pairs"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Uncovered city-category pairs'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

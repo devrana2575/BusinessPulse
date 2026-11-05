@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_osm_attribution",
+  "position": {
+    "x": 24,
+    "y": 690,
+    "z": 0,
+    "width": 1232,
+    "height": 24,
+    "tabOrder": 883224
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimSource"
+                    }
+                  },
+                  "Property": "attribution"
+                }
+              },
+              "queryRef": "DimSource.attribution",
+              "displayName": "OpenStreetMap attribution"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'\u00a9 OpenStreetMap contributors | Open Database License (ODbL) 1.0'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

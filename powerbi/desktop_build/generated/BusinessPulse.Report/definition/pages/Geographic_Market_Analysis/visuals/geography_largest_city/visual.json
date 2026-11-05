@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "geography_largest_city",
+  "position": {
+    "x": 24,
+    "y": 76,
+    "z": 0,
+    "width": 232,
+    "height": 72,
+    "tabOrder": 97304
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Largest City Listings"
+                }
+              },
+              "queryRef": "_Measures.Largest City Listings",
+              "displayName": "Largest city (listings)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Largest city (listings)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

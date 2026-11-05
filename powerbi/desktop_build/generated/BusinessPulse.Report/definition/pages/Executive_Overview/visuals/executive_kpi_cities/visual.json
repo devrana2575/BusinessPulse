@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "executive_kpi_cities",
+  "position": {
+    "x": 228,
+    "y": 76,
+    "z": 0,
+    "width": 196,
+    "height": 74,
+    "tabOrder": 97508
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Cities"
+                }
+              },
+              "queryRef": "_Measures.Total Cities",
+              "displayName": "Cities represented"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cities represented'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

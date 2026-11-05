@@ -1,0 +1,34 @@
+measure,expected_value
+Total Listings,2252.0
+Unique Businesses,2252.0
+Total Cities,12.0
+Total Categories,12.0
+Avg Listings per City,187.67
+Total Pairs,144.0
+Covered Pairs,123.0
+Pair Coverage %,85.42
+Candidate Pairs,132.0
+High-tier Pairs,12.0
+Medium-tier Pairs,5.0
+Low-tier Pairs,115.0
+Insufficient-evidence Pairs,12.0
+Highest Opportunity Score,66.92
+Avg Opportunity Score (candidates),15.83
+Duplicate Count,3.0
+Missing Phone Count,2088.0
+Missing Address Count,1615.0
+Invalid Phone Count,5.0
+Invalid Address Count,54.0
+Invalid Coordinate Count,0.0
+Outside City Bbox Count,0.0
+Missing Business Name Count,0.0
+Complete Records,129.0
+Complete Records %,5.73
+Avg Quality Score,63.36
+Needs-review Records,2123.0
+Quality Issue Rows,3762.0
+Data Quality Issue Count,3765.0
+Largest City Listings,206.0
+Smallest City Listings,174.0
+Top City Share %,9.15
+City HHI (0-1),0.0835
