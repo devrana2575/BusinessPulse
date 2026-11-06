@@ -3,11 +3,11 @@
   "name": "geography_coordinates",
   "position": {
     "x": 24,
-    "y": 82,
+    "y": 160,
     "z": 0,
     "width": 600,
-    "height": 276,
-    "tabOrder": 104984
+    "height": 240,
+    "tabOrder": 204824
   },
   "visual": {
     "visualType": "scatterChart",
@@ -76,6 +76,49 @@
               "queryRef": "FactListings.business_name"
             }
           ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimCity"
+                    }
+                  },
+                  "Property": "city_name"
+                }
+              },
+              "queryRef": "DimCity.city_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimCategory"
+                    }
+                  },
+                  "Property": "category_name"
+                }
+              },
+              "queryRef": "DimCategory.category_name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Average Quality Score"
+                }
+              },
+              "queryRef": "FactListings.Average Quality Score"
+            }
+          ]
         }
       }
     },
@@ -94,6 +137,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Collected listing coordinates (latitude / longitude)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

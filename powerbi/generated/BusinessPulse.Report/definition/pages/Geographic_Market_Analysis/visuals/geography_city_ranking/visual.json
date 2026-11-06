@@ -3,11 +3,11 @@
   "name": "geography_city_ranking",
   "position": {
     "x": 24,
-    "y": 374,
+    "y": 412,
     "z": 0,
     "width": 600,
-    "height": 270,
-    "tabOrder": 478744
+    "height": 250,
+    "tabOrder": 527384
   },
   "visual": {
     "visualType": "tableEx",
@@ -112,6 +112,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'City coverage and rank'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

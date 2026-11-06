@@ -3,11 +3,11 @@
   "name": "executive_kpi_sources",
   "position": {
     "x": 24,
-    "y": 150,
+    "y": 140,
     "z": 0,
     "width": 192,
-    "height": 60,
-    "tabOrder": 192024
+    "height": 74,
+    "tabOrder": 179224
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "FactListings.Total Sources",
-              "displayName": "Data sources"
+              "displayName": "Data Sources"
             }
           ]
         }
@@ -47,7 +47,53 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Data sources'"
+                  "Value": "'Data Sources'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3A5F'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

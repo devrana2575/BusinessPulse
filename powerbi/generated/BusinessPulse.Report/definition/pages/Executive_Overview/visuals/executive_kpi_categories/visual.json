@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
   "name": "executive_kpi_categories",
   "position": {
-    "x": 765,
-    "y": 76,
+    "x": 771,
+    "y": 58,
     "z": 0,
-    "width": 232,
-    "height": 68,
-    "tabOrder": 98045
+    "width": 233,
+    "height": 74,
+    "tabOrder": 75011
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "FactListings.Total Categories",
-              "displayName": "Categories represented"
+              "displayName": "Total Categories"
             }
           ]
         }
@@ -47,7 +47,53 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Categories represented'"
+                  "Value": "'Total Categories'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3A5F'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

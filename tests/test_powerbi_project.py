@@ -581,3 +581,27 @@ def test_static_validator_preserves_descriptions_on_supported_model_objects(
     assert "description: Listing fact description" in table_file.read_text(
         encoding="utf-8"
     )
+
+
+def test_visual_layout_grid_alignment_and_zero_overlaps(tmp_path: Path):
+    output_dir = tmp_path / "BusinessPulse"
+    powerbi.generate_project(output_dir=output_dir)
+
+    pages = powerbi._page_visuals()
+    for page_name, (display_name, visuals) in pages.items():
+        rects = []
+        for visual in visuals:
+            pos = visual["position"]
+            x, y, w, h = pos["x"], pos["y"], pos["width"], pos["height"]
+            assert x >= 24, f"{visual['name']} on {page_name} violates left margin (x={x} < 24)"
+            assert y >= 10, f"{visual['name']} on {page_name} violates top margin (y={y} < 10)"
+            assert x + w <= 1256, f"{visual['name']} on {page_name} violates right margin (x+w={x+w} > 1256)"
+            assert y + h <= 710, f"{visual['name']} on {page_name} violates bottom margin (y+h={y+h} > 710)"
+            rects.append((visual["name"], (x, y, w, h)))
+
+        for i in range(len(rects)):
+            for j in range(i + 1, len(rects)):
+                n1, (x1, y1, w1, h1) = rects[i]
+                n2, (x2, y2, w2, h2) = rects[j]
+                overlaps = not (x1 + w1 <= x2 or x2 + w2 <= x1 or y1 + h1 <= y2 or y2 + h2 <= y1)
+                assert not overlaps, f"Overlap detected between {n1} and {n2} on {page_name}"

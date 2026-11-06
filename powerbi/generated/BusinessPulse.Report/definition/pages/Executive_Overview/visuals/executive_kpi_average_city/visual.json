@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
   "name": "executive_kpi_average_city",
   "position": {
-    "x": 1012,
-    "y": 76,
+    "x": 1020,
+    "y": 58,
     "z": 0,
-    "width": 232,
-    "height": 68,
-    "tabOrder": 98292
+    "width": 236,
+    "height": 74,
+    "tabOrder": 75260
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "FactListings.Average Listings per City",
-              "displayName": "Average listings per city"
+              "displayName": "Avg Listings / City"
             }
           ]
         }
@@ -47,7 +47,53 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average listings per city'"
+                  "Value": "'Avg Listings / City'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3A5F'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

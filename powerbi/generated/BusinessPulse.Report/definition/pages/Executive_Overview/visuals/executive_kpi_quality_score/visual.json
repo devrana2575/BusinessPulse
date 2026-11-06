@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
   "name": "executive_kpi_quality_score",
   "position": {
-    "x": 432,
-    "y": 150,
+    "x": 440,
+    "y": 140,
     "z": 0,
     "width": 192,
-    "height": 60,
-    "tabOrder": 192432
+    "height": 74,
+    "tabOrder": 179640
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "FactListings.Average Quality Score",
-              "displayName": "Mean audit score (0-100)"
+              "displayName": "Mean Quality Score"
             }
           ]
         }
@@ -47,7 +47,53 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Mean audit score (0-100)'"
+                  "Value": "'Mean Quality Score'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3A5F'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

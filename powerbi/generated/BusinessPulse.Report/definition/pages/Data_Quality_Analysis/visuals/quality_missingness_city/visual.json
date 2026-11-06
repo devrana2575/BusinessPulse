@@ -3,11 +3,11 @@
   "name": "quality_missingness_city",
   "position": {
     "x": 24,
-    "y": 174,
+    "y": 160,
     "z": 0,
     "width": 600,
-    "height": 205,
-    "tabOrder": 222744
+    "height": 240,
+    "tabOrder": 204824
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -59,6 +59,36 @@
               "queryRef": "FactListings.Missing Address %"
             }
           ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Completeness %"
+                }
+              },
+              "queryRef": "FactListings.Completeness %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Average Quality Score"
+                }
+              },
+              "queryRef": "FactListings.Average Quality Score"
+            }
+          ]
         }
       }
     },
@@ -77,6 +107,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Missing contact fields by city'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

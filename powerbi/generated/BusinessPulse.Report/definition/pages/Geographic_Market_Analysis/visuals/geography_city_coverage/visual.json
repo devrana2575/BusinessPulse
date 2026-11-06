@@ -3,11 +3,11 @@
   "name": "geography_city_coverage",
   "position": {
     "x": 24,
-    "y": 650,
+    "y": 62,
     "z": 0,
-    "width": 250,
-    "height": 50,
-    "tabOrder": 832024
+    "width": 400,
+    "height": 86,
+    "tabOrder": 79384
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "FactListings.City Coverage %",
-              "displayName": "City coverage"
+              "displayName": "City Coverage %"
             }
           ]
         }
@@ -47,7 +47,53 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'City coverage'"
+                  "Value": "'City Coverage %'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "22D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3A5F'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

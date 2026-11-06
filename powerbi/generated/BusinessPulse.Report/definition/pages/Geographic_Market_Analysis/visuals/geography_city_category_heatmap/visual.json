@@ -3,11 +3,11 @@
   "name": "geography_city_category_heatmap",
   "position": {
     "x": 640,
-    "y": 374,
+    "y": 412,
     "z": 0,
     "width": 616,
-    "height": 270,
-    "tabOrder": 479360
+    "height": 250,
+    "tabOrder": 528000
   },
   "visual": {
     "visualType": "matrix",
@@ -81,6 +81,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'City-category listing counts'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

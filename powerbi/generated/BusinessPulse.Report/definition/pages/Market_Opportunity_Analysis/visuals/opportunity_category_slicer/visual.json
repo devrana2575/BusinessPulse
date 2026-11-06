@@ -3,11 +3,11 @@
   "name": "opportunity_category_slicer",
   "position": {
     "x": 260,
-    "y": 12,
+    "y": 10,
     "z": 0,
     "width": 220,
-    "height": 54,
-    "tabOrder": 15620
+    "height": 42,
+    "tabOrder": 13060
   },
   "visual": {
     "visualType": "slicer",
@@ -48,6 +48,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Category'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

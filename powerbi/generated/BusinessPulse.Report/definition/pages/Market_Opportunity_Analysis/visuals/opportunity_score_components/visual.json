@@ -3,11 +3,11 @@
   "name": "opportunity_score_components",
   "position": {
     "x": 640,
-    "y": 174,
+    "y": 160,
     "z": 0,
     "width": 616,
-    "height": 205,
-    "tabOrder": 223360
+    "height": 240,
+    "tabOrder": 205440
   },
   "visual": {
     "visualType": "stackedBarChart",
@@ -90,6 +90,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Average additive score components'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

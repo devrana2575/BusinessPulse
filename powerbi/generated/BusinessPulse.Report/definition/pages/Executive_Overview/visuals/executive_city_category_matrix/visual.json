@@ -3,11 +3,11 @@
   "name": "executive_city_category_matrix",
   "position": {
     "x": 640,
-    "y": 408,
+    "y": 446,
     "z": 0,
     "width": 616,
-    "height": 180,
-    "tabOrder": 522880
+    "height": 216,
+    "tabOrder": 571520
   },
   "visual": {
     "visualType": "matrix",
@@ -81,6 +81,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Collected city-category counts'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

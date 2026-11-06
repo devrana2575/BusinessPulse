@@ -3,11 +3,11 @@
   "name": "opportunity_pair_detail",
   "position": {
     "x": 640,
-    "y": 395,
+    "y": 412,
     "z": 0,
     "width": 616,
-    "height": 245,
-    "tabOrder": 506240
+    "height": 250,
+    "tabOrder": 528000
   },
   "visual": {
     "visualType": "tableEx",
@@ -125,6 +125,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Pair details and observed listing counts'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

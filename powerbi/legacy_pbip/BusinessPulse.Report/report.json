@@ -1,0 +1,546 @@
+{
+  "config": "{\"version\": \"5.44\", \"themeCollection\": {\"baseTheme\": {\"name\": \"CY24SU06\", \"reportVersionAtImport\": \"5.52\", \"type\": \"SharedResources\"}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {}}",
+  "layoutOptimization": 0,
+  "structureVersion": 1.0,
+  "sections": [
+    {
+      "name": "Executive_Overview",
+      "displayName": "Executive Overview",
+      "filters": "[]",
+      "ordinal": 0,
+      "width": 1280.0,
+      "height": 720.0,
+      "config": "{}",
+      "visualContainers": [
+        {
+          "x": 24.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 220.0,
+          "height": 42.0,
+          "config": "{\"name\": \"executive_city_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 10, \"z\": 0, \"width\": 220, \"height\": 42, \"tabOrder\": 12824}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\", \"displayName\": \"City\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\", \"displayName\": \"City\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'City'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 260.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 220.0,
+          "height": 42.0,
+          "config": "{\"name\": \"executive_category_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 260, \"y\": 10, \"z\": 0, \"width\": 220, \"height\": 42, \"tabOrder\": 13060}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\", \"displayName\": \"Category\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\", \"displayName\": \"Category\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Category'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 496.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 240.0,
+          "height": 42.0,
+          "config": "{\"name\": \"executive_source_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 496, \"y\": 10, \"z\": 0, \"width\": 240, \"height\": 42, \"tabOrder\": 13296}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimSource\"}}, \"Property\": \"source_name\"}}, \"queryRef\": \"DimSource.source_name\", \"displayName\": \"Source\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimSource\"}}, \"Property\": \"source_name\"}}, \"queryRef\": \"DimSource.source_name\", \"displayName\": \"Source\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Source'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 58.0,
+          "z": 0.0,
+          "width": 233.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_listings\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 58, \"z\": 0, \"width\": 233, \"height\": 74, \"tabOrder\": 74264}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\", \"displayName\": \"Total Listings\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\", \"displayName\": \"Total Listings\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Listings'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 273.0,
+          "y": 58.0,
+          "z": 0.0,
+          "width": 233.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_businesses\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 273, \"y\": 58, \"z\": 0, \"width\": 233, \"height\": 74, \"tabOrder\": 74513}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Unique Businesses\"}}, \"queryRef\": \"FactListings.Unique Businesses\", \"displayName\": \"Unique Businesses\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Unique Businesses\"}}, \"queryRef\": \"FactListings.Unique Businesses\", \"displayName\": \"Unique Businesses\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Unique Businesses'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 522.0,
+          "y": 58.0,
+          "z": 0.0,
+          "width": 233.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_cities\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 522, \"y\": 58, \"z\": 0, \"width\": 233, \"height\": 74, \"tabOrder\": 74762}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Cities\"}}, \"queryRef\": \"FactListings.Total Cities\", \"displayName\": \"Total Cities\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Cities\"}}, \"queryRef\": \"FactListings.Total Cities\", \"displayName\": \"Total Cities\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Cities'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 771.0,
+          "y": 58.0,
+          "z": 0.0,
+          "width": 233.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_categories\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 771, \"y\": 58, \"z\": 0, \"width\": 233, \"height\": 74, \"tabOrder\": 75011}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Categories\"}}, \"queryRef\": \"FactListings.Total Categories\", \"displayName\": \"Total Categories\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Categories\"}}, \"queryRef\": \"FactListings.Total Categories\", \"displayName\": \"Total Categories\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Categories'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1020.0,
+          "y": 58.0,
+          "z": 0.0,
+          "width": 236.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_average_city\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1020, \"y\": 58, \"z\": 0, \"width\": 236, \"height\": 74, \"tabOrder\": 75260}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Listings per City\"}}, \"queryRef\": \"FactListings.Average Listings per City\", \"displayName\": \"Avg Listings / City\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Listings per City\"}}, \"queryRef\": \"FactListings.Average Listings per City\", \"displayName\": \"Avg Listings / City\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Avg Listings / City'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 140.0,
+          "z": 0.0,
+          "width": 192.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_sources\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 140, \"z\": 0, \"width\": 192, \"height\": 74, \"tabOrder\": 179224}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Sources\"}}, \"queryRef\": \"FactListings.Total Sources\", \"displayName\": \"Data Sources\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Sources\"}}, \"queryRef\": \"FactListings.Total Sources\", \"displayName\": \"Data Sources\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Data Sources'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 232.0,
+          "y": 140.0,
+          "z": 0.0,
+          "width": 192.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_completeness\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 232, \"y\": 140, \"z\": 0, \"width\": 192, \"height\": 74, \"tabOrder\": 179432}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\", \"displayName\": \"Completeness %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\", \"displayName\": \"Completeness %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Completeness %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 440.0,
+          "y": 140.0,
+          "z": 0.0,
+          "width": 192.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_quality_score\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 440, \"y\": 140, \"z\": 0, \"width\": 192, \"height\": 74, \"tabOrder\": 179640}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\", \"displayName\": \"Mean Quality Score\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\", \"displayName\": \"Mean Quality Score\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Mean Quality Score'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648.0,
+          "y": 140.0,
+          "z": 0.0,
+          "width": 192.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_phone_availability\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 140, \"z\": 0, \"width\": 192, \"height\": 74, \"tabOrder\": 179848}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Phone Availability Percentage\"}}, \"queryRef\": \"FactListings.Phone Availability Percentage\", \"displayName\": \"Phone Available %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Phone Availability Percentage\"}}, \"queryRef\": \"FactListings.Phone Availability Percentage\", \"displayName\": \"Phone Available %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Phone Available %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 856.0,
+          "y": 140.0,
+          "z": 0.0,
+          "width": 192.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_address_availability\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 856, \"y\": 140, \"z\": 0, \"width\": 192, \"height\": 74, \"tabOrder\": 180056}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Address Availability Percentage\"}}, \"queryRef\": \"FactListings.Address Availability Percentage\", \"displayName\": \"Address Available %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Address Availability Percentage\"}}, \"queryRef\": \"FactListings.Address Availability Percentage\", \"displayName\": \"Address Available %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Address Available %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1064.0,
+          "y": 140.0,
+          "z": 0.0,
+          "width": 192.0,
+          "height": 74.0,
+          "config": "{\"name\": \"executive_kpi_duplicate_rate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1064, \"y\": 140, \"z\": 0, \"width\": 192, \"height\": 74, \"tabOrder\": 180264}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Duplicate Rate %\"}}, \"queryRef\": \"FactListings.Duplicate Rate %\", \"displayName\": \"Duplicate Rate %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Duplicate Rate %\"}}, \"queryRef\": \"FactListings.Duplicate Rate %\", \"displayName\": \"Duplicate Rate %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Duplicate Rate %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 224.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 212.0,
+          "config": "{\"name\": \"executive_city_distribution\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 224, \"z\": 0, \"width\": 600, \"height\": 212, \"tabOrder\": 286744}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Contribution % (Selected)\"}}, \"queryRef\": \"FactListings.City Contribution % (Selected)\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Rank\"}}, \"queryRef\": \"FactListings.City Rank\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}]}}, \"prototypeQuery\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Contribution % (Selected)\"}}, \"queryRef\": \"FactListings.City Contribution % (Selected)\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Rank\"}}, \"queryRef\": \"FactListings.City Rank\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Collected listings by city'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 224.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 212.0,
+          "config": "{\"name\": \"executive_category_distribution\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 224, \"z\": 0, \"width\": 616, \"height\": 212, \"tabOrder\": 287360}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\"}]}}, \"prototypeQuery\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Collected listings by category'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 446.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 216.0,
+          "config": "{\"name\": \"executive_quality_bands\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 446, \"z\": 0, \"width\": 600, \"height\": 216, \"tabOrder\": 570904}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"quality_band\"}}, \"queryRef\": \"FactDataQuality.quality_band\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}}, \"prototypeQuery\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"quality_band\"}}, \"queryRef\": \"FactDataQuality.quality_band\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Record audit-score bands'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 446.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 216.0,
+          "config": "{\"name\": \"executive_city_category_matrix\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 446, \"z\": 0, \"width\": 616, \"height\": 216, \"tabOrder\": 571520}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Columns\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}]}, \"Values\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}}, \"prototypeQuery\": {\"Rows\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Columns\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}]}, \"Values\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Collected city-category counts'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 672.0,
+          "z": 0.0,
+          "width": 1232.0,
+          "height": 36.0,
+          "config": "{\"name\": \"executive_report_context\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 672, \"z\": 0, \"width\": 1232, \"height\": 36, \"tabOrder\": 860184}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Report Context\"}}, \"queryRef\": \"FactListings.Report Context\", \"displayName\": \"Source and snapshot context\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Report Context\"}}, \"queryRef\": \"FactListings.Report Context\", \"displayName\": \"Source and snapshot context\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Source and snapshot context'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#4A5568'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Geographic_Market_Analysis",
+      "displayName": "Geographic Market Analysis",
+      "filters": "[]",
+      "ordinal": 1,
+      "width": 1280.0,
+      "height": 720.0,
+      "config": "{}",
+      "visualContainers": [
+        {
+          "x": 24.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 220.0,
+          "height": 42.0,
+          "config": "{\"name\": \"geography_city_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 10, \"z\": 0, \"width\": 220, \"height\": 42, \"tabOrder\": 12824}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\", \"displayName\": \"City\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\", \"displayName\": \"City\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'City'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 260.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 220.0,
+          "height": 42.0,
+          "config": "{\"name\": \"geography_category_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 260, \"y\": 10, \"z\": 0, \"width\": 220, \"height\": 42, \"tabOrder\": 13060}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\", \"displayName\": \"Category\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\", \"displayName\": \"Category\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Category'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 496.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 240.0,
+          "height": 42.0,
+          "config": "{\"name\": \"geography_source_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 496, \"y\": 10, \"z\": 0, \"width\": 240, \"height\": 42, \"tabOrder\": 13296}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimSource\"}}, \"Property\": \"source_name\"}}, \"queryRef\": \"DimSource.source_name\", \"displayName\": \"Source\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimSource\"}}, \"Property\": \"source_name\"}}, \"queryRef\": \"DimSource.source_name\", \"displayName\": \"Source\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Source'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 400.0,
+          "height": 86.0,
+          "config": "{\"name\": \"geography_city_coverage\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 62, \"z\": 0, \"width\": 400, \"height\": 86, \"tabOrder\": 79384}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Coverage %\"}}, \"queryRef\": \"FactListings.City Coverage %\", \"displayName\": \"City Coverage %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Coverage %\"}}, \"queryRef\": \"FactListings.City Coverage %\", \"displayName\": \"City Coverage %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'City Coverage %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 440.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 400.0,
+          "height": 86.0,
+          "config": "{\"name\": \"geography_geo_coverage\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 440, \"y\": 62, \"z\": 0, \"width\": 400, \"height\": 86, \"tabOrder\": 79800}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Geographic Coverage %\"}}, \"queryRef\": \"FactListings.Geographic Coverage %\", \"displayName\": \"Geographic Coverage %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Geographic Coverage %\"}}, \"queryRef\": \"FactListings.Geographic Coverage %\", \"displayName\": \"Geographic Coverage %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Geographic Coverage %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 856.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 400.0,
+          "height": 86.0,
+          "config": "{\"name\": \"geography_city_hhi\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 856, \"y\": 62, \"z\": 0, \"width\": 400, \"height\": 86, \"tabOrder\": 80216}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Concentration HHI (Collected Listings)\"}}, \"queryRef\": \"FactListings.City Concentration HHI (Collected Listings)\", \"displayName\": \"City Concentration (HHI)\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Concentration HHI (Collected Listings)\"}}, \"queryRef\": \"FactListings.City Concentration HHI (Collected Listings)\", \"displayName\": \"City Concentration (HHI)\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'City Concentration (HHI)'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 160.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 240.0,
+          "config": "{\"name\": \"geography_coordinates\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 160, \"z\": 0, \"width\": 600, \"height\": 240, \"tabOrder\": 204824}}], \"singleVisual\": {\"visualType\": \"scatterChart\", \"projections\": {\"X\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"longitude\"}}, \"queryRef\": \"FactListings.longitude\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"latitude\"}}, \"queryRef\": \"FactListings.latitude\"}]}, \"Details\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"business_id\"}}, \"queryRef\": \"FactListings.business_id\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"business_name\"}}, \"queryRef\": \"FactListings.business_name\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\"}]}}, \"prototypeQuery\": {\"X\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"longitude\"}}, \"queryRef\": \"FactListings.longitude\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"latitude\"}}, \"queryRef\": \"FactListings.latitude\"}]}, \"Details\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"business_id\"}}, \"queryRef\": \"FactListings.business_id\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"business_name\"}}, \"queryRef\": \"FactListings.business_name\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Collected listing coordinates (latitude / longitude)'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 160.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 240.0,
+          "config": "{\"name\": \"geography_city_distribution\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 160, \"z\": 0, \"width\": 616, \"height\": 240, \"tabOrder\": 205440}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Contribution % (Selected)\"}}, \"queryRef\": \"FactListings.City Contribution % (Selected)\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Rank\"}}, \"queryRef\": \"FactListings.City Rank\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Coverage %\"}}, \"queryRef\": \"FactListings.City Coverage %\"}]}}, \"prototypeQuery\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Contribution % (Selected)\"}}, \"queryRef\": \"FactListings.City Contribution % (Selected)\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Rank\"}}, \"queryRef\": \"FactListings.City Rank\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Coverage %\"}}, \"queryRef\": \"FactListings.City Coverage %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Listing distribution by city'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 412.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 250.0,
+          "config": "{\"name\": \"geography_city_ranking\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 412, \"z\": 0, \"width\": 600, \"height\": 250, \"tabOrder\": 527384}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"state_name\"}}, \"queryRef\": \"DimCity.state_name\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Contribution % (Selected)\"}}, \"queryRef\": \"FactListings.City Contribution % (Selected)\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Rank\"}}, \"queryRef\": \"FactListings.City Rank\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"state_name\"}}, \"queryRef\": \"DimCity.state_name\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Contribution % (Selected)\"}}, \"queryRef\": \"FactListings.City Contribution % (Selected)\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"City Rank\"}}, \"queryRef\": \"FactListings.City Rank\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'City coverage and rank'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 412.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 250.0,
+          "config": "{\"name\": \"geography_city_category_heatmap\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 412, \"z\": 0, \"width\": 616, \"height\": 250, \"tabOrder\": 528000}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Columns\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}]}, \"Values\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}}, \"prototypeQuery\": {\"Rows\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Columns\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}]}, \"Values\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'City-category listing counts'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 672.0,
+          "z": 0.0,
+          "width": 1232.0,
+          "height": 36.0,
+          "config": "{\"name\": \"geography_report_context\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 672, \"z\": 0, \"width\": 1232, \"height\": 36, \"tabOrder\": 860184}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Report Context\"}}, \"queryRef\": \"FactListings.Report Context\", \"displayName\": \"Source and snapshot context\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Report Context\"}}, \"queryRef\": \"FactListings.Report Context\", \"displayName\": \"Source and snapshot context\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Source and snapshot context'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#4A5568'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Data_Quality_Analysis",
+      "displayName": "Data Quality Analysis",
+      "filters": "[]",
+      "ordinal": 2,
+      "width": 1280.0,
+      "height": 720.0,
+      "config": "{}",
+      "visualContainers": [
+        {
+          "x": 24.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 220.0,
+          "height": 42.0,
+          "config": "{\"name\": \"quality_city_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 10, \"z\": 0, \"width\": 220, \"height\": 42, \"tabOrder\": 12824}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\", \"displayName\": \"City\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\", \"displayName\": \"City\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'City'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 260.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 220.0,
+          "height": 42.0,
+          "config": "{\"name\": \"quality_category_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 260, \"y\": 10, \"z\": 0, \"width\": 220, \"height\": 42, \"tabOrder\": 13060}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\", \"displayName\": \"Category\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\", \"displayName\": \"Category\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Category'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 496.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 240.0,
+          "height": 42.0,
+          "config": "{\"name\": \"quality_status_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 496, \"y\": 10, \"z\": 0, \"width\": 240, \"height\": 42, \"tabOrder\": 13296}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"validation_status\"}}, \"queryRef\": \"FactDataQuality.validation_status\", \"displayName\": \"Validation status\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"validation_status\"}}, \"queryRef\": \"FactDataQuality.validation_status\", \"displayName\": \"Validation status\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Validation status'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 233.0,
+          "height": 86.0,
+          "config": "{\"name\": \"quality_kpi_score\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 62, \"z\": 0, \"width\": 233, \"height\": 86, \"tabOrder\": 79384}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\", \"displayName\": \"Mean Quality Score\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\", \"displayName\": \"Mean Quality Score\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Mean Quality Score'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 273.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 233.0,
+          "height": 86.0,
+          "config": "{\"name\": \"quality_kpi_phone\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 273, \"y\": 62, \"z\": 0, \"width\": 233, \"height\": 86, \"tabOrder\": 79633}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Phone %\"}}, \"queryRef\": \"FactListings.Missing Phone %\", \"displayName\": \"Missing Phone %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Phone %\"}}, \"queryRef\": \"FactListings.Missing Phone %\", \"displayName\": \"Missing Phone %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Missing Phone %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 522.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 233.0,
+          "height": 86.0,
+          "config": "{\"name\": \"quality_kpi_address\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 522, \"y\": 62, \"z\": 0, \"width\": 233, \"height\": 86, \"tabOrder\": 79882}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Address %\"}}, \"queryRef\": \"FactListings.Missing Address %\", \"displayName\": \"Missing Address %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Address %\"}}, \"queryRef\": \"FactListings.Missing Address %\", \"displayName\": \"Missing Address %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Missing Address %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 771.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 233.0,
+          "height": 86.0,
+          "config": "{\"name\": \"quality_kpi_completeness\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 771, \"y\": 62, \"z\": 0, \"width\": 233, \"height\": 86, \"tabOrder\": 80131}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\", \"displayName\": \"Complete Records %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\", \"displayName\": \"Complete Records %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Complete Records %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1020.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 236.0,
+          "height": 86.0,
+          "config": "{\"name\": \"quality_kpi_duplicate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1020, \"y\": 62, \"z\": 0, \"width\": 236, \"height\": 86, \"tabOrder\": 80380}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Duplicate Rate %\"}}, \"queryRef\": \"FactListings.Duplicate Rate %\", \"displayName\": \"Retained Duplicates %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Duplicate Rate %\"}}, \"queryRef\": \"FactListings.Duplicate Rate %\", \"displayName\": \"Retained Duplicates %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Retained Duplicates %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 160.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 240.0,
+          "config": "{\"name\": \"quality_missingness_city\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 160, \"z\": 0, \"width\": 600, \"height\": 240, \"tabOrder\": 204824}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Phone %\"}}, \"queryRef\": \"FactListings.Missing Phone %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Address %\"}}, \"queryRef\": \"FactListings.Missing Address %\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\"}]}}, \"prototypeQuery\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Phone %\"}}, \"queryRef\": \"FactListings.Missing Phone %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Address %\"}}, \"queryRef\": \"FactListings.Missing Address %\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Average Quality Score\"}}, \"queryRef\": \"FactListings.Average Quality Score\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Missing contact fields by city'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 160.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 240.0,
+          "config": "{\"name\": \"quality_score_bands\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 160, \"z\": 0, \"width\": 616, \"height\": 240, \"tabOrder\": 205440}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"quality_band\"}}, \"queryRef\": \"FactDataQuality.quality_band\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}}, \"prototypeQuery\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"quality_band\"}}, \"queryRef\": \"FactDataQuality.quality_band\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Total Listings\"}}, \"queryRef\": \"FactListings.Total Listings\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Audit-score band distribution'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 412.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 250.0,
+          "config": "{\"name\": \"quality_missingness_category\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 412, \"z\": 0, \"width\": 600, \"height\": 250, \"tabOrder\": 527384}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Phone %\"}}, \"queryRef\": \"FactListings.Missing Phone %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Address %\"}}, \"queryRef\": \"FactListings.Missing Address %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Phone %\"}}, \"queryRef\": \"FactListings.Missing Phone %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Missing Address %\"}}, \"queryRef\": \"FactListings.Missing Address %\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Completeness %\"}}, \"queryRef\": \"FactListings.Completeness %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Missingness and completeness by category'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 412.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 250.0,
+          "config": "{\"name\": \"quality_review_detail\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 412, \"z\": 0, \"width\": 616, \"height\": 250, \"tabOrder\": 528000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"business_name\"}}, \"queryRef\": \"FactListings.business_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"validation_status\"}}, \"queryRef\": \"FactDataQuality.validation_status\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"quality_score\"}}, \"queryRef\": \"FactDataQuality.quality_score\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"missing_phone\"}}, \"queryRef\": \"FactDataQuality.missing_phone\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"missing_address\"}}, \"queryRef\": \"FactDataQuality.missing_address\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"duplicate_flag\"}}, \"queryRef\": \"FactDataQuality.duplicate_flag\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"business_name\"}}, \"queryRef\": \"FactListings.business_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"validation_status\"}}, \"queryRef\": \"FactDataQuality.validation_status\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"quality_score\"}}, \"queryRef\": \"FactDataQuality.quality_score\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"missing_phone\"}}, \"queryRef\": \"FactDataQuality.missing_phone\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"missing_address\"}}, \"queryRef\": \"FactDataQuality.missing_address\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactDataQuality\"}}, \"Property\": \"duplicate_flag\"}}, \"queryRef\": \"FactDataQuality.duplicate_flag\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Review detail (use validation-status slicer)'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 672.0,
+          "z": 0.0,
+          "width": 1232.0,
+          "height": 36.0,
+          "config": "{\"name\": \"quality_report_context\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 672, \"z\": 0, \"width\": 1232, \"height\": 36, \"tabOrder\": 860184}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Report Context\"}}, \"queryRef\": \"FactListings.Report Context\", \"displayName\": \"Source and snapshot context\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Report Context\"}}, \"queryRef\": \"FactListings.Report Context\", \"displayName\": \"Source and snapshot context\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Source and snapshot context'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#4A5568'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Market_Opportunity_Analysis",
+      "displayName": "Market Opportunity Analysis",
+      "filters": "[]",
+      "ordinal": 3,
+      "width": 1280.0,
+      "height": 720.0,
+      "config": "{}",
+      "visualContainers": [
+        {
+          "x": 24.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 220.0,
+          "height": 42.0,
+          "config": "{\"name\": \"opportunity_city_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 10, \"z\": 0, \"width\": 220, \"height\": 42, \"tabOrder\": 12824}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\", \"displayName\": \"City\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\", \"displayName\": \"City\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'City'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 260.0,
+          "y": 10.0,
+          "z": 0.0,
+          "width": 220.0,
+          "height": 42.0,
+          "config": "{\"name\": \"opportunity_category_slicer\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 260, \"y\": 10, \"z\": 0, \"width\": 220, \"height\": 42, \"tabOrder\": 13060}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\", \"displayName\": \"Category\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\", \"displayName\": \"Category\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Category'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 296.0,
+          "height": 86.0,
+          "config": "{\"name\": \"opportunity_kpi_coverage\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 62, \"z\": 0, \"width\": 296, \"height\": 86, \"tabOrder\": 79384}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Category Coverage %\"}}, \"queryRef\": \"FactListings.Category Coverage %\", \"displayName\": \"Category Coverage %\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Category Coverage %\"}}, \"queryRef\": \"FactListings.Category Coverage %\", \"displayName\": \"Category Coverage %\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Category Coverage %'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 336.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 296.0,
+          "height": 86.0,
+          "config": "{\"name\": \"opportunity_kpi_candidates\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 336, \"y\": 62, \"z\": 0, \"width\": 296, \"height\": 86, \"tabOrder\": 79696}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate City-Category Pairs\"}}, \"queryRef\": \"FactListings.Candidate City-Category Pairs\", \"displayName\": \"Qualified Candidates\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate City-Category Pairs\"}}, \"queryRef\": \"FactListings.Candidate City-Category Pairs\", \"displayName\": \"Qualified Candidates\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Qualified Candidates'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 296.0,
+          "height": 86.0,
+          "config": "{\"name\": \"opportunity_kpi_high\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 62, \"z\": 0, \"width\": 296, \"height\": 86, \"tabOrder\": 80008}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"High Opportunity Gaps\"}}, \"queryRef\": \"FactListings.High Opportunity Gaps\", \"displayName\": \"High Opportunity Gaps\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"High Opportunity Gaps\"}}, \"queryRef\": \"FactListings.High Opportunity Gaps\", \"displayName\": \"High Opportunity Gaps\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'High Opportunity Gaps'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 960.0,
+          "y": 62.0,
+          "z": 0.0,
+          "width": 296.0,
+          "height": 86.0,
+          "config": "{\"name\": \"opportunity_kpi_top_score\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 960, \"y\": 62, \"z\": 0, \"width\": 296, \"height\": 86, \"tabOrder\": 80320}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Top Opportunity Score\"}}, \"queryRef\": \"FactListings.Top Opportunity Score\", \"displayName\": \"Top Opportunity Score\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Top Opportunity Score\"}}, \"queryRef\": \"FactListings.Top Opportunity Score\", \"displayName\": \"Top Opportunity Score\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Top Opportunity Score'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"22D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1F3A5F'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 160.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 240.0,
+          "config": "{\"name\": \"opportunity_ranked_pairs\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 160, \"z\": 0, \"width\": 600, \"height\": 240, \"tabOrder\": 204824}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"city_category\"}}, \"queryRef\": \"FactCityCategoryCoverage.city_category\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Opportunity Score\"}}, \"queryRef\": \"FactListings.Candidate Opportunity Score\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Underrepresentation Points\"}}, \"queryRef\": \"FactListings.Candidate Underrepresentation Points\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Breadth Points\"}}, \"queryRef\": \"FactListings.Candidate Breadth Points\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Reliability Points\"}}, \"queryRef\": \"FactListings.Candidate Reliability Points\"}]}}, \"prototypeQuery\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"city_category\"}}, \"queryRef\": \"FactCityCategoryCoverage.city_category\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Opportunity Score\"}}, \"queryRef\": \"FactListings.Candidate Opportunity Score\"}]}, \"Tooltips\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Underrepresentation Points\"}}, \"queryRef\": \"FactListings.Candidate Underrepresentation Points\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Breadth Points\"}}, \"queryRef\": \"FactListings.Candidate Breadth Points\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Reliability Points\"}}, \"queryRef\": \"FactListings.Candidate Reliability Points\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Opportunity score by city-category pair'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 160.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 240.0,
+          "config": "{\"name\": \"opportunity_score_components\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 160, \"z\": 0, \"width\": 616, \"height\": 240, \"tabOrder\": 205440}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"city_category\"}}, \"queryRef\": \"FactCityCategoryCoverage.city_category\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Underrepresentation Points\"}}, \"queryRef\": \"FactListings.Candidate Underrepresentation Points\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Breadth Points\"}}, \"queryRef\": \"FactListings.Candidate Breadth Points\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Reliability Points\"}}, \"queryRef\": \"FactListings.Candidate Reliability Points\"}]}}, \"prototypeQuery\": {\"Category\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"city_category\"}}, \"queryRef\": \"FactCityCategoryCoverage.city_category\"}]}, \"Y\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Underrepresentation Points\"}}, \"queryRef\": \"FactListings.Candidate Underrepresentation Points\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Breadth Points\"}}, \"queryRef\": \"FactListings.Candidate Breadth Points\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Reliability Points\"}}, \"queryRef\": \"FactListings.Candidate Reliability Points\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Average additive score components'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 412.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 250.0,
+          "config": "{\"name\": \"opportunity_score_heatmap\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 412, \"z\": 0, \"width\": 600, \"height\": 250, \"tabOrder\": 527384}}], \"singleVisual\": {\"visualType\": \"matrix\", \"projections\": {\"Rows\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Columns\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}]}, \"Values\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Opportunity Score\"}}, \"queryRef\": \"FactListings.Opportunity Score\"}]}}, \"prototypeQuery\": {\"Rows\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCity\"}}, \"Property\": \"city_name\"}}, \"queryRef\": \"DimCity.city_name\"}]}, \"Columns\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"DimCategory\"}}, \"Property\": \"category_name\"}}, \"queryRef\": \"DimCategory.category_name\"}]}, \"Values\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Opportunity Score\"}}, \"queryRef\": \"FactListings.Opportunity Score\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Opportunity score by city and category'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 412.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 250.0,
+          "config": "{\"name\": \"opportunity_pair_detail\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 412, \"z\": 0, \"width\": 616, \"height\": 250, \"tabOrder\": 528000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"city_category\"}}, \"queryRef\": \"FactCityCategoryCoverage.city_category\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"candidate_status\"}}, \"queryRef\": \"FactCityCategoryCoverage.candidate_status\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"listing_count\"}}, \"queryRef\": \"FactCityCategoryCoverage.listing_count\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"relative_representation\"}}, \"queryRef\": \"FactCityCategoryCoverage.relative_representation\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"opportunity_tier\"}}, \"queryRef\": \"FactCityCategoryCoverage.opportunity_tier\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"coverage_status\"}}, \"queryRef\": \"FactCityCategoryCoverage.coverage_status\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Opportunity Score\"}}, \"queryRef\": \"FactListings.Candidate Opportunity Score\"}]}}, \"prototypeQuery\": {\"Values\": {\"projections\": [{\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"city_category\"}}, \"queryRef\": \"FactCityCategoryCoverage.city_category\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"candidate_status\"}}, \"queryRef\": \"FactCityCategoryCoverage.candidate_status\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"listing_count\"}}, \"queryRef\": \"FactCityCategoryCoverage.listing_count\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"relative_representation\"}}, \"queryRef\": \"FactCityCategoryCoverage.relative_representation\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"opportunity_tier\"}}, \"queryRef\": \"FactCityCategoryCoverage.opportunity_tier\"}, {\"field\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactCityCategoryCoverage\"}}, \"Property\": \"coverage_status\"}}, \"queryRef\": \"FactCityCategoryCoverage.coverage_status\"}, {\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Candidate Opportunity Score\"}}, \"queryRef\": \"FactListings.Candidate Opportunity Score\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Pair details and observed listing counts'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 24.0,
+          "y": 672.0,
+          "z": 0.0,
+          "width": 600.0,
+          "height": 36.0,
+          "config": "{\"name\": \"opportunity_methodology\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 24, \"y\": 672, \"z\": 0, \"width\": 600, \"height\": 36, \"tabOrder\": 860184}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Opportunity Caveat\"}}, \"queryRef\": \"FactListings.Opportunity Caveat\", \"displayName\": \"Opportunity Caveat & Methodology\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Opportunity Caveat\"}}, \"queryRef\": \"FactListings.Opportunity Caveat\", \"displayName\": \"Opportunity Caveat & Methodology\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Opportunity Caveat & Methodology'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#4A5568'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 672.0,
+          "z": 0.0,
+          "width": 616.0,
+          "height": 36.0,
+          "config": "{\"name\": \"opportunity_report_context\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640, \"y\": 672, \"z\": 0, \"width\": 616, \"height\": 36, \"tabOrder\": 860800}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Report Context\"}}, \"queryRef\": \"FactListings.Report Context\", \"displayName\": \"Source and snapshot context\"}]}}, \"prototypeQuery\": {\"Data\": {\"projections\": [{\"field\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"FactListings\"}}, \"Property\": \"Report Context\"}}, \"queryRef\": \"FactListings.Report Context\", \"displayName\": \"Source and snapshot context\"}]}}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Source and snapshot context'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10.5D\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"10D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#4A5568'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    }
+  ]
+}

@@ -3,11 +3,11 @@
   "name": "executive_city_slicer",
   "position": {
     "x": 24,
-    "y": 12,
+    "y": 10,
     "z": 0,
     "width": 220,
-    "height": 54,
-    "tabOrder": 15384
+    "height": 42,
+    "tabOrder": 12824
   },
   "visual": {
     "visualType": "slicer",
@@ -48,6 +48,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'City'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

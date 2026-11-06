@@ -3,11 +3,11 @@
   "name": "executive_source_slicer",
   "position": {
     "x": 496,
-    "y": 12,
+    "y": 10,
     "z": 0,
-    "width": 260,
-    "height": 54,
-    "tabOrder": 15856
+    "width": 240,
+    "height": 42,
+    "tabOrder": 13296
   },
   "visual": {
     "visualType": "slicer",
@@ -48,6 +48,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Source'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

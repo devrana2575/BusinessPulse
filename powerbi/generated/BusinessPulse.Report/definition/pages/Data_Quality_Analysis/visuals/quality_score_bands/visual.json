@@ -3,11 +3,11 @@
   "name": "quality_score_bands",
   "position": {
     "x": 640,
-    "y": 174,
+    "y": 160,
     "z": 0,
     "width": 616,
-    "height": 205,
-    "tabOrder": 223360
+    "height": 240,
+    "tabOrder": 205440
   },
   "visual": {
     "visualType": "stackedColumnChart",
@@ -64,6 +64,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Audit-score band distribution'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

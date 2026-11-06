@@ -3,11 +3,11 @@
   "name": "quality_missingness_category",
   "position": {
     "x": 24,
-    "y": 395,
+    "y": 412,
     "z": 0,
     "width": 600,
-    "height": 245,
-    "tabOrder": 505624
+    "height": 250,
+    "tabOrder": 527384
   },
   "visual": {
     "visualType": "tableEx",
@@ -86,6 +86,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Missingness and completeness by category'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

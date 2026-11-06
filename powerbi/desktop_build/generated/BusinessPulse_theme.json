@@ -21,24 +21,94 @@
   "minimum": "#EEF2F6",
   "textClasses": {
     "callout": {
-      "fontSize": 28,
+      "fontSize": 20,
       "fontFace": "Segoe UI Semibold",
       "color": "#1F3A5F"
     },
     "title": {
-      "fontSize": 12,
+      "fontSize": 10.5,
       "fontFace": "Segoe UI Semibold",
       "color": "#1F2933"
     },
     "header": {
-      "fontSize": 11,
+      "fontSize": 9.5,
       "fontFace": "Segoe UI Semibold",
       "color": "#1F2933"
     },
     "label": {
-      "fontSize": 10,
+      "fontSize": 9,
       "fontFace": "Segoe UI",
       "color": "#52606D"
+    }
+  },
+  "visualStyles": {
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "fontSize": 20,
+            "fontFamily": "Segoe UI Semibold",
+            "color": {
+              "solid": {
+                "color": "#1F3A5F"
+              }
+            }
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "grid": [
+          {
+            "gridVertical": false,
+            "gridHorizontal": true,
+            "rowPadding": 2,
+            "textSize": 9
+          }
+        ],
+        "columnHeaders": [
+          {
+            "fontSize": 9.5,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "values": [
+          {
+            "fontSize": 9,
+            "fontFamily": "Segoe UI"
+          }
+        ]
+      }
+    },
+    "pivotTable": {
+      "*": {
+        "grid": [
+          {
+            "gridVertical": false,
+            "gridHorizontal": true,
+            "rowPadding": 2,
+            "textSize": 9
+          }
+        ],
+        "columnHeaders": [
+          {
+            "fontSize": 9.5,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "values": [
+          {
+            "fontSize": 9,
+            "fontFamily": "Segoe UI"
+          }
+        ]
+      }
     }
   }
 }

@@ -3,11 +3,11 @@
   "name": "executive_quality_bands",
   "position": {
     "x": 24,
-    "y": 408,
+    "y": 446,
     "z": 0,
     "width": 600,
-    "height": 180,
-    "tabOrder": 522264
+    "height": 216,
+    "tabOrder": 570904
   },
   "visual": {
     "visualType": "stackedBarChart",
@@ -64,6 +64,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Record audit-score bands'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

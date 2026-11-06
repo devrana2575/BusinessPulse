@@ -3,11 +3,11 @@
   "name": "opportunity_ranked_pairs",
   "position": {
     "x": 24,
-    "y": 174,
+    "y": 160,
     "z": 0,
     "width": 600,
-    "height": 205,
-    "tabOrder": 222744
+    "height": 240,
+    "tabOrder": 204824
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -46,6 +46,49 @@
               "queryRef": "FactListings.Candidate Opportunity Score"
             }
           ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Candidate Underrepresentation Points"
+                }
+              },
+              "queryRef": "FactListings.Candidate Underrepresentation Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Candidate Breadth Points"
+                }
+              },
+              "queryRef": "FactListings.Candidate Breadth Points"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "Candidate Reliability Points"
+                }
+              },
+              "queryRef": "FactListings.Candidate Reliability Points"
+            }
+          ]
         }
       }
     },
@@ -64,6 +107,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Opportunity score by city-category pair'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

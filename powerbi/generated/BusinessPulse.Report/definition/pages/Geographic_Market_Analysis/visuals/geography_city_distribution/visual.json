@@ -3,11 +3,11 @@
   "name": "geography_city_distribution",
   "position": {
     "x": 640,
-    "y": 82,
+    "y": 160,
     "z": 0,
     "width": 616,
-    "height": 276,
-    "tabOrder": 105600
+    "height": 240,
+    "tabOrder": 205440
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -46,6 +46,49 @@
               "queryRef": "FactListings.Total Listings"
             }
           ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "City Contribution % (Selected)"
+                }
+              },
+              "queryRef": "FactListings.City Contribution % (Selected)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "City Rank"
+                }
+              },
+              "queryRef": "FactListings.City Rank"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "City Coverage %"
+                }
+              },
+              "queryRef": "FactListings.City Coverage %"
+            }
+          ]
         }
       }
     },
@@ -64,6 +107,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Listing distribution by city'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

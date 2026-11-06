@@ -433,6 +433,21 @@ def _model_files(
         "",
     ]
     files = {
+        ".platform": json.dumps(
+            {
+                "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+                "metadata": {
+                    "type": "SemanticModel",
+                    "displayName": "BusinessPulse",
+                },
+                "config": {
+                    "version": "2.0",
+                    "logicalId": "8e078ff0-d78e-4c98-bee7-e98d95e38ff6",
+                },
+            },
+            indent=2,
+        )
+        + "\n",
         "definition.pbism": json.dumps(
             {"$schema": SEMANTIC_MODEL_SCHEMA, "version": "4.0"}, indent=2
         )
@@ -997,6 +1012,21 @@ def _page_visuals() -> dict[str, tuple[str, list[dict[str, Any]]]]:
 
 def _report_files() -> dict[str, str]:
     files: dict[str, str] = {
+        ".platform": json.dumps(
+            {
+                "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+                "metadata": {
+                    "type": "Report",
+                    "displayName": "BusinessPulse",
+                },
+                "config": {
+                    "version": "2.0",
+                    "logicalId": "02ee2ab6-1791-4334-bf6e-20b26650371b",
+                },
+            },
+            indent=2,
+        )
+        + "\n",
         "definition.pbir": json.dumps(
             {
                 "$schema": REPORT_SCHEMA,
@@ -1016,15 +1046,35 @@ def _report_files() -> dict[str, str]:
                         "name": "CY24SU06",
                         "reportVersionAtImport": "5.52",
                         "type": "SharedResources",
-                    }
+                    },
+                    "customTheme": {
+                        "name": "BusinessPulse_theme.json",
+                        "reportVersionAtImport": "5.52",
+                        "type": "RegisteredResources",
+                    },
                 },
-                "reportSource": "Default",
+                "resourcePackages": [
+                    {
+                        "name": "RegisteredResources",
+                        "type": "RegisteredResources",
+                        "items": [
+                            {
+                                "name": "BusinessPulse_theme.json",
+                                "path": "BusinessPulse_theme.json",
+                                "type": "CustomTheme",
+                            }
+                        ],
+                    }
+                ],
             },
             indent=2,
+        ),
+        "StaticResources/RegisteredResources/BusinessPulse_theme.json": THEME_JSON.read_text(
+            encoding="utf-8"
         )
         + "\n",
         "definition/version.json": json.dumps(
-            {"$schema": VERSION_SCHEMA, "version": "1.0.0"}, indent=2
+            {"$schema": VERSION_SCHEMA, "version": "2.0.0"}, indent=2
         )
         + "\n",
     }

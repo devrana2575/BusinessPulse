@@ -5,7 +5,24 @@
       "name": "CY24SU06",
       "reportVersionAtImport": "5.52",
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "BusinessPulse_theme.json",
+      "reportVersionAtImport": "5.52",
+      "type": "RegisteredResources"
     }
   },
-  "reportSource": "Default"
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "BusinessPulse_theme.json",
+          "path": "BusinessPulse_theme.json",
+          "type": "CustomTheme"
+        }
+      ]
+    }
+  ]
 }

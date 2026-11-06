@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
   "name": "quality_status_slicer",
   "position": {
-    "x": 468,
-    "y": 12,
+    "x": 496,
+    "y": 10,
     "z": 0,
-    "width": 250,
-    "height": 54,
-    "tabOrder": 15828
+    "width": 240,
+    "height": 42,
+    "tabOrder": 13296
   },
   "visual": {
     "visualType": "slicer",
@@ -48,6 +48,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Validation status'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

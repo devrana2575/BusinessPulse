@@ -41,7 +41,7 @@ VISUAL_SCHEMA = (
 )
 PAGES_SCHEMA = (
     "https://developer.microsoft.com/json-schemas/fabric/item/report/"
-    "definition/pagesMetadata/1.0.0/schema.json"
+    "definition/pagesMetadata/1.1.0/schema.json"
 )
 VERSION_SCHEMA = (
     "https://developer.microsoft.com/json-schemas/fabric/item/report/"
@@ -769,6 +769,21 @@ def _relationships_tmdl() -> str:
 
 def _model_files(dax_text: str, snapshot: Snapshot) -> dict[str, str]:
     files = {
+        ".platform": json.dumps(
+            {
+                "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+                "metadata": {
+                    "type": "SemanticModel",
+                    "displayName": "BusinessPulse",
+                },
+                "config": {
+                    "version": "2.0",
+                    "logicalId": "8e078ff0-d78e-4c98-bee7-e98d95e38ff6",
+                },
+            },
+            indent=2,
+        )
+        + "\n",
         "definition.pbism": json.dumps(
             {"$schema": SEMANTIC_MODEL_SCHEMA, "version": "4.0"},
             indent=2,
@@ -833,11 +848,37 @@ def _visual(
     title: str,
     position: tuple[int, int, int, int],
     roles: dict[str, list[dict[str, Any]]],
+    objects: dict[str, Any] | None = None,
+    show_title: bool = True,
+    title_font_size: str = "10.5D",
 ) -> dict[str, Any]:
     x, y, width, height = position
     query_state = {
         role: {"projections": projections} for role, projections in roles.items()
     }
+    visual_dict: dict[str, Any] = {
+        "visualType": visual_type,
+        "query": {"queryState": query_state},
+        "visualContainerObjects": {
+            "title": [
+                {
+                    "properties": {
+                        "show": {"expr": {"Literal": {"Value": "true" if show_title else "false"}}},
+                        "text": {
+                            "expr": {
+                                "Literal": {
+                                    "Value": "'" + title.replace("'", "''") + "'"
+                                }
+                            }
+                        },
+                        "fontSize": {"expr": {"Literal": {"Value": title_font_size}}},
+                    }
+                }
+            ]
+        },
+    }
+    if objects:
+        visual_dict["objects"] = objects
     return {
         "$schema": VISUAL_SCHEMA,
         "name": name,
@@ -849,26 +890,7 @@ def _visual(
             "height": height,
             "tabOrder": y * PAGE_WIDTH + x,
         },
-        "visual": {
-            "visualType": visual_type,
-            "query": {"queryState": query_state},
-            "visualContainerObjects": {
-                "title": [
-                    {
-                        "properties": {
-                            "show": {"expr": {"Literal": {"Value": "true"}}},
-                            "text": {
-                                "expr": {
-                                    "Literal": {
-                                        "Value": "'" + title.replace("'", "''") + "'"
-                                    }
-                                }
-                            },
-                        }
-                    }
-                ]
-            },
-        },
+        "visual": visual_dict,
     }
 
 
@@ -892,13 +914,47 @@ def _opportunity_measure_projection(measure: str, label: str | None = None) -> d
     )
 
 
-def _card(name: str, measure: str, title: str, pos: tuple[int, int, int, int]) -> dict[str, Any]:
+def _card(
+    name: str,
+    measure: str,
+    title: str,
+    pos: tuple[int, int, int, int],
+    callout_font_size: int = 20,
+    show_title: bool = True,
+) -> dict[str, Any]:
+    objects = {
+        "labels": [
+            {
+                "properties": {
+                    "fontSize": {"expr": {"Literal": {"Value": f"{callout_font_size}D"}}},
+                    "color": {
+                        "solid": {
+                            "color": {
+                                "expr": {
+                                    "Literal": {"Value": "'#1F3A5F'" if show_title else "'#4A5568'"}
+                                }
+                            }
+                        }
+                    },
+                }
+            }
+        ],
+        "categoryLabels": [
+            {
+                "properties": {
+                    "show": {"expr": {"Literal": {"Value": "false"}}}
+                }
+            }
+        ],
+    }
     return _visual(
         name,
         "card",
         title,
         pos,
         {"Data": [_measure_projection(measure, title)]},
+        objects=objects,
+        show_title=show_title,
     )
 
 
@@ -921,11 +977,14 @@ def _chart(
     values: list[str],
     category_role: str = "Category",
     value_role: str = "Y",
+    tooltips: list[str] | None = None,
 ) -> dict[str, Any]:
     roles: dict[str, list[dict[str, Any]]] = {
         category_role: [_column_projection(table, column) for table, column in categories],
         value_role: [_measure_projection(value) for value in values],
     }
+    if tooltips:
+        roles["Tooltips"] = [_measure_projection(tip) for tip in tooltips]
     return _visual(name, visual_type, title, pos, roles)
 
 
@@ -963,142 +1022,126 @@ def _matrix_visual(
 
 
 def _page_visuals() -> dict[str, tuple[str, list[dict[str, Any]]]]:
-    slicer_row = [
-        (24, 12, 220, 54),
-        (260, 12, 220, 54),
-        (496, 12, 260, 54),
+    # Consistent 16:9 Canvas Grid Architecture (1280 x 720)
+    # Margins: Left = 24, Right = 1256 (Content Width = 1232 px)
+    # Top Margin = 10, Bottom Margin = 710 (Content Height = 700 px, 10 px bottom margin)
+    # Two-Column Standard: Left (x=24, w=600), Right (x=640, w=616), Gutter = 16
+    # Top Slicer Row: y = 10, h = 42 across all pages
+    # Bottom Footer Row: y = 672, h = 36 across all pages
+    slicer_row_3 = [
+        (24, 10, 220, 42),
+        (260, 10, 220, 42),
+        (496, 10, 240, 42),
     ]
-    kpi_row = [(24 + index * 247, 76, 232, 68) for index in range(5)]
-    executive_secondary_kpis = [
-        (24 + index * 204, 150, 192, 60) for index in range(6)
+    slicer_row_2 = [
+        (24, 10, 220, 42),
+        (260, 10, 220, 42),
+    ]
+
+    # --- Page 1: Executive Overview ---
+    # Top: Slicers (y = 10, h = 42)
+    # Row 2A (5 Headline KPIs): y = 58, h = 74 (callout = 20pt, categoryLabels off)
+    # Row 2B (6 Secondary KPIs): y = 140, h = 74 (callout = 20pt, categoryLabels off)
+    # Row 3 (Middle Charts): y = 224, h = 212
+    # Row 4 (Bottom Visuals): y = 446, h = 216
+    # Footer: y = 672, h = 36 (callout = 10pt, title off)
+    exec_kpi_row1 = [
+        (24, 58, 233, 74),
+        (273, 58, 233, 74),
+        (522, 58, 233, 74),
+        (771, 58, 233, 74),
+        (1020, 58, 236, 74),
+    ]
+    exec_kpi_row2 = [
+        (24, 140, 192, 74),
+        (232, 140, 192, 74),
+        (440, 140, 192, 74),
+        (648, 140, 192, 74),
+        (856, 140, 192, 74),
+        (1064, 140, 192, 74),
     ]
     executive = [
-        _slicer("executive_city_slicer", "DimCity", "city_name", "City", slicer_row[0]),
-        _slicer(
-            "executive_category_slicer",
-            "DimCategory",
-            "category_name",
-            "Category",
-            slicer_row[1],
+        _slicer("executive_city_slicer", "DimCity", "city_name", "City", slicer_row_3[0]),
+        _slicer("executive_category_slicer", "DimCategory", "category_name", "Category", slicer_row_3[1]),
+        _slicer("executive_source_slicer", "DimSource", "source_name", "Source", slicer_row_3[2]),
+        _card("executive_kpi_listings", "Total Listings", "Total Listings", exec_kpi_row1[0], callout_font_size=20),
+        _card("executive_kpi_businesses", "Unique Businesses", "Unique Businesses", exec_kpi_row1[1], callout_font_size=20),
+        _card("executive_kpi_cities", "Total Cities", "Total Cities", exec_kpi_row1[2], callout_font_size=20),
+        _card("executive_kpi_categories", "Total Categories", "Total Categories", exec_kpi_row1[3], callout_font_size=20),
+        _card("executive_kpi_average_city", "Average Listings per City", "Avg Listings / City", exec_kpi_row1[4], callout_font_size=20),
+        _card("executive_kpi_sources", "Total Sources", "Data Sources", exec_kpi_row2[0], callout_font_size=20),
+        _card("executive_kpi_completeness", "Completeness %", "Completeness %", exec_kpi_row2[1], callout_font_size=20),
+        _card("executive_kpi_quality_score", "Average Quality Score", "Mean Quality Score", exec_kpi_row2[2], callout_font_size=20),
+        _card("executive_kpi_phone_availability", "Phone Availability Percentage", "Phone Available %", exec_kpi_row2[3], callout_font_size=20),
+        _card("executive_kpi_address_availability", "Address Availability Percentage", "Address Available %", exec_kpi_row2[4], callout_font_size=20),
+        _card("executive_kpi_duplicate_rate", "Duplicate Rate %", "Duplicate Rate %", exec_kpi_row2[5], callout_font_size=20),
+        _chart(
+            "executive_city_distribution",
+            "clusteredBarChart",
+            "Collected listings by city",
+            (24, 224, 600, 212),
+            [("DimCity", "city_name")],
+            ["Total Listings"],
+            tooltips=["City Contribution % (Selected)", "City Rank", "Completeness %"],
         ),
-        _slicer(
-            "executive_source_slicer",
-            "DimSource",
-            "source_name",
-            "Source",
-            slicer_row[2],
+        _chart(
+            "executive_category_distribution",
+            "clusteredBarChart",
+            "Collected listings by category",
+            (640, 224, 616, 212),
+            [("DimCategory", "category_name")],
+            ["Total Listings"],
+            tooltips=["Completeness %", "Average Quality Score"],
+        ),
+        _chart(
+            "executive_quality_bands",
+            "stackedBarChart",
+            "Record audit-score bands",
+            (24, 446, 600, 216),
+            [("FactDataQuality", "quality_band")],
+            ["Total Listings"],
+        ),
+        _matrix_visual(
+            "executive_city_category_matrix",
+            "Collected city-category counts",
+            (640, 446, 616, 216),
+            ("DimCity", "city_name"),
+            ("DimCategory", "category_name"),
+            "Total Listings",
+        ),
+        _card(
+            "executive_report_context",
+            "Report Context",
+            "Source and snapshot context",
+            (24, 672, 1232, 36),
+            callout_font_size=10,
+            show_title=False,
         ),
     ]
-    executive.extend(
-        [
-            _card("executive_kpi_listings", "Total Listings", "Collected listings", kpi_row[0]),
-            _card("executive_kpi_businesses", "Unique Businesses", "Unique businesses", kpi_row[1]),
-            _card("executive_kpi_cities", "Total Cities", "Cities represented", kpi_row[2]),
-            _card("executive_kpi_categories", "Total Categories", "Categories represented", kpi_row[3]),
-            _card(
-                "executive_kpi_average_city",
-                "Average Listings per City",
-                "Average listings per city",
-                kpi_row[4],
-            ),
-            _card(
-                "executive_kpi_sources",
-                "Total Sources",
-                "Data sources",
-                executive_secondary_kpis[0],
-            ),
-            _card(
-                "executive_kpi_completeness",
-                "Completeness %",
-                "Complete records",
-                executive_secondary_kpis[1],
-            ),
-            _card(
-                "executive_kpi_quality_score",
-                "Average Quality Score",
-                "Mean audit score (0-100)",
-                executive_secondary_kpis[2],
-            ),
-            _card(
-                "executive_kpi_phone_availability",
-                "Phone Availability Percentage",
-                "Published phone available",
-                executive_secondary_kpis[3],
-            ),
-            _card(
-                "executive_kpi_address_availability",
-                "Address Availability Percentage",
-                "Published address available",
-                executive_secondary_kpis[4],
-            ),
-            _card(
-                "executive_kpi_duplicate_rate",
-                "Duplicate Rate %",
-                "Exact duplicates retained",
-                executive_secondary_kpis[5],
-            ),
-            _chart(
-                "executive_city_distribution",
-                "clusteredBarChart",
-                "Collected listings by city",
-                (24, 226, 600, 170),
-                [("DimCity", "city_name")],
-                ["Total Listings"],
-            ),
-            _chart(
-                "executive_category_distribution",
-                "clusteredBarChart",
-                "Collected listings by category",
-                (640, 226, 616, 170),
-                [("DimCategory", "category_name")],
-                ["Total Listings"],
-            ),
-            _chart(
-                "executive_quality_bands",
-                "stackedBarChart",
-                "Record audit-score bands",
-                (24, 408, 600, 180),
-                [("FactDataQuality", "quality_band")],
-                ["Total Listings"],
-            ),
-            _matrix_visual(
-                "executive_city_category_matrix",
-                "Collected city-category counts",
-                (640, 408, 616, 180),
-                ("DimCity", "city_name"),
-                ("DimCategory", "category_name"),
-                "Total Listings",
-            ),
-            _card(
-                "executive_report_context",
-                "Report Context",
-                "Source and snapshot",
-                (24, 602, 1232, 90),
-            ),
-        ]
-    )
 
+    # --- Page 2: Geographic Market Analysis ---
+    # Top: Slicers (y = 10, h = 42)
+    # Row 2 (Geographic KPIs): y = 62, h = 86 (3 cards, w = 400, callout = 22pt)
+    # Row 3 (Middle Visuals): y = 160, h = 240
+    # Row 4 (Bottom Visuals): y = 412, h = 250
+    # Footer: y = 672, h = 36 (callout = 10pt, title off)
+    geo_kpis = [
+        (24, 62, 400, 86),
+        (440, 62, 400, 86),
+        (856, 62, 400, 86),
+    ]
     geography = [
-        _slicer("geography_city_slicer", "DimCity", "city_name", "City", slicer_row[0]),
-        _slicer(
-            "geography_category_slicer",
-            "DimCategory",
-            "category_name",
-            "Category",
-            slicer_row[1],
-        ),
-        _slicer(
-            "geography_source_slicer",
-            "DimSource",
-            "source_name",
-            "Source",
-            slicer_row[2],
-        ),
+        _slicer("geography_city_slicer", "DimCity", "city_name", "City", slicer_row_3[0]),
+        _slicer("geography_category_slicer", "DimCategory", "category_name", "Category", slicer_row_3[1]),
+        _slicer("geography_source_slicer", "DimSource", "source_name", "Source", slicer_row_3[2]),
+        _card("geography_city_coverage", "City Coverage %", "City Coverage %", geo_kpis[0], callout_font_size=22),
+        _card("geography_geo_coverage", "Geographic Coverage %", "Geographic Coverage %", geo_kpis[1], callout_font_size=22),
+        _card("geography_city_hhi", "City Concentration HHI (Collected Listings)", "City Concentration (HHI)", geo_kpis[2], callout_font_size=22),
         _visual(
             "geography_coordinates",
             "scatterChart",
             "Collected listing coordinates (latitude / longitude)",
-            (24, 82, 600, 276),
+            (24, 160, 600, 240),
             {
                 "X": [_column_projection("FactListings", "longitude")],
                 "Y": [_column_projection("FactListings", "latitude")],
@@ -1106,190 +1149,155 @@ def _page_visuals() -> dict[str, tuple[str, list[dict[str, Any]]]]:
                     _column_projection("FactListings", "business_id"),
                     _column_projection("FactListings", "business_name"),
                 ],
+                "Tooltips": [
+                    _column_projection("DimCity", "city_name"),
+                    _column_projection("DimCategory", "category_name"),
+                    _measure_projection("Average Quality Score"),
+                ],
             },
         ),
         _chart(
             "geography_city_distribution",
             "clusteredBarChart",
             "Listing distribution by city",
-            (640, 82, 616, 276),
+            (640, 160, 616, 240),
             [("DimCity", "city_name")],
             ["Total Listings"],
+            tooltips=["City Contribution % (Selected)", "City Rank", "City Coverage %"],
         ),
         _table_visual(
             "geography_city_ranking",
             "City coverage and rank",
-            (24, 374, 600, 270),
+            (24, 412, 600, 250),
             [("DimCity", "city_name"), ("DimCity", "state_name")],
             ["Total Listings", "City Contribution % (Selected)", "City Rank", "Completeness %"],
         ),
         _matrix_visual(
             "geography_city_category_heatmap",
             "City-category listing counts",
-            (640, 374, 616, 270),
+            (640, 412, 616, 250),
             ("DimCity", "city_name"),
             ("DimCategory", "category_name"),
             "Total Listings",
         ),
-        _card("geography_city_coverage", "City Coverage %", "City coverage", (24, 650, 250, 50)),
-        _card("geography_geo_coverage", "Geographic Coverage %", "Listings with coordinates", (290, 650, 250, 50)),
-        _card(
-            "geography_city_hhi",
-            "City Concentration HHI (Collected Listings)",
-            "City concentration (collected sample)",
-            (556, 650, 250, 50),
-        ),
         _card(
             "geography_report_context",
             "Report Context",
-            "Source and snapshot",
-            (822, 650, 434, 50),
+            "Source and snapshot context",
+            (24, 672, 1232, 36),
+            callout_font_size=10,
+            show_title=False,
         ),
     ]
 
+    # --- Page 3: Data Quality Analysis ---
+    # Top: Slicers (y = 10, h = 42)
+    # Row 2 (Data Quality KPIs): y = 62, h = 86 (5 cards, w = 233-236, callout = 22pt)
+    # Row 3 (Middle Visuals): y = 160, h = 240
+    # Row 4 (Bottom Visuals): y = 412, h = 250
+    # Footer: y = 672, h = 36 (callout = 10pt, title off)
+    quality_kpis = [
+        (24, 62, 233, 86),
+        (273, 62, 233, 86),
+        (522, 62, 233, 86),
+        (771, 62, 233, 86),
+        (1020, 62, 236, 86),
+    ]
     quality = [
-        _slicer("quality_city_slicer", "DimCity", "city_name", "City", (24, 12, 210, 54)),
-        _slicer(
-            "quality_category_slicer",
-            "DimCategory",
-            "category_name",
-            "Category",
-            (246, 12, 210, 54),
+        _slicer("quality_city_slicer", "DimCity", "city_name", "City", slicer_row_3[0]),
+        _slicer("quality_category_slicer", "DimCategory", "category_name", "Category", slicer_row_3[1]),
+        _slicer("quality_status_slicer", "FactDataQuality", "validation_status", "Validation status", slicer_row_3[2]),
+        _card("quality_kpi_score", "Average Quality Score", "Mean Quality Score", quality_kpis[0], callout_font_size=22),
+        _card("quality_kpi_phone", "Missing Phone %", "Missing Phone %", quality_kpis[1], callout_font_size=22),
+        _card("quality_kpi_address", "Missing Address %", "Missing Address %", quality_kpis[2], callout_font_size=22),
+        _card("quality_kpi_completeness", "Completeness %", "Complete Records %", quality_kpis[3], callout_font_size=22),
+        _card("quality_kpi_duplicate", "Duplicate Rate %", "Retained Duplicates %", quality_kpis[4], callout_font_size=22),
+        _chart(
+            "quality_missingness_city",
+            "clusteredBarChart",
+            "Missing contact fields by city",
+            (24, 160, 600, 240),
+            [("DimCity", "city_name")],
+            ["Missing Phone %", "Missing Address %"],
+            tooltips=["Completeness %", "Average Quality Score"],
         ),
-        _slicer(
-            "quality_status_slicer",
-            "FactDataQuality",
-            "validation_status",
-            "Validation status",
-            (468, 12, 250, 54),
+        _chart(
+            "quality_score_bands",
+            "stackedColumnChart",
+            "Audit-score band distribution",
+            (640, 160, 616, 240),
+            [("FactDataQuality", "quality_band")],
+            ["Total Listings"],
+        ),
+        _table_visual(
+            "quality_missingness_category",
+            "Missingness and completeness by category",
+            (24, 412, 600, 250),
+            [("DimCategory", "category_name")],
+            ["Missing Phone %", "Missing Address %", "Completeness %"],
+        ),
+        _table_visual(
+            "quality_review_detail",
+            "Review detail (use validation-status slicer)",
+            (640, 412, 616, 250),
+            [
+                ("FactListings", "business_name"),
+                ("DimCity", "city_name"),
+                ("DimCategory", "category_name"),
+                ("FactDataQuality", "validation_status"),
+                ("FactDataQuality", "quality_score"),
+                ("FactDataQuality", "missing_phone"),
+                ("FactDataQuality", "missing_address"),
+                ("FactDataQuality", "duplicate_flag"),
+            ],
+        ),
+        _card(
+            "quality_report_context",
+            "Report Context",
+            "Source and snapshot context",
+            (24, 672, 1232, 36),
+            callout_font_size=10,
+            show_title=False,
         ),
     ]
-    quality_kpis = [(24 + index * 247, 78, 232, 82) for index in range(5)]
-    quality.extend(
-        [
-            _card(
-                "quality_kpi_score",
-                "Average Quality Score",
-                "Mean audit score (0-100)",
-                quality_kpis[0],
-            ),
-            _card(
-                "quality_kpi_phone",
-                "Missing Phone %",
-                "Missing published phone",
-                quality_kpis[1],
-            ),
-            _card(
-                "quality_kpi_address",
-                "Missing Address %",
-                "Missing published address",
-                quality_kpis[2],
-            ),
-            _card(
-                "quality_kpi_completeness",
-                "Completeness %",
-                "Complete records",
-                quality_kpis[3],
-            ),
-            _card(
-                "quality_kpi_duplicate",
-                "Duplicate Rate %",
-                "Exact duplicates retained",
-                quality_kpis[4],
-            ),
-            _chart(
-                "quality_missingness_city",
-                "clusteredBarChart",
-                "Missing contact fields by city",
-                (24, 174, 600, 205),
-                [("DimCity", "city_name")],
-                ["Missing Phone %", "Missing Address %"],
-            ),
-            _chart(
-                "quality_score_bands",
-                "stackedColumnChart",
-                "Audit-score band distribution",
-                (640, 174, 616, 205),
-                [("FactDataQuality", "quality_band")],
-                ["Total Listings"],
-            ),
-            _table_visual(
-                "quality_missingness_category",
-                "Missingness and completeness by category",
-                (24, 395, 600, 245),
-                [("DimCategory", "category_name")],
-                ["Missing Phone %", "Missing Address %", "Completeness %"],
-            ),
-            _table_visual(
-                "quality_review_detail",
-                "Review detail (use validation-status slicer)",
-                (640, 395, 616, 245),
-                [
-                    ("FactListings", "business_name"),
-                    ("DimCity", "city_name"),
-                    ("DimCategory", "category_name"),
-                    ("FactDataQuality", "validation_status"),
-                    ("FactDataQuality", "quality_score"),
-                    ("FactDataQuality", "missing_phone"),
-                    ("FactDataQuality", "missing_address"),
-                    ("FactDataQuality", "duplicate_flag"),
-                ],
-            ),
-            _card(
-                "quality_report_context",
-                "Report Context",
-                "Source and snapshot",
-                (24, 650, 1232, 50),
-            ),
-        ]
-    )
 
+    # --- Page 4: Market Opportunity Analysis ---
+    # Top: Slicers (y = 10, h = 42)
+    # Row 2 (Opportunity KPIs): y = 62, h = 86 (4 cards, w = 296, callout = 22pt)
+    # Row 3 (Middle Visuals): y = 160, h = 240
+    # Row 4 (Bottom Visuals): y = 412, h = 250
+    # Footer: y = 672, h = 36 (callout = 10pt, title off)
+    opp_kpis = [
+        (24, 62, 296, 86),
+        (336, 62, 296, 86),
+        (648, 62, 296, 86),
+        (960, 62, 296, 86),
+    ]
     opportunity = [
-        _slicer("opportunity_city_slicer", "DimCity", "city_name", "City", slicer_row[0]),
-        _slicer(
-            "opportunity_category_slicer",
-            "DimCategory",
-            "category_name",
-            "Category",
-            slicer_row[1],
-        ),
-        _card(
-            "opportunity_kpi_coverage",
-            "Category Coverage %",
-            "Covered city-category pairs",
-            (24, 78, 290, 82),
-        ),
-        _card(
-            "opportunity_kpi_candidates",
-            "Candidate City-Category Pairs",
-            "Evidence-qualified pairs",
-            (330, 78, 290, 82),
-        ),
-        _card(
-            "opportunity_kpi_high",
-            "High Opportunity Gaps",
-            "High-tier candidate pairs",
-            (636, 78, 290, 82),
-        ),
-        _card(
-            "opportunity_kpi_top_score",
-            "Top Opportunity Score",
-            "Highest score (0-100)",
-            (942, 78, 314, 82),
-        ),
+        _slicer("opportunity_city_slicer", "DimCity", "city_name", "City", slicer_row_2[0]),
+        _slicer("opportunity_category_slicer", "DimCategory", "category_name", "Category", slicer_row_2[1]),
+        _card("opportunity_kpi_coverage", "Category Coverage %", "Category Coverage %", opp_kpis[0], callout_font_size=22),
+        _card("opportunity_kpi_candidates", "Candidate City-Category Pairs", "Qualified Candidates", opp_kpis[1], callout_font_size=22),
+        _card("opportunity_kpi_high", "High Opportunity Gaps", "High Opportunity Gaps", opp_kpis[2], callout_font_size=22),
+        _card("opportunity_kpi_top_score", "Top Opportunity Score", "Top Opportunity Score", opp_kpis[3], callout_font_size=22),
         _chart(
             "opportunity_ranked_pairs",
             "clusteredBarChart",
             "Opportunity score by city-category pair",
-            (24, 174, 600, 205),
+            (24, 160, 600, 240),
             [("FactCityCategoryCoverage", "city_category")],
             ["Candidate Opportunity Score"],
+            tooltips=[
+                "Candidate Underrepresentation Points",
+                "Candidate Breadth Points",
+                "Candidate Reliability Points",
+            ],
         ),
         _chart(
             "opportunity_score_components",
             "stackedBarChart",
             "Average additive score components",
-            (640, 174, 616, 205),
+            (640, 160, 616, 240),
             [("FactCityCategoryCoverage", "city_category")],
             [
                 "Candidate Underrepresentation Points",
@@ -1300,7 +1308,7 @@ def _page_visuals() -> dict[str, tuple[str, list[dict[str, Any]]]]:
         _matrix_visual(
             "opportunity_score_heatmap",
             "Opportunity score by city and category",
-            (24, 395, 600, 245),
+            (24, 412, 600, 250),
             ("DimCity", "city_name"),
             ("DimCategory", "category_name"),
             "Opportunity Score",
@@ -1308,7 +1316,7 @@ def _page_visuals() -> dict[str, tuple[str, list[dict[str, Any]]]]:
         _table_visual(
             "opportunity_pair_detail",
             "Pair details and observed listing counts",
-            (640, 395, 616, 245),
+            (640, 412, 616, 250),
             [
                 ("FactCityCategoryCoverage", "city_category"),
                 ("FactCityCategoryCoverage", "candidate_status"),
@@ -1322,14 +1330,18 @@ def _page_visuals() -> dict[str, tuple[str, list[dict[str, Any]]]]:
         _card(
             "opportunity_methodology",
             "Opportunity Caveat",
-            "Interpretation",
-            (24, 650, 600, 50),
+            "Opportunity Caveat & Methodology",
+            (24, 672, 600, 36),
+            callout_font_size=10,
+            show_title=False,
         ),
         _card(
             "opportunity_report_context",
             "Report Context",
-            "Source and snapshot",
-            (640, 650, 616, 50),
+            "Source and snapshot context",
+            (640, 672, 616, 36),
+            callout_font_size=10,
+            show_title=False,
         ),
     ]
     return {
@@ -1342,6 +1354,21 @@ def _page_visuals() -> dict[str, tuple[str, list[dict[str, Any]]]]:
 
 def _report_files() -> dict[str, str]:
     files: dict[str, str] = {
+        ".platform": json.dumps(
+            {
+                "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+                "metadata": {
+                    "type": "Report",
+                    "displayName": "BusinessPulse",
+                },
+                "config": {
+                    "version": "2.0",
+                    "logicalId": "02ee2ab6-1791-4334-bf6e-20b26650371b",
+                },
+            },
+            indent=2,
+        )
+        + "\n",
         "definition.pbir": json.dumps(
             {
                 "$schema": REPORT_SCHEMA,
@@ -1359,15 +1386,37 @@ def _report_files() -> dict[str, str]:
                         "name": "CY24SU06",
                         "reportVersionAtImport": "5.52",
                         "type": "SharedResources",
-                    }
+                    },
+                    "customTheme": {
+                        "name": "BusinessPulse_theme.json",
+                        "reportVersionAtImport": "5.52",
+                        "type": "RegisteredResources",
+                    },
                 },
-                "reportSource": "Default",
+                "resourcePackages": [
+                    {
+                        "name": "RegisteredResources",
+                        "type": "RegisteredResources",
+                        "items": [
+                            {
+                                "name": "BusinessPulse_theme.json",
+                                "path": "BusinessPulse_theme.json",
+                                "type": "CustomTheme",
+                            }
+                        ],
+                    }
+                ],
             },
             indent=2,
         )
         + "\n",
+        "StaticResources/RegisteredResources/BusinessPulse_theme.json": (
+            (POWERBI_DIR / "desktop_build" / "BusinessPulse_theme.json").read_text(encoding="utf-8")
+            if (POWERBI_DIR / "desktop_build" / "BusinessPulse_theme.json").is_file()
+            else "{}"
+        ),
         "definition/version.json": json.dumps(
-            {"$schema": VERSION_SCHEMA, "version": "1.0.0"}, indent=2
+            {"$schema": VERSION_SCHEMA, "version": "2.0.0"}, indent=2
         )
         + "\n",
     }
@@ -2034,13 +2083,15 @@ def validate_project(output_dir: Path = DEFAULT_OUTPUT_DIR) -> dict[str, Any]:
     required_visual_types = {
         "card",
         "clusteredBarChart",
-        "stackedBarChart",
-        "stackedColumnChart",
         "matrix",
         "tableEx",
         "slicer",
         "scatterChart",
     }
+    required_visual_type_groups = (
+        {"barChart", "stackedBarChart"},
+        {"columnChart", "stackedColumnChart"},
+    )
     found_visual_types: set[str] = set()
     model_measures = {("FactListings", name) for name in actual_measures}
     for page_name in expected_pages:
@@ -2077,7 +2128,11 @@ def validate_project(output_dir: Path = DEFAULT_OUTPUT_DIR) -> dict[str, Any]:
                         raise ValueError(
                             f"Visual {visual['name']} has an unsupported field projection"
                         )
-    if not required_visual_types.issubset(found_visual_types):
+    missing_visual_types = required_visual_types - found_visual_types
+    missing_visual_type_groups = [
+        group for group in required_visual_type_groups if group.isdisjoint(found_visual_types)
+    ]
+    if missing_visual_types or missing_visual_type_groups:
         raise ValueError("The generated report is missing one or more required visual types")
 
     return {

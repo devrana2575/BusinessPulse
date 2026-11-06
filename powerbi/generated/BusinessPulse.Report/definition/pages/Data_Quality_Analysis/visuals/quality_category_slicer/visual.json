@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
   "name": "quality_category_slicer",
   "position": {
-    "x": 246,
-    "y": 12,
+    "x": 260,
+    "y": 10,
     "z": 0,
-    "width": 210,
-    "height": 54,
-    "tabOrder": 15606
+    "width": 220,
+    "height": 42,
+    "tabOrder": 13060
   },
   "visual": {
     "visualType": "slicer",
@@ -48,6 +48,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Category'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
                 }
               }
             }

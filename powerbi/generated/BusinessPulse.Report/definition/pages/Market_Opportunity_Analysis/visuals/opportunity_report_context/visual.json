@@ -3,11 +3,11 @@
   "name": "opportunity_report_context",
   "position": {
     "x": 640,
-    "y": 650,
+    "y": 672,
     "z": 0,
     "width": 616,
-    "height": 50,
-    "tabOrder": 832640
+    "height": 36,
+    "tabOrder": 860800
   },
   "visual": {
     "visualType": "card",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "FactListings.Report Context",
-              "displayName": "Source and snapshot"
+              "displayName": "Source and snapshot context"
             }
           ]
         }
@@ -40,14 +40,60 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Source and snapshot'"
+                  "Value": "'Source and snapshot context'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4A5568'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
