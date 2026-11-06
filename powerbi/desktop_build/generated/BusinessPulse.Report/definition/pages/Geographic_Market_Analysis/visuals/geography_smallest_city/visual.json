@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "geography_smallest_city",
+  "position": {
+    "x": 270,
+    "y": 76,
+    "z": 0,
+    "width": 232,
+    "height": 72,
+    "tabOrder": 97550
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Smallest City Listings"
+                }
+              },
+              "queryRef": "_Measures.Smallest City Listings",
+              "displayName": "Smallest city (listings)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Smallest city (listings)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

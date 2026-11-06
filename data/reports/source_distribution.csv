@@ -1,0 +1,2 @@
+source,source_type,listing_count,cities_present,categories_present,missing_phone,missing_address,duplicates,complete_listings,avg_quality_score,share_pct,missing_phone_pct,missing_address_pct,duplicate_rate_pct,completeness_pct
+OpenStreetMap (Overpass API),Open Data - Crowdsourced Map,2252,12,12,2088,1615,3,129,63.36,100.0,92.72,71.71,0.13,5.73

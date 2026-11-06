@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "quality_duplicate_slicer",
+  "position": {
+    "x": 732,
+    "y": 10,
+    "z": 0,
+    "width": 220,
+    "height": 52,
+    "tabOrder": 13532
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactListings"
+                    }
+                  },
+                  "Property": "duplicate_flag"
+                }
+              },
+              "queryRef": "FactListings.duplicate_flag",
+              "displayName": "Exact duplicate flag"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Exact duplicate flag'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

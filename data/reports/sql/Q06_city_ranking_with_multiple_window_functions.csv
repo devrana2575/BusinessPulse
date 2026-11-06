@@ -1,0 +1,13 @@
+city_name,listing_count,rank_with_ties,dense_rank_with_ties,row_number_stable
+Surat,206,1,1,1
+Chennai,201,2,2,2
+Ahmedabad,192,3,3,3
+Pune,192,3,3,4
+Bengaluru,190,5,4,5
+Jaipur,189,6,5,6
+Hyderabad,186,7,6,7
+Mumbai,185,8,7,8
+Kolkata,182,9,8,9
+Chandigarh,179,10,9,10
+Lucknow,176,11,10,11
+Delhi,174,12,11,12

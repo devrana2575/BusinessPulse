@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "project": "BusinessPulse",
+  "status": "PBIP GENERATED — DESKTOP VALIDATION PENDING",
+  "desktop": {
+    "installation": "Microsoft Store",
+    "version": "2.159.883.0",
+    "pbip_pbir_tmdl_support": true,
+    "validation_performed": false
+  },
+  "generated_project": {
+    "pbip_generated": true,
+    "pbix_generated": false,
+    "project_file": "powerbi/generated/BusinessPulse.pbip",
+    "report_folder": "powerbi/generated/BusinessPulse.Report",
+    "semantic_model_folder": "powerbi/generated/BusinessPulse.SemanticModel",
+    "report_format": "PBIR",
+    "semantic_model_format": "TMDL",
+    "source_mode": "Embedded offline snapshot from the checked-in cleaned-listings and opportunity CSV outputs; no database connection or credentials",
+    "listing_rows": 2252,
+    "unique_business_ids": 2252,
+    "city_count": 12,
+    "category_count": 12,
+    "opportunity_pairs": 144,
+    "measure_count": 72,
+    "visual_count": 55,
+    "static_validation": "passed",
+    "desktop_validation": "pending"
+  },
+  "source_assets": [
+    {
+      "name": "Power Query M",
+      "status": "MySQL M templates retained; generated PBIP embeds validated offline snapshot M; Desktop execution pending",
+      "files": [
+        "powerbi/power_query_m/Parameters.pq",
+        "powerbi/power_query_m/stg_Listings.pq",
+        "powerbi/power_query_m/FactListings.pq",
+        "powerbi/power_query_m/FactDataQuality.pq",
+        "powerbi/power_query_m/FactCityCategoryCoverage.pq",
+        "powerbi/power_query_m/DimCity.pq",
+        "powerbi/power_query_m/DimCategory.pq",
+        "powerbi/power_query_m/DimSource.pq"
+      ],
+      "can_be_automated": [
+        "Static file, source-view, selected-column, and type-contract checks",
+        "Building offline import queries from the existing snapshot outputs",
+        "Statically validating selected columns, keys, data types, and row consistency"
+      ],
+      "requires_desktop": [
+        "Opening the generated PBIP, refreshing its embedded data, and verifying runtime types"
+      ]
+    },
+    {
+      "name": "DAX measures",
+      "status": "72 measures generated in TMDL; semantic evaluation remains pending in Desktop",
+      "files": ["powerbi/dax_measures.dax"],
+      "can_be_automated": [
+        "Static measure inventory and reference checks",
+        "Generating measure source text from the checked-in library"
+      ],
+      "requires_desktop": [
+        "Parsing/evaluating measures against the actual model",
+        "Verifying filter context, formatting, and reconciled values"
+      ]
+    },
+    {
+      "name": "Semantic model and report design",
+      "status": "Six-table TMDL model and four PBIR pages generated; Desktop validation remains pending",
+      "files": [
+        "powerbi/data_model.md",
+        "powerbi/documentation/data_model.md",
+        "powerbi/dashboard_design.md"
+      ],
+      "can_be_automated": [
+        "Static relationship, field, and page-requirement checklist checks"
+      ],
+      "requires_desktop": [
+        "Creating and validating relationships, sorting, categories, and load settings",
+        "Building report visuals, interactions, and accessibility properties"
+      ]
+    },
+    {
+      "name": "PBIP, PBIR, TMDL, and PBIX",
+      "status": "PBIP/PBIR/TMDL generated from the saved offline snapshot; PBIX not generated",
+      "can_be_automated": [
+        "Generating project folders, model definitions, report pages, visuals, measures, and embedded snapshot queries",
+        "Static validation of project references, fields, page/visual inventory, and saved-data consistency"
+      ],
+      "requires_desktop": [
+        "Opening and refreshing the generated project in Power BI Desktop",
+        "Validating visual rendering, interactions, accessibility, DAX results, and values",
+        "Saving a PBIX and capturing genuine screenshots only after Desktop validation"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "id": "executive-overview",
+      "title": "Executive Overview",
+      "source_specification": "powerbi/dashboard_design.md#page-1--executive-overview",
+      "status": "generated_not_desktop_validated",
+      "automated_preparation": [
+        "Reuse M table queries, documented model contract, and existing DAX measures",
+        "Statically check required measure names and source fields"
+      ],
+      "checklist": [
+        {
+          "id": "executive-kpis",
+          "item": "Listings, cities, categories, sources, average listings per city, completeness, quality, availability, and duplicate KPIs",
+          "source_readiness": "measures_and_model_sources_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        },
+        {
+          "id": "executive-city-category-mix",
+          "item": "City contribution chart, category mix, quality-band split, and city-by-category coverage matrix",
+          "source_readiness": "data_model_and_page_spec_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        },
+        {
+          "id": "executive-filters-attribution",
+          "item": "City/category/source slicers, snapshot label, OSM attribution, and sampling caveat",
+          "source_readiness": "model_and_page_spec_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        }
+      ],
+      "desktop_build_and_validation": [
+        "Build KPI cards, city contribution, category mix, quality bands, and coverage matrix",
+        "Apply 16:9 layout, theme, slicers, interactions, titles, and attribution",
+        "Refresh data and reconcile displayed values"
+      ]
+    },
+    {
+      "id": "geographic-market-analysis",
+      "title": "Geographic Market Analysis",
+      "source_specification": "powerbi/dashboard_design.md#page-2--geographic-coverage",
+      "status": "generated_not_desktop_validated",
+      "automated_preparation": [
+        "Reuse FactListings coordinates, DimCity, coverage view, and city DAX measures",
+        "Statically check geographic fields and geographic measure references"
+      ],
+      "checklist": [
+        {
+          "id": "geographic-map",
+          "item": "Map of collected POIs with city/category context and clustering caveat",
+          "source_readiness": "coordinates_and_page_spec_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        },
+        {
+          "id": "geographic-ranking-heatmap",
+          "item": "City ranking, contribution/completeness metrics, and city-by-category heat map",
+          "source_readiness": "views_measures_and_page_spec_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        },
+        {
+          "id": "geographic-interactions",
+          "item": "City selection cross-filters the ranking and coverage visuals; slicers are clearable",
+          "source_readiness": "interaction_spec_exists",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        }
+      ],
+      "desktop_build_and_validation": [
+        "Build map, city ranking, city-category heat map, and top/bottom city cards",
+        "Validate geocoding, map clustering, slicers, and cross-filter behavior",
+        "Confirm counts are described as collected OSM POIs, not total businesses"
+      ]
+    },
+    {
+      "id": "data-quality-analysis",
+      "title": "Data Quality Analysis",
+      "source_specification": "powerbi/dashboard_design.md#page-3--data-quality--completeness",
+      "status": "generated_not_desktop_validated",
+      "automated_preparation": [
+        "Reuse FactDataQuality, quality audit fields, and completeness DAX measures",
+        "Statically verify missingness, validity, duplicate, completeness, and review fields"
+      ],
+      "checklist": [
+        {
+          "id": "quality-kpis-missingness",
+          "item": "Quality KPIs, missing-phone/address rates by city and category, and quality-band distribution",
+          "source_readiness": "quality_columns_and_measures_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        },
+        {
+          "id": "quality-review-queue",
+          "item": "Needs-review detail table with duplicate and missingness flags; contact details hidden by default",
+          "source_readiness": "quality_fields_and_page_spec_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        },
+        {
+          "id": "quality-source-limits",
+          "item": "Source completeness context and explicit public-source missingness/retained-duplicate notes",
+          "source_readiness": "source_metadata_and_page_spec_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        }
+      ],
+      "desktop_build_and_validation": [
+        "Build quality KPIs, missingness visuals, quality-band distribution, and review queue",
+        "Test city/category filter propagation through the 1:1 fact relationship",
+        "Verify public-source missingness and retained-duplicate limitations are visible"
+      ]
+    },
+    {
+      "id": "market-opportunity-analysis",
+      "title": "Market Opportunity Analysis",
+      "source_specification": "powerbi/dashboard_design.md#page-4--market-opportunity",
+      "status": "generated_not_desktop_validated",
+      "automated_preparation": [
+        "Reuse vw_market_opportunity fields and opportunity DAX measures",
+        "Statically verify score component and candidate/tier fields"
+      ],
+      "checklist": [
+        {
+          "id": "opportunity-kpis-methodology",
+          "item": "Coverage, candidate, high-tier, top-score KPIs and visible score-methodology banner",
+          "source_readiness": "score_fields_measures_and_methodology_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        },
+        {
+          "id": "opportunity-ranking-heatmap",
+          "item": "Candidate ranking, opportunity heat map, raw-count context matrix, and score decomposition",
+          "source_readiness": "opportunity_view_measures_and_page_spec_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        },
+        {
+          "id": "opportunity-detail-integrity",
+          "item": "Candidate detail table; score is not summed; city/category filters and SQL reconciliation are checked",
+          "source_readiness": "view_fields_and_integrity_spec_exist",
+          "desktop_validation_required": true,
+          "status": "generated_static_validation_passed"
+        }
+      ],
+      "desktop_build_and_validation": [
+        "Build candidate ranking, score heat map, score decomposition, and detail table",
+        "Validate score aggregation, thresholds, city/category filters, and SQL reconciliation",
+        "Show that underrepresentation is not demand, revenue, or competition"
+      ]
+    }
+  ],
+  "completion_gate": [
+    "A genuine PBIP project exists and opens in the installed Power BI Desktop",
+    "All embedded M queries refresh successfully and model relationships pass integrity checks",
+    "DAX measures evaluate and key metrics reconcile to MySQL",
+    "All four pages render with tested interactions, attribution, and accessibility checks",
+    "Genuine Desktop screenshots exist; PBIX is claimed only after validation"
+  ]
+}

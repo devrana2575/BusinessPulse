@@ -1,0 +1,51 @@
+city_name,category_name,listing_count,completeness_pct,missing_phone_pct,missing_address_pct
+Delhi,Automotive,43,0.0,100.0,97.67
+Bengaluru,Retail,42,0.0,100.0,69.05
+Hyderabad,Food & Beverage,41,0.0,95.12,97.56
+Hyderabad,Retail,41,0.0,100.0,80.49
+Chennai,Retail,41,0.0,100.0,92.68
+Mumbai,Hospitality,33,0.0,100.0,100.0
+Chennai,Automotive,32,0.0,100.0,96.88
+Hyderabad,Automotive,28,0.0,100.0,100.0
+Delhi,Retail,28,0.0,100.0,85.71
+Chandigarh,Retail,27,0.0,100.0,88.89
+Delhi,Finance & Banking,26,0.0,100.0,100.0
+Pune,Automotive,25,0.0,100.0,60.0
+Ahmedabad,Finance & Banking,24,0.0,100.0,75.0
+Lucknow,Automotive,24,0.0,100.0,79.17
+Hyderabad,Finance & Banking,22,0.0,100.0,95.45
+Lucknow,Finance & Banking,22,0.0,95.45,86.36
+Mumbai,Finance & Banking,22,0.0,100.0,81.82
+Hyderabad,Health & Pharmacy,21,0.0,95.24,80.95
+Mumbai,Automotive,20,0.0,100.0,60.0
+Kolkata,Automotive,20,0.0,100.0,95.0
+Kolkata,Finance & Banking,18,0.0,100.0,94.44
+Bengaluru,Finance & Banking,18,0.0,100.0,72.22
+Bengaluru,Fitness & Recreation,17,0.0,100.0,76.47
+Pune,Hospitality,17,0.0,88.24,94.12
+Jaipur,Finance & Banking,16,0.0,100.0,93.75
+Hyderabad,Fitness & Recreation,16,0.0,100.0,81.25
+Pune,Finance & Banking,13,0.0,100.0,69.23
+Surat,Finance & Banking,13,0.0,100.0,53.85
+Lucknow,Fitness & Recreation,11,0.0,100.0,100.0
+Kolkata,Fitness & Recreation,11,0.0,100.0,90.91
+Chennai,Fitness & Recreation,11,0.0,100.0,90.91
+Ahmedabad,Fitness & Recreation,11,0.0,100.0,72.73
+Bengaluru,Beauty & Personal Care,10,0.0,100.0,80.0
+Delhi,Health & Pharmacy,10,0.0,90.0,90.0
+Bengaluru,Professional Services,7,0.0,85.71,85.71
+Kolkata,Professional Services,5,0.0,100.0,80.0
+Lucknow,Beauty & Personal Care,5,0.0,100.0,80.0
+Mumbai,Beauty & Personal Care,5,0.0,100.0,40.0
+Ahmedabad,Food & Beverage,40,2.5,95.0,50.0
+Surat,Automotive,38,2.63,97.37,18.42
+Chandigarh,Food & Beverage,38,2.63,92.11,84.21
+Kolkata,Food & Beverage,36,2.78,88.89,75.0
+Chandigarh,Automotive,35,2.86,97.14,77.14
+Lucknow,Retail,34,2.94,97.06,79.41
+Delhi,Food & Beverage,29,3.45,89.66,96.55
+Pune,Health & Pharmacy,29,3.45,96.55,68.97
+Ahmedabad,Automotive,27,3.7,96.3,70.37
+Bengaluru,Automotive,24,4.17,91.67,54.17
+Kolkata,Hospitality,24,4.17,91.67,70.83
+Chandigarh,Health & Pharmacy,22,4.55,95.45,77.27

@@ -1,0 +1,47 @@
+relationship cb07fcb9-46ce-534f-aebc-ea4e094394de
+    fromColumn: FactListings.city_id
+    toColumn: DimCity.city_id
+    fromCardinality: many
+    toCardinality: one
+    isActive
+    crossFilteringBehavior: oneDirection
+
+relationship bd6892d2-5703-5b64-860c-43f2f5ad07cd
+    fromColumn: FactListings.category_id
+    toColumn: DimCategory.category_id
+    fromCardinality: many
+    toCardinality: one
+    isActive
+    crossFilteringBehavior: oneDirection
+
+relationship 6fd6c110-6b58-5409-8de3-d8096898bf82
+    fromColumn: FactListings.source_id
+    toColumn: DimSource.source_id
+    fromCardinality: many
+    toCardinality: one
+    isActive
+    crossFilteringBehavior: oneDirection
+
+relationship 88d475ea-b018-5efb-b293-5eb69c918afa
+    fromColumn: FactListings.business_id
+    toColumn: FactDataQuality.business_id
+    fromCardinality: one
+    toCardinality: one
+    isActive
+    crossFilteringBehavior: bothDirections
+
+relationship f731c4a4-45d0-5332-99b5-d16de315974b
+    fromColumn: FactCityCategoryCoverage.city_id
+    toColumn: DimCity.city_id
+    fromCardinality: many
+    toCardinality: one
+    isActive
+    crossFilteringBehavior: oneDirection
+
+relationship eae7c6a7-4c45-5abd-8fc8-25ef8602b06f
+    fromColumn: FactCityCategoryCoverage.category_id
+    toColumn: DimCategory.category_id
+    fromCardinality: many
+    toCardinality: one
+    isActive
+    crossFilteringBehavior: oneDirection

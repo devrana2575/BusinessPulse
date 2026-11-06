@@ -1,0 +1,64 @@
+dimension,dimension_value,field,missing_count,present_count,total_count,missing_pct,invalid_present_count,nonusable_count,nonusable_pct,definition
+category,Automotive,address,264,87,351,75.21,2,266,75.78,Missing in the public source; present-but-invalid counted separately
+category,Automotive,phone,344,7,351,98.01,1,345,98.29,Missing in the public source; present-but-invalid counted separately
+category,Beauty & Personal Care,address,29,13,42,69.05,0,29,69.05,Missing in the public source; present-but-invalid counted separately
+category,Beauty & Personal Care,phone,40,2,42,95.24,0,40,95.24,Missing in the public source; present-but-invalid counted separately
+category,Education & Training,address,2,0,2,100.0,0,2,100.0,Missing in the public source; present-but-invalid counted separately
+category,Education & Training,phone,2,0,2,100.0,0,2,100.0,Missing in the public source; present-but-invalid counted separately
+category,Finance & Banking,address,190,34,224,84.82,6,196,87.5,Missing in the public source; present-but-invalid counted separately
+category,Finance & Banking,phone,221,3,224,98.66,0,221,98.66,Missing in the public source; present-but-invalid counted separately
+category,Fitness & Recreation,address,104,20,124,83.87,2,106,85.48,Missing in the public source; present-but-invalid counted separately
+category,Fitness & Recreation,phone,119,5,124,95.97,0,119,95.97,Missing in the public source; present-but-invalid counted separately
+category,Food & Beverage,address,329,118,447,73.6,12,341,76.29,Missing in the public source; present-but-invalid counted separately
+category,Food & Beverage,phone,403,44,447,90.16,2,405,90.6,Missing in the public source; present-but-invalid counted separately
+category,Health & Pharmacy,address,137,107,244,56.15,8,145,59.43,Missing in the public source; present-but-invalid counted separately
+category,Health & Pharmacy,phone,227,17,244,93.03,1,228,93.44,Missing in the public source; present-but-invalid counted separately
+category,Home & Repair Services,address,12,9,21,57.14,0,12,57.14,Missing in the public source; present-but-invalid counted separately
+category,Home & Repair Services,phone,19,2,21,90.48,0,19,90.48,Missing in the public source; present-but-invalid counted separately
+category,Hospitality,address,208,67,275,75.64,15,223,81.09,Missing in the public source; present-but-invalid counted separately
+category,Hospitality,phone,240,35,275,87.27,1,241,87.64,Missing in the public source; present-but-invalid counted separately
+category,Other Services,address,6,2,8,75.0,0,6,75.0,Missing in the public source; present-but-invalid counted separately
+category,Other Services,phone,7,1,8,87.5,0,7,87.5,Missing in the public source; present-but-invalid counted separately
+category,Professional Services,address,33,29,62,53.23,2,35,56.45,Missing in the public source; present-but-invalid counted separately
+category,Professional Services,phone,48,14,62,77.42,0,48,77.42,Missing in the public source; present-but-invalid counted separately
+category,Retail,address,301,151,452,66.59,7,308,68.14,Missing in the public source; present-but-invalid counted separately
+category,Retail,phone,418,34,452,92.48,0,418,92.48,Missing in the public source; present-but-invalid counted separately
+city,Ahmedabad,address,119,73,192,61.98,13,132,68.75,Missing in the public source; present-but-invalid counted separately
+city,Ahmedabad,phone,178,14,192,92.71,0,178,92.71,Missing in the public source; present-but-invalid counted separately
+city,Bengaluru,address,119,71,190,62.63,2,121,63.68,Missing in the public source; present-but-invalid counted separately
+city,Bengaluru,phone,177,13,190,93.16,1,178,93.68,Missing in the public source; present-but-invalid counted separately
+city,Chandigarh,address,145,34,179,81.01,5,150,83.8,Missing in the public source; present-but-invalid counted separately
+city,Chandigarh,phone,167,12,179,93.3,0,167,93.3,Missing in the public source; present-but-invalid counted separately
+city,Chennai,address,174,27,201,86.57,1,175,87.06,Missing in the public source; present-but-invalid counted separately
+city,Chennai,phone,191,10,201,95.02,0,191,95.02,Missing in the public source; present-but-invalid counted separately
+city,Delhi,address,161,13,174,92.53,2,163,93.68,Missing in the public source; present-but-invalid counted separately
+city,Delhi,phone,167,7,174,95.98,0,167,95.98,Missing in the public source; present-but-invalid counted separately
+city,Hyderabad,address,168,18,186,90.32,1,169,90.86,Missing in the public source; present-but-invalid counted separately
+city,Hyderabad,phone,182,4,186,97.85,1,183,98.39,Missing in the public source; present-but-invalid counted separately
+city,Jaipur,address,130,59,189,68.78,9,139,73.54,Missing in the public source; present-but-invalid counted separately
+city,Jaipur,phone,165,24,189,87.3,0,165,87.3,Missing in the public source; present-but-invalid counted separately
+city,Kolkata,address,130,52,182,71.43,5,135,74.18,Missing in the public source; present-but-invalid counted separately
+city,Kolkata,phone,169,13,182,92.86,1,170,93.41,Missing in the public source; present-but-invalid counted separately
+city,Lucknow,address,126,50,176,71.59,3,129,73.3,Missing in the public source; present-but-invalid counted separately
+city,Lucknow,phone,164,12,176,93.18,0,164,93.18,Missing in the public source; present-but-invalid counted separately
+city,Mumbai,address,126,59,185,68.11,3,129,69.73,Missing in the public source; present-but-invalid counted separately
+city,Mumbai,phone,175,10,185,94.59,2,177,95.68,Missing in the public source; present-but-invalid counted separately
+city,Pune,address,141,51,192,73.44,4,145,75.52,Missing in the public source; present-but-invalid counted separately
+city,Pune,phone,177,15,192,92.19,0,177,92.19,Missing in the public source; present-but-invalid counted separately
+city,Surat,address,76,130,206,36.89,6,82,39.81,Missing in the public source; present-but-invalid counted separately
+city,Surat,phone,176,30,206,85.44,0,176,85.44,Missing in the public source; present-but-invalid counted separately
+field,all records,address,1615,637,2252,71.71,54,1669,74.11,Blank public address; present invalid values are counted separately
+field,all records,business_id,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,business_name,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,category,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,city,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,collection_date,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,country,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,latitude,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,longitude,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,phone,2088,164,2252,92.72,5,2093,92.94,Blank public phone value; present invalid values are counted separately
+field,all records,source,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,source_record_id,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+field,all records,state_name,0,2252,2252,0.0,,0,0.0,Blank or null value in the cleaned CSV
+source,OpenStreetMap (Overpass API),address,1615,637,2252,71.71,54,1669,74.11,Missing in the public source; present-but-invalid counted separately
+source,OpenStreetMap (Overpass API),phone,2088,164,2252,92.72,5,2093,92.94,Missing in the public source; present-but-invalid counted separately

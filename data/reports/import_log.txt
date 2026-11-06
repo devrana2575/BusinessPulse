@@ -1,0 +1,2 @@
+2026-11-02 22:40:00,287 INFO businesspulse.import: Import file=cleaned_business_listings.csv hash=13e2d344e549 rows=2252 valid=2252 blocking=0
+2026-11-02 22:40:15,395 INFO businesspulse.import: Import complete: {'file': 'cleaned_business_listings.csv', 'file_hash': '13e2d344e5497124b6d8d0d3a46ceafa292eb903110dbe52d32db4ba008454b2', 'rows_received': 2252, 'rows_valid': 2252, 'rows_rejected': 0, 'rows_inserted': 2252, 'rows_flagged_duplicate': 3, 'batch_id': 1, 'rows_rejected_validation': 0, 'rows_rejected_pipeline': 0}

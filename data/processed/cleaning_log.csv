@@ -1,0 +1,6 @@
+step,rows_before,rows_after,rows_removed,notes
+raw records loaded,2252,2252,0,Original raw file preserved
+"normalised names, cities, categories, addresses and phones",2252,2252,0,Derived keys added; raw values retained in raw dataset
+rejected records,2252,2252,0,Reasons recorded in rejected_records.csv
+exact duplicates flagged,2252,2252,0,3 records flagged and retained for data-quality analysis; not silently deleted
+potential duplicates flagged,2252,2252,0,0 records flagged for review only

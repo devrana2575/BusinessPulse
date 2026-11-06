@@ -1,0 +1,58 @@
+metric,value,denominator,pct,unit,definition,evidence
+raw_records,2252,,,records,Rows in the preserved raw CSV,calculated
+cleaned_records,2252,,,records,Rows in the cleaned CSV,calculated
+unique_business_ids,2252,2252,100.0,records,Distinct project business IDs in the cleaned file,calculated
+rejected_records,0,2252,0.0,records,Rows with a documented blocking rejection; none were rejected,calculated
+duplicate_records_flagged,3,2252,0.13,records,Exact duplicates flagged by name + city + address/phone; retained for audit,calculated
+duplicate_rate,3,2252,0.13,%,Exact duplicate records divided by cleaned records,calculated
+potential_duplicate_records,0,2252,0.0,records,"Address-similarity >= 0.90 candidates; review only, not deleted",calculated
+missing_phone_records,2088,2252,92.72,records,Cleaned records with no published phone value,calculated
+missing_phone_rate,2088,2252,92.72,%,Missing phone records divided by cleaned records,calculated
+missing_address_records,1615,2252,71.71,records,Cleaned records with no published structured address,calculated
+missing_address_rate,1615,2252,71.71,%,Missing address records divided by cleaned records,calculated
+invalid_present_phone_records,5,164,0.22,records,Present phone values outside the 7-15 digit rule; pct is share of all records,calculated
+invalid_present_phone_rate_of_present,5,164,3.05,%,Invalid present phones divided by records with a present phone,calculated
+invalid_present_address_records,54,637,2.4,records,Present addresses too short/unstructured for the audit; pct is share of all records,calculated
+invalid_present_address_rate_of_present,54,637,8.48,%,Invalid present addresses divided by records with a present address,calculated
+complete_records,129,2252,5.73,records,Valid phone + valid address + not an exact duplicate,calculated
+completeness_rate,129,2252,5.73,%,Complete records divided by cleaned records,calculated
+validation_valid,129,2252,5.73,records,Validation status = valid,calculated
+validation_needs_review,2123,2252,94.27,records,"Validation status = needs_review (warnings, not blocking)",calculated
+validation_invalid,0,2252,0.0,records,Validation status = invalid (blocking errors),calculated
+quality_score_mean,63.36,2252,,score (0-100),Mean documented audit score; not business quality,calculated
+quality_score_median,55.0,2252,,score (0-100),Median documented audit score,calculated
+quality_score_min,55.0,2252,,score (0-100),Minimum documented audit score,calculated
+quality_score_max,100.0,2252,,score (0-100),Maximum documented audit score,calculated
+quality_band_High (80-100),588,2252,26.11,records,Records in quality band High (80-100),calculated
+quality_band_Medium (60-79),72,2252,3.2,records,Records in quality band Medium (60-79),calculated
+quality_band_Low (<60),1592,2252,70.69,records,Records in quality band Low (<60),calculated
+distinct_cities,12,,,cities,Cities represented by at least one cleaned listing,calculated
+distinct_categories,12,,,categories,Analytical categories represented by at least one listing,calculated
+distinct_sources,1,,,sources,Distinct public data sources in this snapshot,calculated
+covered_city_category_pairs,123,144,85.42,pairs,City x category cells with at least one collected listing,calculated
+city_category_universe,144,144,100.0,pairs,All city x category combinations in the fixed 12 x 12 frame,calculated
+coverage_rate,123,144,85.42,%,Covered pairs divided by the 144-pair universe,calculated
+opportunity_candidate_pairs,132,144,91.67,pairs,Pairs passing city >=20 and category >=5 evidence filters,calculated
+opportunity_tier_High,12,144,8.33,pairs,City x category pairs in opportunity tier High,calculated
+opportunity_tier_Medium,5,144,3.47,pairs,City x category pairs in opportunity tier Medium,calculated
+opportunity_tier_Low,115,144,79.86,pairs,City x category pairs in opportunity tier Low,calculated
+opportunity_tier_Insufficient evidence,12,144,8.33,pairs,City x category pairs in opportunity tier Insufficient evidence,calculated
+blocking_validation_errors,0,2252,0.0,errors,Blocking validation errors; these would reject rows,calculated
+warning_validation_issues,3762,2252,,warnings,Warning-level validation issues; retained and flagged,calculated
+raw_cleaned_business_id_matches,2252,2252,100.0,records,Raw business IDs present in the cleaned file,calculated
+raw_to_cleaned_name_changes,9,2252,0.4,records,Rows whose business_name changed during normalisation,calculated
+raw_to_cleaned_phone_changes,83,2252,3.69,records,"Rows whose phone changed during normalisation (format, not enrichment)",calculated
+raw_to_cleaned_address_changes,0,2252,0.0,records,Rows whose address changed during normalisation,calculated
+raw_to_cleaned_city_changes,0,2252,0.0,records,Rows whose canonical city changed,calculated
+raw_to_cleaned_category_changes,0,2252,0.0,records,Rows whose analytical category changed,calculated
+collection_query_entries,60,,,queries,One entry per city/group in collection_manifest.json,collection_manifest.json
+collection_successful_queries,0,60,0.0,queries,Manifest entries with status=success,collection_manifest.json
+collection_failed_queries,60,60,100.0,queries,Manifest entries not marked success,collection_manifest.json
+collection_raw_osm_elements,2640,,,elements,Elements returned before raw-build skips and de-duplication,collection_manifest.json
+collection_cap_limited_queries,0,60,0.0,queries,Successful queries whose returned element count equals the configured cap,collection_manifest.json
+raw_build_skipped_unnamed,233,2640,8.83,elements,Skipped unnamed OSM elements,raw_build_summary.json
+raw_build_skipped_non_business_or_unmapped,7,2640,0.27,elements,Skipped non-business or unmapped OSM elements,raw_build_summary.json
+raw_build_skipped_generic_name,9,2640,0.34,elements,Skipped generic business names,raw_build_summary.json
+raw_build_skipped_duplicate_osm_element,139,2640,5.27,elements,Skipped duplicate OSM elements,raw_build_summary.json
+raw_build_skipped_missing_coordinates,0,2640,0.0,elements,Skipped elements with missing coordinates,raw_build_summary.json
+collection_snapshot_date,2026-11-02,,,date,Single collection snapshot date used by every cleaned record,data/raw/raw_build_summary.json

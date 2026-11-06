@@ -1,0 +1,5 @@
+validation_status,quality_band,listing_count,dataset_share_pct
+needs_review,High (80-100),459,20.38
+needs_review,Low (<60),1592,70.69
+needs_review,Medium (60-79),72,3.2
+valid,High (80-100),129,5.73

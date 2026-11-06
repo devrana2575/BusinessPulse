@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "opportunity_pair_detail",
+  "position": {
+    "x": 640,
+    "y": 422,
+    "z": 0,
+    "width": 616,
+    "height": 230,
+    "tabOrder": 540800
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactCityCategoryCoverage"
+                    }
+                  },
+                  "Property": "Pair Label"
+                }
+              },
+              "queryRef": "FactCityCategoryCoverage.Pair Label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactCityCategoryCoverage"
+                    }
+                  },
+                  "Property": "coverage_status"
+                }
+              },
+              "queryRef": "FactCityCategoryCoverage.coverage_status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactCityCategoryCoverage"
+                    }
+                  },
+                  "Property": "listing_count"
+                }
+              },
+              "queryRef": "FactCityCategoryCoverage.listing_count"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactCityCategoryCoverage"
+                    }
+                  },
+                  "Property": "relative_representation"
+                }
+              },
+              "queryRef": "FactCityCategoryCoverage.relative_representation"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactCityCategoryCoverage"
+                    }
+                  },
+                  "Property": "opportunity_tier"
+                }
+              },
+              "queryRef": "FactCityCategoryCoverage.opportunity_tier"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Opportunity Score (Pair)"
+                }
+              },
+              "queryRef": "_Measures.Opportunity Score (Pair)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'City-category opportunity review'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

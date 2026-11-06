@@ -1,0 +1,13 @@
+city_name,listing_count,categories_present,total_categories,category_coverage_pct,diversity_rank
+Pune,192,11,12,91.67,1
+Ahmedabad,192,11,12,91.67,1
+Bengaluru,190,11,12,91.67,3
+Kolkata,182,11,12,91.67,4
+Lucknow,176,11,12,91.67,5
+Surat,206,10,12,83.33,6
+Chennai,201,10,12,83.33,7
+Jaipur,189,10,12,83.33,8
+Mumbai,185,10,12,83.33,9
+Delhi,174,10,12,83.33,10
+Hyderabad,186,9,12,75.0,11
+Chandigarh,179,9,12,75.0,12

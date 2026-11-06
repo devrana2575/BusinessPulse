@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "quality_kpi_duplicate",
+  "position": {
+    "x": 198,
+    "y": 72,
+    "z": 0,
+    "width": 164,
+    "height": 74,
+    "tabOrder": 92358
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Duplicate Count"
+                }
+              },
+              "queryRef": "_Measures.Duplicate Count",
+              "displayName": "Exact duplicates retained"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Exact duplicates retained'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

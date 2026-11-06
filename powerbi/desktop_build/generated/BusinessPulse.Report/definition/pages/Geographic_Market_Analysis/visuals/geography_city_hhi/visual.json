@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "geography_city_hhi",
+  "position": {
+    "x": 762,
+    "y": 76,
+    "z": 0,
+    "width": 232,
+    "height": 72,
+    "tabOrder": 98042
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "City HHI"
+                }
+              },
+              "queryRef": "_Measures.City HHI",
+              "displayName": "City HHI (0-1)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'City HHI (0-1)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

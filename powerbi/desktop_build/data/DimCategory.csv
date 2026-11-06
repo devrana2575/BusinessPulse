@@ -1,0 +1,13 @@
+category_id,category_name,display_order,description
+1,Food & Beverage,1,"Restaurants, cafes, bars, bakeries and food shops"
+2,Retail,2,General merchandise and specialty shops
+3,Health & Pharmacy,3,"Pharmacies, clinics, hospitals and health shops"
+4,Finance & Banking,4,"Banks, exchange services and financial offices"
+5,Professional Services,5,"Legal, accounting, real estate and business services"
+6,Hospitality,6,"Hotels, guest houses and hostels"
+7,Beauty & Personal Care,7,"Beauty salons, hairdressers and personal-care shops"
+8,Automotive,8,"Vehicle sales, repair, parts and fuel"
+9,Education & Training,9,"Driving, language, music and training providers"
+10,Fitness & Recreation,10,"Gyms, sports venues and entertainment"
+11,Home & Repair Services,11,"Hardware, building materials and trades"
+12,Other Services,12,"Laundry, tailoring, pet care and other services"

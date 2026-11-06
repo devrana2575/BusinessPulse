@@ -1,0 +1,2 @@
+config_id,underrepresentation_weight,city_breadth_weight,reliability_weight,high_threshold,medium_threshold,min_city_listings,min_category_national_count,updated_at
+1,0.6,0.25,0.15,60.0,40.0,20,5,2026-11-02 22:39:49

@@ -1,0 +1,2 @@
+total_listings,missing_phone_count,missing_phone_pct,missing_address_count,missing_address_pct,duplicate_count,duplicate_rate_pct,complete_listings,completeness_pct,avg_quality_score,records_requiring_review
+2252,2088.0,92.72,1615.0,71.71,3.0,0.13,129.0,5.73,63.36,2123.0

@@ -1,0 +1,13 @@
+city,state_name,listing_count,categories_present,missing_phone,missing_address,duplicates,complete_listings,avg_quality_score,share_pct,missing_phone_pct,missing_address_pct,completeness_pct,category_coverage_pct,rank
+Surat,Gujarat,206,10,176,76,1,30,73.45,9.15,85.44,36.89,14.56,83.33,1
+Chennai,Tamil Nadu,201,10,191,174,0,10,59.33,8.93,95.02,86.57,4.98,83.33,2
+Ahmedabad,Gujarat,192,11,178,119,2,12,65.42,8.53,92.71,61.98,6.25,91.67,3
+Pune,Maharashtra,192,11,177,141,0,10,63.1,8.53,92.19,73.44,5.21,91.67,3
+Bengaluru,Karnataka,190,11,177,119,0,9,65.61,8.44,93.16,62.63,4.74,91.67,5
+Jaipur,Rajasthan,189,10,165,130,0,21,65.11,8.39,87.3,68.78,11.11,83.33,6
+Hyderabad,Telangana,186,9,182,168,0,1,57.77,8.26,97.85,90.32,0.54,75.0,7
+Mumbai,Maharashtra,185,10,175,126,0,8,63.86,8.21,94.59,68.11,4.32,83.33,8
+Kolkata,West Bengal,182,11,169,130,0,7,63.38,8.08,92.86,71.43,3.85,91.67,9
+Chandigarh,Chandigarh,179,9,167,145,0,8,60.95,7.95,93.3,81.01,4.47,75.0,10
+Lucknow,Uttar Pradesh,176,11,164,126,0,9,63.38,7.82,93.18,71.59,5.11,91.67,11
+Delhi,Delhi,174,10,167,161,0,4,57.61,7.73,95.98,92.53,2.3,83.33,12

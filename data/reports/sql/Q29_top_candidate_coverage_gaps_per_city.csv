@@ -1,0 +1,37 @@
+city_name,category_name,listing_count,city_total,relative_representation,opportunity_score,opportunity_tier,candidate_rank
+Ahmedabad,Other Services,0,192,0.0,63.02,High,1
+Ahmedabad,Beauty & Personal Care,1,192,0.2793,46.26,Medium,2
+Ahmedabad,Health & Pharmacy,16,192,0.7691,16.87,Low,3
+Bengaluru,Health & Pharmacy,15,190,0.7286,19.08,Low,1
+Bengaluru,Hospitality,18,190,0.7758,16.25,Low,2
+Bengaluru,Automotive,24,190,0.8104,14.17,Low,3
+Chandigarh,Home & Repair Services,0,179,0.0,66.92,High,1
+Chandigarh,Other Services,0,179,0.0,66.92,High,2
+Chandigarh,Beauty & Personal Care,1,179,0.2995,48.95,Medium,3
+Chennai,Other Services,0,201,0.0,64.91,High,1
+Chennai,Professional Services,4,201,0.7228,21.55,Low,2
+Chennai,Beauty & Personal Care,3,201,0.8003,16.9,Low,3
+Delhi,Home & Repair Services,0,174,0.0,64.51,High,1
+Delhi,Beauty & Personal Care,1,174,0.3082,46.02,Medium,2
+Delhi,Health & Pharmacy,10,174,0.5304,32.69,Low,3
+Hyderabad,Beauty & Personal Care,0,186,0.0,66.33,High,1
+Hyderabad,Professional Services,0,186,0.0,66.33,High,2
+Hyderabad,Home & Repair Services,1,186,0.5765,31.74,Low,3
+Jaipur,Other Services,0,189,0.0,65.83,High,1
+Jaipur,Fitness & Recreation,1,189,0.0961,60.07,High,2
+Jaipur,Beauty & Personal Care,2,189,0.5674,31.79,Low,3
+Kolkata,Automotive,20,182,0.705,20.36,Low,1
+Kolkata,Finance & Banking,18,182,0.9943,3.0,Low,2
+Kolkata,Food & Beverage,36,182,0.9965,2.87,Low,3
+Lucknow,Professional Services,3,176,0.6191,25.7,Low,1
+Lucknow,Automotive,24,176,0.8749,10.36,Low,2
+Lucknow,Health & Pharmacy,17,176,0.8915,9.36,Low,3
+Mumbai,Fitness & Recreation,0,185,0.0,64.82,High,1
+Mumbai,Professional Services,3,185,0.589,29.48,Low,2
+Mumbai,Automotive,20,185,0.6936,23.2,Low,3
+Pune,Other Services,0,192,0.0,62.86,High,1
+Pune,Professional Services,2,192,0.3784,40.16,Medium,2
+Pune,Finance & Banking,13,192,0.6807,22.02,Low,3
+Surat,Other Services,0,206,0.0,66.35,High,1
+Surat,Home & Repair Services,1,206,0.5206,35.12,Low,2
+Surat,Finance & Banking,13,206,0.6344,28.29,Low,3

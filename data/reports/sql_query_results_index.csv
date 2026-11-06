@@ -1,0 +1,36 @@
+query_id,title,row_count,status,error,output_file
+Q01,Dataset health snapshot,1,ok,,data\reports\sql\Q01_dataset_health_snapshot.csv
+Q02,Listings by city,12,ok,,data\reports\sql\Q02_listings_by_city.csv
+Q03,Top 10 cities by listing count,10,ok,,data\reports\sql\Q03_top_10_cities_by_listing_count.csv
+Q04,Bottom 10 cities by listing count,10,ok,,data\reports\sql\Q04_bottom_10_cities_by_listing_count.csv
+Q05,City concentration and cumulative share,12,ok,,data\reports\sql\Q05_city_concentration_and_cumulative_share.csv
+Q06,City ranking with multiple window functions,12,ok,,data\reports\sql\Q06_city_ranking_with_multiple_window_functions.csv
+Q07,City-wise category distribution and category rank,123,ok,,data\reports\sql\Q07_city_wise_category_distribution_and_category_rank.csv
+Q08,Category summary and share,12,ok,,data\reports\sql\Q08_category_summary_and_share.csv
+Q09,Most common categories,5,ok,,data\reports\sql\Q09_most_common_categories.csv
+Q10,Least represented categories,5,ok,,data\reports\sql\Q10_least_represented_categories.csv
+Q11,Category coverage across the city universe,12,ok,,data\reports\sql\Q11_category_coverage_across_the_city_universe.csv
+Q12,City category diversity,12,ok,,data\reports\sql\Q12_city_category_diversity.csv
+Q13,Missing phone by city,12,ok,,data\reports\sql\Q13_missing_phone_by_city.csv
+Q14,Missing address by city,12,ok,,data\reports\sql\Q14_missing_address_by_city.csv
+Q15,Duplicate records requiring review,3,ok,,data\reports\sql\Q15_duplicate_records_requiring_review.csv
+Q16,Duplicate count by city,12,ok,,data\reports\sql\Q16_duplicate_count_by_city.csv
+Q17,Completeness by city,12,ok,,data\reports\sql\Q17_completeness_by_city.csv
+Q18,Completeness by category,12,ok,,data\reports\sql\Q18_completeness_by_category.csv
+Q19,Completeness by source,1,ok,,data\reports\sql\Q19_completeness_by_source.csv
+Q20,Records requiring review,100,ok,,data\reports\sql\Q20_records_requiring_review.csv
+Q21,Missing-field rate by source,1,ok,,data\reports\sql\Q21_missing_field_rate_by_source.csv
+Q22,Duplicate rate by source,1,ok,,data\reports\sql\Q22_duplicate_rate_by_source.csv
+Q23,Source listing counts and concentration,1,ok,,data\reports\sql\Q23_source_listing_counts_and_concentration.csv
+Q24,City-category coverage matrix,144,ok,,data\reports\sql\Q24_city_category_coverage_matrix.csv
+Q25,Underrepresented categories within cities,17,ok,,data\reports\sql\Q25_underrepresented_categories_within_cities.csv
+Q26,Cities with low category coverage,0,ok,,data\reports\sql\Q26_cities_with_low_category_coverage.csv
+Q27,Category concentration by city,12,ok,,data\reports\sql\Q27_category_concentration_by_city.csv
+Q28,Transparent opportunity ranking,30,ok,,data\reports\sql\Q28_transparent_opportunity_ranking.csv
+Q29,Top candidate coverage gaps per city,36,ok,,data\reports\sql\Q29_top_candidate_coverage_gaps_per_city.csv
+Q30,Coverage KPI summary,1,ok,,data\reports\sql\Q30_coverage_kpi_summary.csv
+Q31,Supporting listing counts for opportunity review,50,ok,,data\reports\sql\Q31_supporting_listing_counts_for_opportunity_review.csv
+Q32,Quality status and band distribution,4,ok,,data\reports\sql\Q32_quality_status_and_band_distribution.csv
+Q33,Collection snapshot,1,ok,,data\reports\sql\Q33_collection_snapshot.csv
+Q34,Opportunity methodology parameters,1,ok,,data\reports\sql\Q34_opportunity_methodology_parameters.csv
+Q35,Category completeness by city (data-quality drill-down),50,ok,,data\reports\sql\Q35_category_completeness_by_city_data_quality_drill_down.csv

@@ -1,0 +1,416 @@
+// =============================================================================
+// BusinessPulse DAX measures
+// Power BI Desktop / tabular model
+//
+// Source tables: FactListings, FactDataQuality, FactCityCategoryCoverage,
+//                DimCity, DimCategory, DimSource
+//
+// Conventions:
+// * Flag columns imported from MySQL are 0/1 whole numbers. Compare with = 1.
+// * Ratio measures use DIVIDE and must never be summed in a visual.
+// * [City Contribution %] follows the requested ALL(DimCity) definition.
+//   [City Contribution % (Selected)] is the slicer-aware alternative.
+// * Opportunity score measures describe underrepresentation in COLLECTED
+//   LISTINGS. They are not demand, revenue, or competition forecasts.
+// * Apply format strings in Model view (documented in powerbi/README.md).
+// =============================================================================
+
+
+// -----------------------------------------------------------------------------
+// 01. Core volume
+// -----------------------------------------------------------------------------
+
+Total Listings =
+COUNTROWS ( FactListings )
+
+Unique Businesses =
+DISTINCTCOUNT ( FactListings[business_id] )
+
+Total Cities =
+[Distinct Cities]
+
+Total Categories =
+[Distinct Categories]
+
+Total Sources =
+[Distinct Sources]
+
+// Distinct cities that actually have listings in the current fact table.
+// This avoids counting an empty dimension member.
+Distinct Cities =
+DISTINCTCOUNT ( FactListings[city_id] )
+
+Distinct Categories =
+DISTINCTCOUNT ( FactListings[category_id] )
+
+Distinct Sources =
+DISTINCTCOUNT ( FactListings[source_id] )
+
+Listings by City =
+COUNTROWS ( FactListings )
+
+Listings by Category =
+COUNTROWS ( FactListings )
+
+Listings by Source =
+COUNTROWS ( FactListings )
+
+Snapshot Date =
+MIN ( FactListings[collection_date] )
+
+Collection Snapshot Label =
+"Snapshot: " & FORMAT ( [Snapshot Date], "yyyy-mm-dd" )
+
+
+// -----------------------------------------------------------------------------
+// 02. Geographic contribution and ranking
+// -----------------------------------------------------------------------------
+
+// Requested definition: share of the entire model, ignoring city filters.
+City Contribution % =
+DIVIDE (
+    [Listings by City],
+    CALCULATE ( [Total Listings], ALL ( DimCity ) ),
+    0
+)
+
+// Slicer-aware alternative used on the geographic page.
+City Contribution % (Selected) =
+DIVIDE (
+    [Listings by City],
+    CALCULATE ( [Total Listings], ALLSELECTED ( DimCity ) ),
+    0
+)
+
+City Rank =
+RANKX (
+    ALLSELECTED ( DimCity[city_name] ),
+    [Total Listings],
+    ,
+    DESC,
+    DENSE
+)
+
+City Rank (All Cities) =
+RANKX (
+    ALL ( DimCity[city_name] ),
+    [Total Listings],
+    ,
+    DESC,
+    DENSE
+)
+
+
+// -----------------------------------------------------------------------------
+// 03. Category contribution, rank and within-city share
+// -----------------------------------------------------------------------------
+
+Category Contribution % =
+DIVIDE (
+    [Listings by Category],
+    CALCULATE ( [Total Listings], ALL ( DimCategory ) ),
+    0
+)
+
+Category Rank =
+RANKX (
+    ALLSELECTED ( DimCategory[category_name] ),
+    [Total Listings],
+    ,
+    DESC,
+    DENSE
+)
+
+// In a city context this is the category share of that city. With no city
+// filter it is the category share of the whole collected sample.
+Category Share in City % =
+DIVIDE (
+    [Listings by Category],
+    CALCULATE ( [Total Listings], ALLSELECTED ( DimCategory ) ),
+    0
+)
+
+Listings per City =
+DIVIDE ( [Total Listings], [Distinct Cities], 0 )
+
+Average Listings per City =
+[Listings per City]
+
+Highest City Listing Count =
+MAXX (
+    ALLSELECTED ( DimCity[city_id] ),
+    CALCULATE ( [Total Listings] )
+)
+
+Lowest City Listing Count =
+MINX (
+    FILTER (
+        ALLSELECTED ( DimCity[city_id] ),
+        CALCULATE ( [Total Listings] ) > 0
+    ),
+    CALCULATE ( [Total Listings] )
+)
+
+Source Share % =
+DIVIDE (
+    [Listings by Source],
+    CALCULATE ( [Total Listings], ALL ( DimSource ) ),
+    0
+)
+
+// Share of represented source cities covered by the current category/source
+// selection. City filters are cleared so a city slicer does not change the
+// denominator.
+City Coverage % =
+DIVIDE (
+    CALCULATE ( [Distinct Cities], REMOVEFILTERS ( DimCity ) ),
+    CALCULATE ( DISTINCTCOUNT ( DimCity[city_id] ), REMOVEFILTERS ( DimCity ) ),
+    0
+)
+
+Listings with Coordinates =
+COUNTROWS (
+    FILTER (
+        FactListings,
+        NOT ISBLANK ( FactListings[latitude] )
+            && NOT ISBLANK ( FactListings[longitude] )
+    )
+)
+
+// Coordinate completeness in the collected dataset, not geographic land-area
+// coverage.
+Geographic Coverage % =
+DIVIDE ( [Listings with Coordinates], [Total Listings], 0 )
+
+Top City Contribution % =
+MAXX (
+    ALLSELECTED ( DimCity[city_id] ),
+    [City Contribution % (Selected)]
+)
+
+// HHI is calculated over collected-listing shares, not commercial market
+// shares. It ranges from 1 / represented cities to 1.
+City Concentration HHI (Collected Listings) =
+SUMX (
+    ALLSELECTED ( DimCity[city_id] ),
+    POWER ( [City Contribution % (Selected)], 2 )
+)
+
+
+// -----------------------------------------------------------------------------
+// 04. Data quality
+// -----------------------------------------------------------------------------
+
+// FactDataQuality is filtered through the 1:1 relationship from FactListings:
+// DimCity/DimCategory/DimSource -> FactListings -> FactDataQuality.
+Missing Phone Count =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[missing_phone] = 1 )
+)
+
+Missing Phone % =
+DIVIDE ( [Missing Phone Count], [Total Listings], 0 )
+
+// Availability means the source published a nonblank value. It does not imply
+// that the phone is valid or that a business can be contacted.
+Listings with Phone Numbers =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[missing_phone] = 0 )
+)
+
+Listings without Phone Numbers =
+[Missing Phone Count]
+
+Phone Availability Percentage =
+DIVIDE ( [Listings with Phone Numbers], [Total Listings], 0 )
+
+Missing Address Count =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[missing_address] = 1 )
+)
+
+Missing Address % =
+DIVIDE ( [Missing Address Count], [Total Listings], 0 )
+
+Listings with Addresses =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[missing_address] = 0 )
+)
+
+// address_valid follows the documented minimum usability rule; it is not
+// proof of a real-world address.
+Listings with Complete Addresses =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[address_valid] = 1 )
+)
+
+Address Availability Percentage =
+DIVIDE ( [Listings with Addresses], [Total Listings], 0 )
+
+Duplicate Listings =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[duplicate_flag] = 1 )
+)
+
+Duplicate Rate % =
+DIVIDE ( [Duplicate Listings], [Total Listings], 0 )
+
+Potential Duplicate Listings =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[potential_duplicate_flag] = 1 )
+)
+
+Complete Listings =
+COUNTROWS (
+    FILTER ( FactDataQuality, FactDataQuality[is_complete] = 1 )
+)
+
+Completeness % =
+DIVIDE ( [Complete Listings], [Total Listings], 0 )
+
+Complete Records Percentage =
+[Completeness %]
+
+Average Quality Score =
+AVERAGE ( FactDataQuality[quality_score] )
+
+Needs Review Count =
+CALCULATE (
+    COUNTROWS ( FactDataQuality ),
+    FactDataQuality[validation_status] = "needs_review"
+)
+
+Needs Review % =
+DIVIDE ( [Needs Review Count], [Total Listings], 0 )
+
+Valid Listings =
+CALCULATE (
+    COUNTROWS ( FactDataQuality ),
+    FactDataQuality[validation_status] = "valid"
+)
+
+Source Completeness % =
+DIVIDE ( [Complete Listings], [Total Listings], 0 )
+
+
+// -----------------------------------------------------------------------------
+// 05. City-category coverage
+// -----------------------------------------------------------------------------
+
+City-Category Combinations =
+COUNTROWS ( FactCityCategoryCoverage )
+
+Covered City-Category Combinations =
+SUM ( FactCityCategoryCoverage[is_covered] )
+
+Category Coverage % =
+DIVIDE (
+    [Covered City-Category Combinations],
+    [City-Category Combinations],
+    0
+)
+
+Uncovered Share % =
+1 - [Category Coverage %]
+
+Average Listings per City-Category =
+DIVIDE (
+    SUM ( FactCityCategoryCoverage[listing_count] ),
+    [City-Category Combinations],
+    0
+)
+
+Candidate City-Category Pairs =
+COUNTROWS (
+    FILTER (
+        FactCityCategoryCoverage,
+        FactCityCategoryCoverage[is_candidate] = 1
+    )
+)
+
+Candidate Opportunity Score =
+CALCULATE (
+    AVERAGE ( FactCityCategoryCoverage[opportunity_score] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
+Candidate Underrepresentation Points =
+CALCULATE (
+    AVERAGE ( FactCityCategoryCoverage[underrepresentation_points] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
+Candidate Breadth Points =
+CALCULATE (
+    AVERAGE ( FactCityCategoryCoverage[breadth_points] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
+Candidate Reliability Points =
+CALCULATE (
+    AVERAGE ( FactCityCategoryCoverage[reliability_points] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
+
+// -----------------------------------------------------------------------------
+// 06. Opportunity scoring (descriptive, not a demand forecast)
+// -----------------------------------------------------------------------------
+
+// Average is appropriate for a card or a city/category visual row. Do not sum
+// this measure across rows.
+Opportunity Score =
+AVERAGE ( FactCityCategoryCoverage[opportunity_score] )
+
+Top Opportunity Score =
+CALCULATE (
+    MAX ( FactCityCategoryCoverage[opportunity_score] ),
+    FactCityCategoryCoverage[is_candidate] = 1
+)
+
+High Opportunity Gaps =
+COUNTROWS (
+    FILTER (
+        FactCityCategoryCoverage,
+        FactCityCategoryCoverage[is_candidate] = 1
+            && FactCityCategoryCoverage[opportunity_tier] = "High"
+    )
+)
+
+Medium Opportunity Gaps =
+COUNTROWS (
+    FILTER (
+        FactCityCategoryCoverage,
+        FactCityCategoryCoverage[is_candidate] = 1
+            && FactCityCategoryCoverage[opportunity_tier] = "Medium"
+    )
+)
+
+Underrepresented Categories =
+COUNTROWS (
+    FILTER (
+        FactCityCategoryCoverage,
+        FactCityCategoryCoverage[is_candidate] = 1
+            && FactCityCategoryCoverage[relative_representation] < 0.5
+    )
+)
+
+Underrepresentation Points =
+AVERAGE ( FactCityCategoryCoverage[underrepresentation_points] )
+
+Breadth Points =
+AVERAGE ( FactCityCategoryCoverage[breadth_points] )
+
+Reliability Points =
+AVERAGE ( FactCityCategoryCoverage[reliability_points] )
+
+Methodology Note =
+SELECTEDVALUE ( FactCityCategoryCoverage[methodology_note], "Opportunity methodology not available" )
+
+Report Context =
+"Snapshot "
+    & FORMAT ( [Snapshot Date], "yyyy-mm-dd" )
+    & " | OpenStreetMap contributors (ODbL 1.0) | Collected POIs, not a census"
+
+Opportunity Caveat =
+"Ranks underrepresentation in collected listings only; not demand, revenue, or competition."

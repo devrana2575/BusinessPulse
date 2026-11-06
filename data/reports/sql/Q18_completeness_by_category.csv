@@ -1,0 +1,13 @@
+category_name,listing_count,complete_listings,completeness_pct,missing_phone_pct,missing_address_pct,completeness_rank
+Professional Services,62,12.0,19.35,77.42,53.23,1
+Other Services,8,1.0,12.5,87.5,75.0,2
+Home & Repair Services,21,2.0,9.52,90.48,57.14,3
+Hospitality,275,26.0,9.45,87.27,75.64,4
+Retail,452,33.0,7.3,92.48,66.59,5
+Food & Beverage,447,28.0,6.26,90.16,73.6,6
+Health & Pharmacy,244,14.0,5.74,93.03,56.15,7
+Beauty & Personal Care,42,2.0,4.76,95.24,69.05,8
+Fitness & Recreation,124,3.0,2.42,95.97,83.87,9
+Automotive,351,6.0,1.71,98.01,75.21,10
+Finance & Banking,224,2.0,0.89,98.66,84.82,11
+Education & Training,2,0.0,0.0,100.0,100.0,12

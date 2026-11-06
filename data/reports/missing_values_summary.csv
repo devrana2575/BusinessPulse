@@ -1,0 +1,5 @@
+field,missing_count,missing_pct
+phone missing,2088,92.72
+address missing,1615,71.71
+phone present but invalid,5,0.22
+address present but invalid,54,2.4

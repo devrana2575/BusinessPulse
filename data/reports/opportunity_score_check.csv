@@ -1,0 +1,145 @@
+city_name,category_name,opportunity_score,python_opportunity_score,score_difference,opportunity_tier,tier_check,tier_match,is_candidate
+Pune,Retail,2.86,2.86,0.0,Low,Low,True,1
+Pune,Professional Services,40.16,40.16,0.0,Medium,Medium,True,1
+Pune,Other Services,62.86,62.86,0.0,High,High,True,1
+Pune,Hospitality,19.36,19.36,0.0,Low,Low,True,1
+Pune,Home & Repair Services,2.86,2.86,0.0,Low,Low,True,1
+Pune,Health & Pharmacy,2.86,2.86,0.0,Low,Low,True,1
+Pune,Food & Beverage,2.86,2.86,0.0,Low,Low,True,1
+Pune,Fitness & Recreation,2.86,2.86,0.0,Low,Low,True,1
+Pune,Finance & Banking,22.02,22.02,0.0,Low,Low,True,1
+Pune,Education & Training,2.86,2.86,0.0,Insufficient evidence,Insufficient evidence,True,0
+Pune,Beauty & Personal Care,2.86,2.86,0.0,Low,Low,True,1
+Pune,Automotive,12.74,12.74,0.0,Low,Low,True,1
+Mumbai,Retail,4.82,4.82,0.0,Low,Low,True,1
+Mumbai,Professional Services,29.48,29.48,0.0,Low,Low,True,1
+Mumbai,Other Services,4.82,4.82,0.0,Low,Low,True,1
+Mumbai,Hospitality,4.82,4.82,0.0,Low,Low,True,1
+Mumbai,Home & Repair Services,4.82,4.82,0.0,Low,Low,True,1
+Mumbai,Health & Pharmacy,7.94,7.94,0.0,Low,Low,True,1
+Mumbai,Food & Beverage,4.82,4.82,0.0,Low,Low,True,1
+Mumbai,Fitness & Recreation,64.82,64.82,0.0,High,High,True,1
+Mumbai,Finance & Banking,4.82,4.82,0.0,Low,Low,True,1
+Mumbai,Education & Training,64.82,64.82,0.0,Insufficient evidence,Insufficient evidence,True,0
+Mumbai,Beauty & Personal Care,4.82,4.82,0.0,Low,Low,True,1
+Mumbai,Automotive,23.2,23.2,0.0,Low,Low,True,1
+Bengaluru,Retail,2.79,2.79,0.0,Low,Low,True,1
+Bengaluru,Professional Services,2.79,2.79,0.0,Low,Low,True,1
+Bengaluru,Other Services,2.79,2.79,0.0,Low,Low,True,1
+Bengaluru,Hospitality,16.25,16.25,0.0,Low,Low,True,1
+Bengaluru,Home & Repair Services,2.79,2.79,0.0,Low,Low,True,1
+Bengaluru,Health & Pharmacy,19.08,19.08,0.0,Low,Low,True,1
+Bengaluru,Food & Beverage,7.11,7.11,0.0,Low,Low,True,1
+Bengaluru,Fitness & Recreation,2.79,2.79,0.0,Low,Low,True,1
+Bengaluru,Finance & Banking,5.65,5.65,0.0,Low,Low,True,1
+Bengaluru,Education & Training,62.79,62.79,0.0,Insufficient evidence,Insufficient evidence,True,0
+Bengaluru,Beauty & Personal Care,2.79,2.79,0.0,Low,Low,True,1
+Bengaluru,Automotive,14.17,14.17,0.0,Low,Low,True,1
+Delhi,Retail,16.41,16.41,0.0,Low,Low,True,1
+Delhi,Professional Services,26.93,26.93,0.0,Low,Low,True,1
+Delhi,Other Services,4.51,4.51,0.0,Low,Low,True,1
+Delhi,Hospitality,24.98,24.98,0.0,Low,Low,True,1
+Delhi,Home & Repair Services,64.51,64.51,0.0,High,High,True,1
+Delhi,Health & Pharmacy,32.69,32.69,0.0,Low,Low,True,1
+Delhi,Food & Beverage,14.13,14.13,0.0,Low,Low,True,1
+Delhi,Fitness & Recreation,4.51,4.51,0.0,Low,Low,True,1
+Delhi,Finance & Banking,4.51,4.51,0.0,Low,Low,True,1
+Delhi,Education & Training,64.51,64.51,0.0,Insufficient evidence,Insufficient evidence,True,0
+Delhi,Beauty & Personal Care,46.02,46.02,0.0,Medium,Medium,True,1
+Delhi,Automotive,4.51,4.51,0.0,Low,Low,True,1
+Hyderabad,Retail,6.33,6.33,0.0,Low,Low,True,1
+Hyderabad,Professional Services,66.33,66.33,0.0,High,High,True,1
+Hyderabad,Other Services,6.33,6.33,0.0,Low,Low,True,1
+Hyderabad,Hospitality,26.71,26.71,0.0,Low,Low,True,1
+Hyderabad,Home & Repair Services,31.74,31.74,0.0,Low,Low,True,1
+Hyderabad,Health & Pharmacy,6.33,6.33,0.0,Low,Low,True,1
+Hyderabad,Food & Beverage,6.33,6.33,0.0,Low,Low,True,1
+Hyderabad,Fitness & Recreation,6.33,6.33,0.0,Low,Low,True,1
+Hyderabad,Finance & Banking,6.33,6.33,0.0,Low,Low,True,1
+Hyderabad,Education & Training,66.33,66.33,0.0,Insufficient evidence,Insufficient evidence,True,0
+Hyderabad,Beauty & Personal Care,66.33,66.33,0.0,High,High,True,1
+Hyderabad,Automotive,8.38,8.38,0.0,Low,Low,True,1
+Chennai,Retail,4.91,4.91,0.0,Low,Low,True,1
+Chennai,Professional Services,21.55,21.55,0.0,Low,Low,True,1
+Chennai,Other Services,64.91,64.91,0.0,High,High,True,1
+Chennai,Hospitality,6.25,6.25,0.0,Low,Low,True,1
+Chennai,Home & Repair Services,4.91,4.91,0.0,Low,Low,True,1
+Chennai,Health & Pharmacy,4.91,4.91,0.0,Low,Low,True,1
+Chennai,Food & Beverage,4.91,4.91,0.0,Low,Low,True,1
+Chennai,Fitness & Recreation,5.28,5.28,0.0,Low,Low,True,1
+Chennai,Finance & Banking,16.9,16.9,0.0,Low,Low,True,1
+Chennai,Education & Training,64.91,64.91,0.0,Insufficient evidence,Insufficient evidence,True,0
+Chennai,Beauty & Personal Care,16.9,16.9,0.0,Low,Low,True,1
+Chennai,Automotive,4.91,4.91,0.0,Low,Low,True,1
+Kolkata,Retail,2.66,2.66,0.0,Low,Low,True,1
+Kolkata,Professional Services,2.79,2.79,0.0,Low,Low,True,1
+Kolkata,Other Services,2.66,2.66,0.0,Low,Low,True,1
+Kolkata,Hospitality,2.66,2.66,0.0,Low,Low,True,1
+Kolkata,Home & Repair Services,2.66,2.66,0.0,Low,Low,True,1
+Kolkata,Health & Pharmacy,2.66,2.66,0.0,Low,Low,True,1
+Kolkata,Food & Beverage,2.87,2.87,0.0,Low,Low,True,1
+Kolkata,Fitness & Recreation,2.66,2.66,0.0,Low,Low,True,1
+Kolkata,Finance & Banking,3.0,3.0,0.0,Low,Low,True,1
+Kolkata,Education & Training,62.66,62.66,0.0,Insufficient evidence,Insufficient evidence,True,0
+Kolkata,Beauty & Personal Care,2.66,2.66,0.0,Low,Low,True,1
+Kolkata,Automotive,20.36,20.36,0.0,Low,Low,True,1
+Ahmedabad,Retail,3.02,3.02,0.0,Low,Low,True,1
+Ahmedabad,Professional Services,3.02,3.02,0.0,Low,Low,True,1
+Ahmedabad,Other Services,63.02,63.02,0.0,High,High,True,1
+Ahmedabad,Hospitality,6.72,6.72,0.0,Low,Low,True,1
+Ahmedabad,Home & Repair Services,3.02,3.02,0.0,Low,Low,True,1
+Ahmedabad,Health & Pharmacy,16.87,16.87,0.0,Low,Low,True,1
+Ahmedabad,Food & Beverage,3.02,3.02,0.0,Low,Low,True,1
+Ahmedabad,Fitness & Recreation,3.02,3.02,0.0,Low,Low,True,1
+Ahmedabad,Finance & Banking,3.02,3.02,0.0,Low,Low,True,1
+Ahmedabad,Education & Training,3.02,3.02,0.0,Insufficient evidence,Insufficient evidence,True,0
+Ahmedabad,Beauty & Personal Care,46.26,46.26,0.0,Medium,Medium,True,1
+Ahmedabad,Automotive,8.89,8.89,0.0,Low,Low,True,1
+Jaipur,Retail,8.89,8.89,0.0,Low,Low,True,1
+Jaipur,Professional Services,5.83,5.83,0.0,Low,Low,True,1
+Jaipur,Other Services,65.83,65.83,0.0,High,High,True,1
+Jaipur,Hospitality,5.83,5.83,0.0,Low,Low,True,1
+Jaipur,Home & Repair Services,31.79,31.79,0.0,Low,Low,True,1
+Jaipur,Health & Pharmacy,5.83,5.83,0.0,Low,Low,True,1
+Jaipur,Food & Beverage,11.46,11.46,0.0,Low,Low,True,1
+Jaipur,Fitness & Recreation,60.07,60.07,0.0,High,High,True,1
+Jaipur,Finance & Banking,14.77,14.77,0.0,Low,Low,True,1
+Jaipur,Education & Training,65.83,65.83,0.0,Insufficient evidence,Insufficient evidence,True,0
+Jaipur,Beauty & Personal Care,31.79,31.79,0.0,Low,Low,True,1
+Jaipur,Automotive,5.83,5.83,0.0,Low,Low,True,1
+Surat,Retail,6.35,6.35,0.0,Low,Low,True,1
+Surat,Professional Services,6.35,6.35,0.0,Low,Low,True,1
+Surat,Other Services,66.35,66.35,0.0,High,High,True,1
+Surat,Hospitality,13.88,13.88,0.0,Low,Low,True,1
+Surat,Home & Repair Services,35.12,35.12,0.0,Low,Low,True,1
+Surat,Health & Pharmacy,6.35,6.35,0.0,Low,Low,True,1
+Surat,Food & Beverage,14.99,14.99,0.0,Low,Low,True,1
+Surat,Fitness & Recreation,13.46,13.46,0.0,Low,Low,True,1
+Surat,Finance & Banking,28.29,28.29,0.0,Low,Low,True,1
+Surat,Education & Training,66.35,66.35,0.0,Insufficient evidence,Insufficient evidence,True,0
+Surat,Beauty & Personal Care,6.35,6.35,0.0,Low,Low,True,1
+Surat,Automotive,6.35,6.35,0.0,Low,Low,True,1
+Lucknow,Retail,5.1,5.1,0.0,Low,Low,True,1
+Lucknow,Professional Services,25.7,25.7,0.0,Low,Low,True,1
+Lucknow,Other Services,2.85,2.85,0.0,Low,Low,True,1
+Lucknow,Hospitality,2.85,2.85,0.0,Low,Low,True,1
+Lucknow,Home & Repair Services,2.85,2.85,0.0,Low,Low,True,1
+Lucknow,Health & Pharmacy,9.36,9.36,0.0,Low,Low,True,1
+Lucknow,Food & Beverage,4.45,4.45,0.0,Low,Low,True,1
+Lucknow,Fitness & Recreation,2.85,2.85,0.0,Low,Low,True,1
+Lucknow,Finance & Banking,2.85,2.85,0.0,Low,Low,True,1
+Lucknow,Education & Training,62.85,62.85,0.0,Insufficient evidence,Insufficient evidence,True,0
+Lucknow,Beauty & Personal Care,2.85,2.85,0.0,Low,Low,True,1
+Lucknow,Automotive,10.36,10.35,0.01,Low,Low,True,1
+Chandigarh,Retail,21.83,21.83,0.0,Low,Low,True,1
+Chandigarh,Professional Services,6.92,6.92,0.0,Low,Low,True,1
+Chandigarh,Other Services,66.92,66.92,0.0,High,High,True,1
+Chandigarh,Hospitality,6.92,6.92,0.0,Low,Low,True,1
+Chandigarh,Home & Repair Services,66.92,66.92,0.0,High,High,True,1
+Chandigarh,Health & Pharmacy,6.92,6.92,0.0,Low,Low,True,1
+Chandigarh,Food & Beverage,6.92,6.92,0.0,Low,Low,True,1
+Chandigarh,Fitness & Recreation,48.66,48.66,0.0,Medium,Medium,True,1
+Chandigarh,Finance & Banking,19.74,19.74,0.0,Low,Low,True,1
+Chandigarh,Education & Training,66.92,66.92,0.0,Insufficient evidence,Insufficient evidence,True,0
+Chandigarh,Beauty & Personal Care,48.95,48.95,0.0,Medium,Medium,True,1
+Chandigarh,Automotive,6.92,6.92,0.0,Low,Low,True,1

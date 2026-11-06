@@ -1,0 +1,51 @@
+city_name,category_name,listing_count,city_total,category_total,category_share_in_city_pct,relative_representation,pair_count_rank
+Surat,Retail,47,206,452,22.82,1.1367,1
+Delhi,Automotive,43,174,351,24.71,1.5856,2
+Bengaluru,Retail,42,190,452,22.11,1.1014,3
+Chennai,Food & Beverage,42,201,447,20.9,1.0527,3
+Pune,Food & Beverage,42,192,447,21.88,1.1021,3
+Chennai,Retail,41,201,452,20.4,1.0163,6
+Hyderabad,Food & Beverage,41,186,447,22.04,1.1105,6
+Hyderabad,Retail,41,186,452,22.04,1.0982,6
+Mumbai,Food & Beverage,41,185,447,22.16,1.1165,6
+Ahmedabad,Food & Beverage,40,192,447,20.83,1.0496,10
+Pune,Retail,40,192,452,20.83,1.038,10
+Ahmedabad,Retail,39,192,452,20.31,1.012,12
+Kolkata,Retail,39,182,452,21.43,1.0676,12
+Chandigarh,Food & Beverage,38,179,447,21.23,1.0695,14
+Mumbai,Retail,38,185,452,20.54,1.0234,14
+Surat,Automotive,38,206,351,18.45,1.1835,14
+Jaipur,Retail,36,189,452,19.05,0.949,17
+Kolkata,Food & Beverage,36,182,447,19.78,0.9965,17
+Bengaluru,Food & Beverage,35,190,447,18.42,0.9281,19
+Chandigarh,Automotive,35,179,351,19.55,1.2545,19
+Jaipur,Automotive,35,189,351,18.52,1.1881,19
+Surat,Food & Beverage,35,206,447,16.99,0.856,19
+Jaipur,Food & Beverage,34,189,447,17.99,0.9063,23
+Jaipur,Hospitality,34,189,275,17.99,1.4732,23
+Lucknow,Food & Beverage,34,176,447,19.32,0.9733,23
+Lucknow,Retail,34,176,452,19.32,0.9625,23
+Mumbai,Hospitality,33,185,275,17.84,1.4608,27
+Chennai,Automotive,32,201,351,15.92,1.0214,28
+Chandigarh,Hospitality,30,179,275,16.76,1.3725,29
+Delhi,Food & Beverage,29,174,447,16.67,0.8397,30
+Pune,Health & Pharmacy,29,192,244,15.1,1.394,30
+Delhi,Retail,28,174,452,16.09,0.8017,32
+Hyderabad,Automotive,28,186,351,15.05,0.9658,32
+Surat,Health & Pharmacy,28,206,244,13.59,1.2545,32
+Ahmedabad,Automotive,27,192,351,14.06,0.9022,35
+Chandigarh,Retail,27,179,452,15.08,0.7515,35
+Delhi,Finance & Banking,26,174,224,14.94,1.5023,37
+Chennai,Health & Pharmacy,25,201,244,12.44,1.1479,38
+Pune,Automotive,25,192,351,13.02,0.8354,38
+Ahmedabad,Finance & Banking,24,192,224,12.5,1.2567,40
+Bengaluru,Automotive,24,190,351,12.63,0.8104,40
+Chennai,Hospitality,24,201,275,11.94,0.9778,40
+Kolkata,Hospitality,24,182,275,13.19,1.0799,40
+Lucknow,Automotive,24,176,351,13.64,0.8749,40
+Ahmedabad,Hospitality,22,192,275,11.46,0.9383,45
+Chandigarh,Health & Pharmacy,22,179,244,12.29,1.1344,45
+Hyderabad,Finance & Banking,22,186,224,11.83,1.1891,45
+Lucknow,Finance & Banking,22,176,224,12.5,1.2567,45
+Lucknow,Hospitality,22,176,275,12.5,1.0236,45
+Mumbai,Finance & Banking,22,185,224,11.89,1.1956,45

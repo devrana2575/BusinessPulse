@@ -1,0 +1,2 @@
+source_name,listing_count,source_share_pct,complete_listings,completeness_pct,missing_phone_pct,missing_address_pct,duplicate_rate_pct,avg_quality_score
+OpenStreetMap (Overpass API),2252,100.0,129.0,5.73,92.72,71.71,0.13,63.36

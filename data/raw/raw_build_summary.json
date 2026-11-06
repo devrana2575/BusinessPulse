@@ -1,0 +1,19 @@
+{
+  "raw_rows": 2252,
+  "cities": 12,
+  "categories": 12,
+  "sources": 1,
+  "collection_date": "2026-11-02",
+  "files_scanned": 60,
+  "skipped": {
+    "unnamed": 233,
+    "non_business_or_unmapped": 7,
+    "generic_name": 9,
+    "duplicate_osm_element": 139,
+    "missing_coordinates": 0
+  },
+  "source_name": "OpenStreetMap (Overpass API)",
+  "license": "Open Database License (ODbL) 1.0",
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "built_at": "2026-11-02T17:09:21+00:00"
+}

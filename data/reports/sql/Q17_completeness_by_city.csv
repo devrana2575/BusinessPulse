@@ -1,0 +1,13 @@
+city_name,listing_count,complete_listings,completeness_pct,avg_quality_score,records_requiring_review,completeness_rank
+Surat,206,30.0,14.56,73.45,176.0,1
+Jaipur,189,21.0,11.11,65.11,168.0,2
+Ahmedabad,192,12.0,6.25,65.42,180.0,3
+Pune,192,10.0,5.21,63.1,182.0,4
+Lucknow,176,9.0,5.11,63.38,167.0,5
+Chennai,201,10.0,4.98,59.33,191.0,6
+Bengaluru,190,9.0,4.74,65.61,181.0,7
+Chandigarh,179,8.0,4.47,60.95,171.0,8
+Mumbai,185,8.0,4.32,63.86,177.0,9
+Kolkata,182,7.0,3.85,63.38,175.0,10
+Delhi,174,4.0,2.3,57.61,170.0,11
+Hyderabad,186,1.0,0.54,57.77,185.0,12

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "quality_issue_types",
+  "position": {
+    "x": 24,
+    "y": 412,
+    "z": 0,
+    "width": 430,
+    "height": 250,
+    "tabOrder": 527384
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactQualityIssues"
+                    }
+                  },
+                  "Property": "issue_type"
+                }
+              },
+              "queryRef": "FactQualityIssues.issue_type"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Quality Issue Rows"
+                }
+              },
+              "queryRef": "_Measures.Quality Issue Rows"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Data Quality Issue Count"
+                }
+              },
+              "queryRef": "_Measures.Data Quality Issue Count"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Audit warning rows by issue type'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+city_name,category_name,listing_count,city_total,category_share_in_city_pct,national_category_share_pct,relative_representation,opportunity_score,opportunity_tier,coverage_status
+Chandigarh,Other Services,0,179,0.0,0.36,0.0,66.92,High,No listings in this city-category
+Chandigarh,Home & Repair Services,0,179,0.0,0.93,0.0,66.92,High,No listings in this city-category
+Surat,Other Services,0,206,0.0,0.36,0.0,66.35,High,No listings in this city-category
+Hyderabad,Professional Services,0,186,0.0,2.75,0.0,66.33,High,No listings in this city-category
+Hyderabad,Beauty & Personal Care,0,186,0.0,1.87,0.0,66.33,High,No listings in this city-category
+Jaipur,Other Services,0,189,0.0,0.36,0.0,65.83,High,No listings in this city-category
+Chennai,Other Services,0,201,0.0,0.36,0.0,64.91,High,No listings in this city-category
+Mumbai,Fitness & Recreation,0,185,0.0,5.51,0.0,64.82,High,No listings in this city-category
+Delhi,Home & Repair Services,0,174,0.0,0.93,0.0,64.51,High,No listings in this city-category
+Ahmedabad,Other Services,0,192,0.0,0.36,0.0,63.02,High,No listings in this city-category
+Pune,Other Services,0,192,0.0,0.36,0.0,62.86,High,No listings in this city-category
+Jaipur,Fitness & Recreation,1,189,0.53,5.51,0.0961,60.07,High,Below national baseline
+Chandigarh,Beauty & Personal Care,1,179,0.56,1.87,0.2995,48.95,Medium,Below national baseline
+Chandigarh,Fitness & Recreation,3,179,1.68,5.51,0.3044,48.66,Medium,Below national baseline
+Ahmedabad,Beauty & Personal Care,1,192,0.52,1.87,0.2793,46.26,Medium,Below national baseline
+Delhi,Beauty & Personal Care,1,174,0.57,1.87,0.3082,46.02,Medium,Below national baseline
+Pune,Professional Services,2,192,1.04,2.75,0.3784,40.16,Medium,Below national baseline
